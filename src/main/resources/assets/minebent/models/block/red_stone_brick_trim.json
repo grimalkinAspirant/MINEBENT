@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "minebent:block/green_stone_bricks",
+    "side": "minebent:block/green_stone_brick_trim"
+  }
+}

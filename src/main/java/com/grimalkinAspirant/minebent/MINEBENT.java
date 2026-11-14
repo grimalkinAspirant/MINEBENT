@@ -2,6 +2,10 @@ package com.grimalkinAspirant.minebent;
 
 import com.grimalkinAspirant.minebent.items.MINEBENTCreativeModeTabs;
 import com.grimalkinAspirant.minebent.items.MINEBENTItems;
+import net.minecraft.client.Minecraft;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.neoforged.neoforge.client.event.RenderLevelStageEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -37,6 +41,9 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class MINEBENT {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "minebent";
+    public static ResourceLocation id(String path){
+        return ResourceLocation.fromNamespaceAndPath(MODID,path);
+    }
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
@@ -83,8 +90,7 @@ public class MINEBENT {
 
         Config.ITEM_STRINGS.get().forEach((item) -> LOGGER.info("ITEM >> {}", item));
     }
-
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
+        // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
