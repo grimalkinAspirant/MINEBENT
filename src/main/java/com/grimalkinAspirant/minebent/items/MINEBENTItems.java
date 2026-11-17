@@ -27,6 +27,10 @@ public class MINEBENTItems {
     // Misc
     public static final DeferredItem<Item> CHITIN = ITEMS.register("chitin",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> MIRTHFUL_ESSENCE = ITEMS.register("mirthful_essence",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> MIRTHFUL_SCRIPTURES = ITEMS.register("mirthful_scriptures",
+            () -> new Item(new Item.Properties()));
     // Food
 
     // Weapons and Tools
@@ -52,7 +56,13 @@ public class MINEBENTItems {
     // Armor
     public static final DeferredItem<ArmorItem> ROCKET_SHOES = ITEMS.register("rocket_shoes",
             () -> new ArmorItem(ArmorMaterials.GOLD, ArmorItem.Type.BOOTS,
-                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(19))));
+                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(0))));
+    public static final DeferredItem<ArmorItem> ROCKET_PACK = ITEMS.register("rocket_pack",
+            () -> new ArmorItem(ArmorMaterials.GOLD, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(0))));
+    public static final DeferredItem<ArmorItem> ROCKET_WINGPACK = ITEMS.register("rocket_wingpack",
+            () -> new ArmorItem(ArmorMaterials.GOLD, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(0))));
     public static final DeferredItem<ArmorItem> CHITIN_HELMET = ITEMS.register("chitin_helmet",
             () -> new ArmorItem(ArmorMaterials.CHAIN, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(0))));
@@ -74,7 +84,7 @@ public class MINEBENTItems {
     public static final DeferredItem<ArmorItem> MIRTHFUL_LEGGINGS = ITEMS.register("mirthful_leggings",
             () -> new ArmorItem(ArmorMaterials.NETHERITE, ArmorItem.Type.LEGGINGS,
                     new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(0))));
-    public static final DeferredItem<ArmorItem> MITRHFUL_BOOTS = ITEMS.register("mirthful_boots",
+    public static final DeferredItem<ArmorItem> MIRTHFUL_BOOTS = ITEMS.register("mirthful_boots",
             () -> new ArmorItem(ArmorMaterials.NETHERITE, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(0))));
 

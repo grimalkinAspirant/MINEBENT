@@ -21,7 +21,28 @@ public class MINEBENTCreativeModeTabs {
                     .title(Component.translatable("MINEBENT"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(MINEBENTItems.CHITIN);
+                        output.accept(MINEBENTItems.MIRTHFUL_ESSENCE);
                         output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
+                        output.accept(MINEBENTItems.MIRTHFUL_SWORD);
+                        output.accept(MINEBENTItems.MIRTHFUL_PICKAXE);
+                        output.accept(MINEBENTItems.MIRTHFUL_SHOVEL);
+                        output.accept(MINEBENTItems.MIRTHFUL_AXE);
+                        output.accept(MINEBENTItems.MIRTHFUL_HOE);
+                        output.accept(MINEBENTItems.MIRTHFUL_MASQUE);
+                        output.accept(MINEBENTItems.MIRTHFUL_CHESTPLATE);
+                        output.accept(MINEBENTItems.MIRTHFUL_LEGGINGS);
+                        output.accept(MINEBENTItems.MIRTHFUL_BOOTS);
+                        output.accept(MINEBENTItems.CHITIN_HELMET);
+                        output.accept(MINEBENTItems.CHITIN_CHESTPLATE);
+                        output.accept(MINEBENTItems.CHITIN_LEGGINGS);
+                        output.accept(MINEBENTItems.CHITIN_BOOTS);
+                        output.accept(MINEBENTItems.ROCKET_SHOES);
+                        output.accept(MINEBENTItems.ROCKET_PACK);
+                        output.accept(MINEBENTItems.ROCKET_WINGPACK);
+                        output.accept(MINEBENTItems.MIRTHFUL_SCRIPTURES);
+                        output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
+
+
                         output.accept(MINEBENTItems.TROLLSTONE_ITEM);
                         output.accept(MINEBENTItems.COBBLED_TROLLSTONE_ITEM);
                         output.accept(MINEBENTItems.TROLLSTONE_BRICKS_ITEM);
