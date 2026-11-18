@@ -17,17 +17,18 @@ public class MINEBENTCreativeModeTabs {
 
     public  static final Supplier<CreativeModeTab> MINEBENT_TAB = CREATIVE_MODE_TAB.register("minebent_tab",
             () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(MINEBENTItems.CHITIN.get()))
+                    .icon(() -> new ItemStack(MINEBENTItems.TROLLLOGO_FAKEITEM.get()))
                     .title(Component.translatable("MINEBENT"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(MINEBENTItems.CHITIN);
                         output.accept(MINEBENTItems.MIRTHFUL_ESSENCE);
                         output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
-                        output.accept(MINEBENTItems.MIRTHFUL_SWORD);
-                        output.accept(MINEBENTItems.MIRTHFUL_PICKAXE);
                         output.accept(MINEBENTItems.MIRTHFUL_SHOVEL);
+                        output.accept(MINEBENTItems.MIRTHFUL_PICKAXE);
                         output.accept(MINEBENTItems.MIRTHFUL_AXE);
                         output.accept(MINEBENTItems.MIRTHFUL_HOE);
+                        output.accept(MINEBENTItems.MIRTHFUL_SWORD);
+                        output.accept(MINEBENTItems.MIRTHFUL_CLUB);
                         output.accept(MINEBENTItems.MIRTHFUL_MASQUE);
                         output.accept(MINEBENTItems.MIRTHFUL_CHESTPLATE);
                         output.accept(MINEBENTItems.MIRTHFUL_LEGGINGS);
@@ -40,8 +41,14 @@ public class MINEBENTCreativeModeTabs {
                         output.accept(MINEBENTItems.ROCKET_PACK);
                         output.accept(MINEBENTItems.ROCKET_WINGPACK);
                         output.accept(MINEBENTItems.MIRTHFUL_SCRIPTURES);
+                        output.accept(MINEBENTItems.RUBY);
+                        output.accept(MINEBENTItems.CHERUB_KEY);
+                        output.accept(MINEBENTItems.CHERUB_PORTAL_ITEM);
                         output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
-
+                        output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
+                        output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
+                        output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
+                        output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
 
                         output.accept(MINEBENTItems.TROLLSTONE_ITEM);
                         output.accept(MINEBENTItems.COBBLED_TROLLSTONE_ITEM);
@@ -52,6 +59,7 @@ public class MINEBENTCreativeModeTabs {
                         output.accept(MINEBENTItems.MOSSY_COBBLED_TROLLSTONE_ITEM);
                         output.accept(MINEBENTItems.BROODSTONE_ITEM);
                         output.accept(MINEBENTItems.BROODSTONE_BRICKS_ITEM);
+                        output.accept(MINEBENTItems.RUBY_BLOCK_ITEM);
 
                         output.accept(MINEBENTItems.RED_STONE_ITEM);
                         output.accept(MINEBENTItems.RED_STONE_WALL_ITEM);

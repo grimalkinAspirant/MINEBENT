@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "minebent:block/ruby_block"
+    }
+  }
+}

@@ -2,7 +2,9 @@ package com.grimalkinAspirant.minebent.items;
 
 import com.grimalkinAspirant.minebent.MINEBENT;
 import com.mraof.minestuck.block.*;
+import com.mraof.minestuck.item.MSItemProperties;
 import com.mraof.minestuck.item.MSItemTypes;
+import com.mraof.minestuck.item.weapon.MSToolType;
 import com.mraof.minestuck.item.weapon.OnHitEffect;
 import com.mraof.minestuck.item.weapon.WeaponItem;
 import net.minecraft.world.item.*;
@@ -25,11 +27,15 @@ public class MINEBENTItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MINEBENT.MODID);
 
     // Misc
+    public static final DeferredItem<Item> TROLLLOGO_FAKEITEM = ITEMS.register("trolllogo_fakeitem",
+            () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> CHITIN = ITEMS.register("chitin",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> MIRTHFUL_ESSENCE = ITEMS.register("mirthful_essence",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> MIRTHFUL_SCRIPTURES = ITEMS.register("mirthful_scriptures",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RUBY = ITEMS.register("ruby",
             () -> new Item(new Item.Properties()));
     // Food
 
@@ -37,21 +43,25 @@ public class MINEBENTItems {
     public static final DeferredItem<Item> AHABS_CROSSHAIRS = ITEMS.register("ahabs_crosshairs",
             () -> new WeaponItem(new WeaponItem.Builder(MSItemTypes.ZILLY_TIER, -2, -2.0f).efficiency(1.0f).set(MSItemTypes.WAND_TOOL).set(BENTMagicRangedRightClickEffect.AHAB),
                     new Item.Properties().rarity(Rarity.EPIC)));
+    public static final DeferredItem<Item> MIRTHFUL_CLUB = ITEMS.register("mirthful_club",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, 6, -2.8F).efficiency(2.0F).set(MSItemTypes.CLUB_TOOL),
+                    new Item.Properties().rarity(Rarity.COMMON)));
+    public static final DeferredItem<Item> UMBRELLA = ITEMS.register("umbrella",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, 7, -2.4F).efficiency(15.0F).set(MSItemTypes.SWORD_TOOL).add(OnHitEffect.SWEEP),
+                    new Item.Properties().rarity(Rarity.COMMON)));
+    public static final DeferredItem<Item> CHERUB_KEY = ITEMS.register("cherub_key",
+            () -> new WeaponItem(new WeaponItem.Builder(MSItemTypes.ZILLY_TIER, -1, -1.0F).efficiency(1.0F).set(MSItemTypes.KEY_TOOL),
+                    new Item.Properties().rarity(Rarity.EPIC)));
     public static final DeferredItem<Item> MIRTHFUL_SWORD = ITEMS.register("mirthful_sword",
-            () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, 7, -2.4F).efficiency(15.0F).set(MSItemTypes.SWORD_TOOL).add(OnHitEffect.SWEEP),
-                    new Item.Properties().rarity(Rarity.COMMON)));
-    public static final DeferredItem<Item> MIRTHFUL_PICKAXE = ITEMS.register("mirthful_pickaxe",
-            () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, 7, -2.4F).efficiency(15.0F).set(MSItemTypes.PICKAXE_TOOL).add(OnHitEffect.SWEEP),
-                    new Item.Properties().rarity(Rarity.COMMON)));
-    public static final DeferredItem<Item> MIRTHFUL_SHOVEL = ITEMS.register("mirthful_shovel",
-            () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, 7, -2.4F).efficiency(15.0F).set(MSItemTypes.SHOVEL_TOOL).add(OnHitEffect.SWEEP),
-                    new Item.Properties().rarity(Rarity.COMMON)));
+            () -> new SwordItem(Tiers.NETHERITE, new Item.Properties().attributes(SwordItem.createAttributes(Tiers.NETHERITE, 4.0F, -2.4F))));
     public static final DeferredItem<Item> MIRTHFUL_AXE = ITEMS.register("mirthful_axe",
-            () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, 7, -2.4F).efficiency(15.0F).set(MSItemTypes.AXE_TOOL).add(OnHitEffect.SWEEP),
-                    new Item.Properties().rarity(Rarity.COMMON)));
+            () -> new AxeItem(Tiers.NETHERITE, new Item.Properties().attributes(AxeItem.createAttributes(Tiers.NETHERITE, 6.0F, -3.0F))));
+    public static final DeferredItem<Item> MIRTHFUL_PICKAXE = ITEMS.register("mirthful_pickaxe",
+            () -> new PickaxeItem(Tiers.NETHERITE, new Item.Properties().attributes(PickaxeItem.createAttributes(Tiers.NETHERITE, 2.0F, -2.8F))));
+    public static final DeferredItem<Item> MIRTHFUL_SHOVEL = ITEMS.register("mirthful_shovel",
+            () -> new ShovelItem(Tiers.NETHERITE, new Item.Properties().attributes(ShovelItem.createAttributes(Tiers.NETHERITE, 2.5F, -3.0F))));
     public static final DeferredItem<Item> MIRTHFUL_HOE = ITEMS.register("mirthful_hoe",
-            () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, 7, -2.4F).efficiency(15.0F).set(MSItemTypes.SWORD_TOOL).add(OnHitEffect.SWEEP),
-                    new Item.Properties().rarity(Rarity.COMMON)));
+            () -> new HoeItem(Tiers.NETHERITE, new Item.Properties().attributes(HoeItem.createAttributes(Tiers.NETHERITE, -3.0F, 0.0F))));
 
     // Armor
     public static final DeferredItem<ArmorItem> ROCKET_SHOES = ITEMS.register("rocket_shoes",
@@ -87,10 +97,15 @@ public class MINEBENTItems {
     public static final DeferredItem<ArmorItem> MIRTHFUL_BOOTS = ITEMS.register("mirthful_boots",
             () -> new ArmorItem(ArmorMaterials.NETHERITE, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(0))));
+    public static final DeferredItem<ArmorItem> UMBRELLA_HAT = ITEMS.register("umbrella_hat",
+            () -> new ArmorItem(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(0))));
 
     // Blocks
     public static final DeferredBlock<Block> CHERUB_PORTAL = BLOCKS.registerSimpleBlock("cherub_portal", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
     public static final DeferredItem<BlockItem> CHERUB_PORTAL_ITEM = ITEMS.registerSimpleBlockItem("cherub_portal", CHERUB_PORTAL);
+    public static final DeferredBlock<Block> RUBY_BLOCK = BLOCKS.registerSimpleBlock("ruby_block", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED));
+    public static final DeferredItem<BlockItem> RUBY_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("ruby_block", RUBY_BLOCK);
 
     // Natural Blocks & Derivatives
     public static final DeferredBlock<Block> TROLLSTONE = BLOCKS.registerSimpleBlock("trollstone", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
