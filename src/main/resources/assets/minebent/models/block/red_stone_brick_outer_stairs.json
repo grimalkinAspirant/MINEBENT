@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "minebent:block/polished_green_stone",
-    "side": "minebent:block/horizontal_green_stone_bricks",
-    "top": "minebent:block/polished_green_stone"
-  }
-}

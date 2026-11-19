@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "minestuck:block/polished_red_stone",
-    "side": "minestuck:block/horizontal_red_stone_bricks",
-    "top": "minestuck:block/polished_red_stone"
-  }
-}
