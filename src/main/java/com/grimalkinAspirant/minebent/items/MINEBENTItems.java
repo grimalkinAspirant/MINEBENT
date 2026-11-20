@@ -1,25 +1,21 @@
 package com.grimalkinAspirant.minebent.items;
 
 import com.grimalkinAspirant.minebent.MINEBENT;
-import com.mraof.minestuck.block.*;
-import com.mraof.minestuck.item.MSItemProperties;
+import com.grimalkinAspirant.minebent.datagen.BENTDragonArmorFly;
+import com.grimalkinAspirant.minebent.datagen.BENTMagicRangedRightClickEffect;
+import com.grimalkinAspirant.minebent.datagen.BENTRocketArmorFly;
 import com.mraof.minestuck.item.MSItemTypes;
-import com.mraof.minestuck.item.weapon.MSToolType;
 import com.mraof.minestuck.item.weapon.OnHitEffect;
 import com.mraof.minestuck.item.weapon.WeaponItem;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
-import java.util.function.Function;
 
 import static com.grimalkinAspirant.minebent.MINEBENT.BLOCKS;
 import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.ofFullCopy;
@@ -67,38 +63,38 @@ public class MINEBENTItems {
 
     // Armor
     public static final DeferredItem<ArmorItem> ROCKET_SHOES = ITEMS.register("rocket_shoes",
-            () -> new ArmorItem(MINEBENTMaterials.ROCKET_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
-                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(0))));
+            () -> new BENTRocketArmorFly(MINEBENTMaterials.ROCKET_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(32))));
     public static final DeferredItem<ArmorItem> ROCKET_PACK = ITEMS.register("rocket_pack",
-            () -> new ArmorItem(MINEBENTMaterials.ROCKET_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(0))));
+            () -> new BENTRocketArmorFly(MINEBENTMaterials.ROCKET_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(32))));
     public static final DeferredItem<ArmorItem> ROCKET_WINGPACK = ITEMS.register("rocket_wingpack",
-            () -> new ArmorItem(MINEBENTMaterials.ROCKET_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(0))));
+            () -> new BENTDragonArmorFly(MINEBENTMaterials.ROCKET_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(32))));
     public static final DeferredItem<ArmorItem> CHITIN_HELMET = ITEMS.register("chitin_helmet",
-            () -> new ArmorItem(ArmorMaterials.CHAIN, ArmorItem.Type.HELMET,
+            () -> new ArmorItem(MINEBENTMaterials.CHITIN_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(0))));
     public static final DeferredItem<ArmorItem> CHITIN_CHESTPLATE = ITEMS.register("chitin_chestplate",
-            () -> new ArmorItem(ArmorMaterials.CHAIN, ArmorItem.Type.CHESTPLATE,
+            () -> new ArmorItem(MINEBENTMaterials.CHITIN_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(0))));
     public static final DeferredItem<ArmorItem> CHITIN_LEGGINGS = ITEMS.register("chitin_leggings",
-            () -> new ArmorItem(ArmorMaterials.CHAIN, ArmorItem.Type.LEGGINGS,
+            () -> new ArmorItem(MINEBENTMaterials.CHITIN_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
                     new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(0))));
     public static final DeferredItem<ArmorItem> CHITIN_BOOTS = ITEMS.register("chitin_boots",
-            () -> new ArmorItem(ArmorMaterials.CHAIN, ArmorItem.Type.BOOTS,
+            () -> new ArmorItem(MINEBENTMaterials.CHITIN_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(0))));
     public static final DeferredItem<ArmorItem> MIRTHFUL_MASQUE = ITEMS.register("mirthful_masque",
             () -> new ArmorItem(MINEBENTMaterials.MIRTHFUL_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
-                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(0))));
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(42))));
     public static final DeferredItem<ArmorItem> MIRTHFUL_CHESTPLATE = ITEMS.register("mirthful_chestplate",
             () -> new ArmorItem(MINEBENTMaterials.MIRTHFUL_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(0))));
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(42))));
     public static final DeferredItem<ArmorItem> MIRTHFUL_LEGGINGS = ITEMS.register("mirthful_leggings",
             () -> new ArmorItem(MINEBENTMaterials.MIRTHFUL_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
-                    new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(0))));
+                    new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(42))));
     public static final DeferredItem<ArmorItem> MIRTHFUL_BOOTS = ITEMS.register("mirthful_boots",
             () -> new ArmorItem(MINEBENTMaterials.MIRTHFUL_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
-                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(0))));
+                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(42))));
     public static final DeferredItem<ArmorItem> UMBRELLA_HAT = ITEMS.register("umbrella_hat",
             () -> new ArmorItem(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(0))));
@@ -150,10 +146,23 @@ public class MINEBENTItems {
     public static final DeferredItem<BlockItem> MOSSY_COBBLED_TROLLSTONE_ITEM = ITEMS.registerSimpleBlockItem("mossy_cobbled_trollstone", MOSSY_COBBLED_TROLLSTONE);
     public static final DeferredBlock<Block> MOSSY_TROLLSTONE_BRICKS = BLOCKS.registerSimpleBlock("mossy_trollstone_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
     public static final DeferredItem<BlockItem> MOSSY_TROLLSTONE_BRICKS_ITEM = ITEMS.registerSimpleBlockItem("mossy_trollstone_bricks", MOSSY_TROLLSTONE_BRICKS);
+
     public static final DeferredBlock<Block> BROODSTONE = BLOCKS.registerSimpleBlock("broodstone", BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE));
     public static final DeferredItem<BlockItem> BROODSTONE_ITEM = ITEMS.registerSimpleBlockItem("broodstone", BROODSTONE);
+    public static final DeferredBlock<StairBlock> BROODSTONE_STAIRS = BLOCKS.register("broodstone_stairs", () -> new StairBlock(BROODSTONE.get().defaultBlockState(), ofFullCopy(BROODSTONE.get())));
+    public static final DeferredItem<BlockItem> BROODSTONE_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("broodstone_stairs", BROODSTONE_STAIRS);
+    public static final DeferredBlock<SlabBlock> BROODSTONE_SLAB = BLOCKS.register("broodstone_slab", () -> new SlabBlock(ofFullCopy(BROODSTONE.get())));
+    public static final DeferredItem<BlockItem> BROODSTONE_SLAB_ITEM = ITEMS.registerSimpleBlockItem("broodstone_slab", BROODSTONE_SLAB);
+    public static final DeferredBlock<WallBlock> BROODSTONE_WALL = BLOCKS.register("broodstone_wall", () -> new WallBlock(ofFullCopy(BROODSTONE.get())));
+    public static final DeferredItem<BlockItem> BROODSTONE_WALL_ITEM = ITEMS.registerSimpleBlockItem("broodstone_wall", BROODSTONE_WALL);
     public static final DeferredBlock<Block> BROODSTONE_BRICKS = BLOCKS.registerSimpleBlock("broodstone_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE));
     public static final DeferredItem<BlockItem> BROODSTONE_BRICKS_ITEM = ITEMS.registerSimpleBlockItem("broodstone_bricks", BROODSTONE_BRICKS);
+    public static final DeferredBlock<StairBlock> BROODSTONE_BRICK_STAIRS = BLOCKS.register("broodstone_brick_stairs", () -> new StairBlock(BROODSTONE_BRICKS.get().defaultBlockState(), ofFullCopy(BROODSTONE_BRICKS.get())));
+    public static final DeferredItem<BlockItem> BROODSTONE_BRICK_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("broodstone_brick_stairs", BROODSTONE_BRICK_STAIRS);
+    public static final DeferredBlock<SlabBlock> BROODSTONE_BRICK_SLAB = BLOCKS.register("broodstone_brick_slab", () -> new SlabBlock(ofFullCopy(BROODSTONE_BRICKS.get())));
+    public static final DeferredItem<BlockItem> BROODSTONE_BRICK_SLAB_ITEM = ITEMS.registerSimpleBlockItem("broodstone_brick_slab", BROODSTONE_BRICK_SLAB);
+    public static final DeferredBlock<WallBlock> BROODSTONE_BRICK_WALL = BLOCKS.register("broodstone_brick_wall", () -> new WallBlock(ofFullCopy(BROODSTONE_BRICKS.get())));
+    public static final DeferredItem<BlockItem> BROODSTONE_BRICK_WALL_ITEM = ITEMS.registerSimpleBlockItem("broodstone_brick_wall", BROODSTONE_BRICK_WALL);
 
     // Ores
     public static final DeferredBlock<Block> TROLLSTONE_COAL_ORE = BLOCKS.registerSimpleBlock("trollstone_coal_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));

@@ -3,11 +3,9 @@ package com.grimalkinAspirant.minebent.items;
 import com.grimalkinAspirant.minebent.MINEBENT;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -22,11 +20,19 @@ public class MINEBENTCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(MINEBENTItems.CHERUB_KEY);
                         output.accept(MINEBENTItems.CHERUB_PORTAL_ITEM);
+
                         output.accept(MINEBENTItems.CHITIN);
                         output.accept(MINEBENTItems.CHITIN_HELMET);
                         output.accept(MINEBENTItems.CHITIN_CHESTPLATE);
                         output.accept(MINEBENTItems.CHITIN_LEGGINGS);
                         output.accept(MINEBENTItems.CHITIN_BOOTS);
+
+                        output.accept(MINEBENTItems.RUBY);
+                        output.accept(MINEBENTItems.RUBY_BLOCK_ITEM);
+                        output.accept(MINEBENTItems.ROCKET_SHOES);
+                        output.accept(MINEBENTItems.ROCKET_PACK);
+                        output.accept(MINEBENTItems.ROCKET_WINGPACK);
+
                         output.accept(MINEBENTItems.MIRTHFUL_ESSENCE);
                         output.accept(MINEBENTItems.MIRTHFUL_SHOVEL);
                         output.accept(MINEBENTItems.MIRTHFUL_PICKAXE);
@@ -39,6 +45,7 @@ public class MINEBENTCreativeModeTabs {
                         output.accept(MINEBENTItems.MIRTHFUL_LEGGINGS);
                         output.accept(MINEBENTItems.MIRTHFUL_BOOTS);
                         output.accept(MINEBENTItems.MIRTHFUL_SCRIPTURES);
+
                         output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
                         output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
                         output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
@@ -54,16 +61,25 @@ public class MINEBENTCreativeModeTabs {
                         output.accept(MINEBENTItems.COBBLED_TROLLSTONE_STAIRS_ITEM);
                         output.accept(MINEBENTItems.COBBLED_TROLLSTONE_SLAB_ITEM);
                         output.accept(MINEBENTItems.COBBLED_TROLLSTONE_WALL_ITEM);
+
                         output.accept(MINEBENTItems.TROLLSTONE_BRICKS_ITEM);
                         output.accept(MINEBENTItems.TROLLSTONE_BRICK_STAIRS_ITEM);
                         output.accept(MINEBENTItems.TROLLSTONE_BRICK_SLAB_ITEM);
                         output.accept(MINEBENTItems.TROLLSTONE_BRICK_WALL_ITEM);
+
                         output.accept(MINEBENTItems.CRACKED_TROLLSTONE_BRICKS_ITEM);
                         output.accept(MINEBENTItems.CHISELED_TROLLSTONE_BRICKS_ITEM);
                         output.accept(MINEBENTItems.MOSSY_TROLLSTONE_BRICKS_ITEM);
                         output.accept(MINEBENTItems.MOSSY_COBBLED_TROLLSTONE_ITEM);
+
                         output.accept(MINEBENTItems.BROODSTONE_ITEM);
+                        output.accept(MINEBENTItems.BROODSTONE_STAIRS_ITEM);
+                        output.accept(MINEBENTItems.BROODSTONE_SLAB_ITEM);
+                        output.accept(MINEBENTItems.BROODSTONE_WALL_ITEM);
                         output.accept(MINEBENTItems.BROODSTONE_BRICKS_ITEM);
+                        output.accept(MINEBENTItems.BROODSTONE_BRICK_STAIRS_ITEM);
+                        output.accept(MINEBENTItems.BROODSTONE_BRICK_SLAB_ITEM);
+                        output.accept(MINEBENTItems.BROODSTONE_BRICK_WALL_ITEM);
 
                         output.accept(MINEBENTItems.TROLLSTONE_COAL_ORE_ITEM);
                         output.accept(MINEBENTItems.TROLLSTONE_COPPER_ORE_ITEM);
@@ -85,12 +101,6 @@ public class MINEBENTCreativeModeTabs {
                         output.accept(MINEBENTItems.TROLLSLATE_CRUXITE_ORE_ITEM);
                         output.accept(MINEBENTItems.TROLLSLATE_URANIUM_ORE_ITEM);
                         output.accept(MINEBENTItems.TROLLSLATE_RUBY_ORE_ITEM);
-
-                        output.accept(MINEBENTItems.RUBY);
-                        output.accept(MINEBENTItems.RUBY_BLOCK_ITEM);
-                        output.accept(MINEBENTItems.ROCKET_SHOES);
-                        output.accept(MINEBENTItems.ROCKET_PACK);
-                        output.accept(MINEBENTItems.ROCKET_WINGPACK);
 
 //                        output.accept(MINEBENTItems.RED_STONE_ITEM);
 //                        output.accept(MINEBENTItems.RED_STONE_WALL_ITEM);

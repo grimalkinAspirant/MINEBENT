@@ -1,4 +1,4 @@
-package com.grimalkinAspirant.minebent.items;
+package com.grimalkinAspirant.minebent.datagen;
 
 import com.mraof.minestuck.item.weapon.MagicRangedRightClickEffect;
 import com.mraof.minestuck.util.MSSoundEvents;

@@ -12,7 +12,6 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
-import software.bernie.geckolib.event.GeoRenderEvent;
 
 import java.util.EnumMap;
 import java.util.List;
@@ -35,7 +34,14 @@ public class MINEBENTMaterials {
                 attribute.put(ArmorItem.Type.BOOTS, 1);
                 attribute.put(ArmorItem.Type.BODY, 11);
             }), 6, 0f, 0f, () -> MINEBENTItems.RUBY.get());
-
+    public static final Holder<ArmorMaterial> CHITIN_ARMOR_MATERIAL = register("chitin",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+                attribute.put(ArmorItem.Type.HELMET, 2);
+                attribute.put(ArmorItem.Type.CHESTPLATE, 5);
+                attribute.put(ArmorItem.Type.LEGGINGS, 4);
+                attribute.put(ArmorItem.Type.BOOTS, 1);
+                attribute.put(ArmorItem.Type.BODY, 4);
+            }), 12, 0f, 0f, () -> MINEBENTItems.CHITIN.get());
     private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtection,
                                                   int enchantability, float toughness, float knockbackResistance,
                                                   Supplier<Item> ingredientItem) {

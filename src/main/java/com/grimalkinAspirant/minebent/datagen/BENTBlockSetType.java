@@ -1,4 +1,4 @@
-package com.grimalkinAspirant.minebent.items;
+package com.grimalkinAspirant.minebent.datagen;
 
 import com.mraof.minestuck.Minestuck;
 import net.minecraft.sounds.SoundEvents;

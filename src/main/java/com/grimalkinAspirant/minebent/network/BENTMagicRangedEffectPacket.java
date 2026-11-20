@@ -2,7 +2,7 @@ package com.grimalkinAspirant.minebent.network;
 
 import com.grimalkinAspirant.minebent.MINEBENT;
 import com.mraof.minestuck.network.MSPayloads;
-import com.grimalkinAspirant.minebent.items.BENTMagicEffect;
+import com.grimalkinAspirant.minebent.datagen.BENTMagicEffect;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;

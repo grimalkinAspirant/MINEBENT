@@ -1,4 +1,4 @@
-package com.grimalkinAspirant.minebent.items;
+package com.grimalkinAspirant.minebent.datagen;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;

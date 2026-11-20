@@ -1,4 +1,4 @@
-package com.grimalkinAspirant.minebent.items;
+package com.grimalkinAspirant.minebent.datagen;
 
 import com.mraof.minestuck.util.MSSoundEvents;
 import net.minecraft.client.multiplayer.ClientLevel;
