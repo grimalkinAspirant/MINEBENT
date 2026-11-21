@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "s": {
+      "tag": "minecraft:gold_ingot"
+    },
+    "m": {
+      "item": "minestuck:cane"
+    }
+  },
+  "pattern": [
+    "  s",
+    " m ",
+    "s  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minebent:gold_cane"
+  }
+}

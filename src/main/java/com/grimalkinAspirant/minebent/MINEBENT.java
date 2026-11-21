@@ -67,7 +67,6 @@ public class MINEBENT {
         CREATIVE_MODE_TABS.register(modEventBus);
 
         MINEBENTCreativeModeTabs.register(modEventBus);
-        MINEBENTItems.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.

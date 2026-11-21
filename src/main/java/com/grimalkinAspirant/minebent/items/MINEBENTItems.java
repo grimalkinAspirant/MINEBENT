@@ -4,15 +4,23 @@ import com.grimalkinAspirant.minebent.MINEBENT;
 import com.grimalkinAspirant.minebent.datagen.BENTDragonArmorFly;
 import com.grimalkinAspirant.minebent.datagen.BENTMagicRangedRightClickEffect;
 import com.grimalkinAspirant.minebent.datagen.BENTRocketArmorFly;
+import com.mraof.minestuck.item.MSItemProperties;
 import com.mraof.minestuck.item.MSItemTypes;
+import com.mraof.minestuck.item.MSItems;
+import com.mraof.minestuck.item.weapon.InventoryTickEffect;
+import com.mraof.minestuck.item.weapon.ItemRightClickEffect;
 import com.mraof.minestuck.item.weapon.OnHitEffect;
 import com.mraof.minestuck.item.weapon.WeaponItem;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.ModifyDefaultComponentsEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -35,6 +43,8 @@ public class MINEBENTItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> RUBY = ITEMS.register("ruby",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> TROLL_HORN = ITEMS.register("troll_horn",
+            () -> new Item(new Item.Properties()));
     // Food
 
     // Weapons and Tools
@@ -42,11 +52,10 @@ public class MINEBENTItems {
             () -> new WeaponItem(new WeaponItem.Builder(MSItemTypes.ZILLY_TIER, -2, -2.0f).efficiency(1.0f).set(MSItemTypes.WAND_TOOL).set(BENTMagicRangedRightClickEffect.AHAB),
                     new Item.Properties().rarity(Rarity.EPIC)));
     public static final DeferredItem<Item> MIRTHFUL_CLUB = ITEMS.register("mirthful_club",
-            () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, 6, -2.8F).efficiency(2.0F).set(MSItemTypes.CLUB_TOOL),
-                    new Item.Properties().rarity(Rarity.COMMON)));
-    public static final DeferredItem<Item> UMBRELLA = ITEMS.register("umbrella",
-            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, 7, -2.4F).efficiency(15.0F).set(MSItemTypes.SWORD_TOOL).add(OnHitEffect.SWEEP),
-                    new Item.Properties().rarity(Rarity.COMMON)));
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, 5, -2.8F).efficiency(2.0F).set(MSItemTypes.CLUB_TOOL), new Item.Properties()));
+    public static final DeferredItem<Item> OPEN_UMBRELLA = ITEMS.register("open_umbrella",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, 0, -3.0F).efficiency(1.0F).set(ItemRightClickEffect.switchTo(MSItems.UMBRELLA))
+                    .set(MSItemTypes.CANE_TOOL).add(InventoryTickEffect.BREATH_SLOW_FALLING), new MSItemProperties().durability(350)));
     public static final DeferredItem<Item> CHERUB_KEY = ITEMS.register("cherub_key",
             () -> new WeaponItem(new WeaponItem.Builder(MSItemTypes.ZILLY_TIER, -1, -1.0F).efficiency(1.0F).set(MSItemTypes.KEY_TOOL),
                     new Item.Properties().rarity(Rarity.EPIC)));
@@ -60,6 +69,70 @@ public class MINEBENTItems {
             () -> new ShovelItem(Tiers.NETHERITE, new Item.Properties().attributes(ShovelItem.createAttributes(Tiers.NETHERITE, 2.5F, -3.0F))));
     public static final DeferredItem<Item> MIRTHFUL_HOE = ITEMS.register("mirthful_hoe",
             () -> new HoeItem(Tiers.NETHERITE, new Item.Properties().attributes(HoeItem.createAttributes(Tiers.NETHERITE, -3.0F, 0.0F))));
+
+    // Tiered Troll Strifekind
+    public static final DeferredItem<Item> STONE_LANCE = ITEMS.register("stone_lance",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.STONE, 4, -2.8F).efficiency(2.0F).set(MSItemTypes.LANCE_TOOL), new Item.Properties()));
+    public static final DeferredItem<Item> GOLD_LANCE = ITEMS.register("gold_lance",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.GOLD, 4, -2.8F).efficiency(2.0F).set(MSItemTypes.LANCE_TOOL), new Item.Properties()));
+    public static final DeferredItem<Item> DIAMOND_LANCE = ITEMS.register("diamond_lance",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.DIAMOND, 4, -2.8F).efficiency(2.0F).set(MSItemTypes.LANCE_TOOL), new Item.Properties()));
+    public static final DeferredItem<Item> MIRTHFUL_LANCE = ITEMS.register("mirthful_lance",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, 5, -2.8F).efficiency(2.0F).set(MSItemTypes.LANCE_TOOL), new Item.Properties()));
+    public static final DeferredItem<Item> WOODEN_SICKLE = ITEMS.register("wooden_sickle",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, 2, -2.2F).efficiency(1.5F).disableShield().set(MSItemTypes.SICKLE_TOOL), new Item.Properties()));
+    public static final DeferredItem<Item> STONE_SICKLE = ITEMS.register("stone_sickle",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.STONE, 2, -2.2F).efficiency(1.5F).disableShield().set(MSItemTypes.SICKLE_TOOL), new Item.Properties()));
+    public static final DeferredItem<Item> GOLD_SICKLE = ITEMS.register("gold_sickle",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.GOLD, 2, -2.2F).efficiency(1.5F).disableShield().set(MSItemTypes.SICKLE_TOOL), new Item.Properties()));
+    public static final DeferredItem<Item> DIAMOND_SICKLE = ITEMS.register("diamond_sickle",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.DIAMOND, 2, -2.2F).efficiency(1.5F).disableShield().set(MSItemTypes.SICKLE_TOOL), new Item.Properties()));
+    public static final DeferredItem<Item> MIRTHFUL_SICKLE = ITEMS.register("mirthful_sickle",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, 3, -2.2F).efficiency(1.5F).disableShield().set(MSItemTypes.SICKLE_TOOL), new Item.Properties()));
+    public static final DeferredItem<Item> WOODEN_CLAWS_DRAWN = ITEMS.register("wooden_claws_drawn",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, 1, -1.5F).efficiency(10.0F).set(MSItemTypes.CLAWS_TOOL).set(ItemRightClickEffect.switchTo(MINEBENTItems.WOODEN_CLAWS_SHEATHED)), new MSItemProperties().durability(200)));
+    public static final DeferredItem<Item> WOODEN_CLAWS_SHEATHED = ITEMS.register("wooden_claws_sheathed",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, -1, -1.0F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.WOODEN_CLAWS_DRAWN)), new MSItemProperties().durability(200)));
+    public static final DeferredItem<Item> GOLD_CLAWS_DRAWN = ITEMS.register("gold_claws_drawn",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.GOLD, 1, -1.5F).efficiency(10.0F).set(MSItemTypes.CLAWS_TOOL).set(ItemRightClickEffect.switchTo(MINEBENTItems.GOLD_CLAWS_SHEATHED)), new MSItemProperties().durability(200)));
+    public static final DeferredItem<Item> GOLD_CLAWS_SHEATHED = ITEMS.register("gold_claws_sheathed",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.GOLD, -1, -1.0F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.GOLD_CLAWS_DRAWN)), new MSItemProperties().durability(200)));
+    public static final DeferredItem<Item> MIRTHFUL_CLAWS_DRAWN = ITEMS.register("mirthful_claws_drawn",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, 2, -1.5F).efficiency(10.0F).set(MSItemTypes.CLAWS_TOOL).set(ItemRightClickEffect.switchTo(MINEBENTItems.MIRTHFUL_CLAWS_SHEATHED)), new MSItemProperties().durability(200)));
+    public static final DeferredItem<Item> MIRTHFUL_CLAWS_SHEATHED = ITEMS.register("mirthful_claws_sheathed",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, -1, -1.0F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.MIRTHFUL_CLAWS_DRAWN)), new MSItemProperties().durability(200)));
+    public static final DeferredItem<Item> WOODEN_LIPSTICK_CHAINSAW = ITEMS.register("wooden_lipstick_chainsaw",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, 2, -1.5F).efficiency(10.0F).set(MSItemTypes.CHAINSAW_TOOL).set(ItemRightClickEffect.switchTo(MINEBENTItems.SAWDUST_LIPSTICK)), new MSItemProperties().durability(250)));
+    public static final DeferredItem<Item> SAWDUST_LIPSTICK = ITEMS.register("sawdust_lipstick",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, -1, -0.5F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.WOODEN_LIPSTICK_CHAINSAW)), new MSItemProperties().durability(250)));
+    public static final DeferredItem<Item> STONE_LIPSTICK_CHAINSAW = ITEMS.register("stone_lipstick_chainsaw",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.STONE, 2, -1.5F).efficiency(10.0F).set(MSItemTypes.CHAINSAW_TOOL).set(ItemRightClickEffect.switchTo(MINEBENTItems.CHALKY_LIPSTICK)), new MSItemProperties().durability(250)));
+    public static final DeferredItem<Item> CHALKY_LIPSTICK = ITEMS.register("chalky_lipstick",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, -1, -0.5F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.STONE_LIPSTICK_CHAINSAW)), new MSItemProperties().durability(250)));
+    public static final DeferredItem<Item> GOLD_LIPSTICK_CHAINSAW = ITEMS.register("gold_lipstick_chainsaw",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.GOLD, 2, -1.5F).efficiency(10.0F).set(MSItemTypes.CHAINSAW_TOOL).set(ItemRightClickEffect.switchTo(MINEBENTItems.SIX_KARAT_LIPSTICK)), new MSItemProperties().durability(250)));
+    public static final DeferredItem<Item> SIX_KARAT_LIPSTICK = ITEMS.register("six_karat_lipstick",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, -1, -0.5F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.GOLD_LIPSTICK_CHAINSAW)), new MSItemProperties().durability(250)));
+    public static final DeferredItem<Item> DIAMOND_LIPSTICK_CHAINSAW = ITEMS.register("diamond_lipstick_chainsaw",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.DIAMOND, 2, -1.5F).efficiency(10.0F).set(MSItemTypes.CHAINSAW_TOOL).set(ItemRightClickEffect.switchTo(MINEBENTItems.ICED_LIPSTICK)), new MSItemProperties().durability(250)));
+    public static final DeferredItem<Item> ICED_LIPSTICK = ITEMS.register("iced_lipstick",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, -1, -0.5F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.DIAMOND_LIPSTICK_CHAINSAW)), new MSItemProperties().durability(250)));
+    public static final DeferredItem<Item> STONE_CANE = ITEMS.register("stone_cane",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.STONE, 2, -2.0F).efficiency(1.0F).set(MSItemTypes.CANE_TOOL), new MSItemProperties().durability(100)));
+    public static final DeferredItem<Item> GOLD_CANE = ITEMS.register("gold_cane",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.GOLD, 2, -2.0F).efficiency(1.0F).set(MSItemTypes.CANE_TOOL), new MSItemProperties().durability(100)));
+    public static final DeferredItem<Item> DIAMOND_CANE = ITEMS.register("diamond_cane",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.DIAMOND, 2, -2.0F).efficiency(1.0F).set(MSItemTypes.CANE_TOOL), new MSItemProperties().durability(100)));
+    public static final DeferredItem<Item> MIRTHFUL_CANE = ITEMS.register("mirthful_cane",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, 3, -2.0F).efficiency(1.0F).set(MSItemTypes.CANE_TOOL), new MSItemProperties().durability(100)));
+    public static final DeferredItem<Item> WOODEN_CLUB = ITEMS.register("wooden_club",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, 4, -2.8F).efficiency(2.0F).set(MSItemTypes.CLUB_TOOL), new Item.Properties()));
+    public static final DeferredItem<Item> STONE_CLUB = ITEMS.register("stone_club",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.STONE, 4, -2.8F).efficiency(2.0F).set(MSItemTypes.CLUB_TOOL), new Item.Properties()));
+    public static final DeferredItem<Item> GOLD_CLUB = ITEMS.register("gold_club",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.GOLD, 4, -2.8F).efficiency(2.0F).set(MSItemTypes.CLUB_TOOL), new Item.Properties()));
+    public static final DeferredItem<Item> DIAMOND_CLUB = ITEMS.register("diamond_club",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.DIAMOND, 4, -2.8F).efficiency(2.0F).set(MSItemTypes.CLUB_TOOL), new Item.Properties()));
 
     // Armor
     public static final DeferredItem<ArmorItem> ROCKET_SHOES = ITEMS.register("rocket_shoes",
@@ -95,7 +168,7 @@ public class MINEBENTItems {
     public static final DeferredItem<ArmorItem> MIRTHFUL_BOOTS = ITEMS.register("mirthful_boots",
             () -> new ArmorItem(MINEBENTMaterials.MIRTHFUL_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(42))));
-    public static final DeferredItem<ArmorItem> UMBRELLA_HAT = ITEMS.register("umbrella_hat",
+    public static final DeferredItem<ArmorItem> SUNHAT = ITEMS.register("sunhat",
             () -> new ArmorItem(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(0))));
 
@@ -349,7 +422,10 @@ public class MINEBENTItems {
 //    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_TURTLE_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_brick_turtle", BLUE_STONE_BRICK_TURTLE);
 
     //
-    public static void register(IEventBus eventBus) {
-        ITEMS.register(eventBus);
-        }
-    }
+//    @SubscribeEvent
+//    public static void modifyComponents(ModifyDefaultComponentsEvent event) {
+//        event.modify(MSItems.UMBRELLA, builder ->
+//                builder.set(ItemRightClickEffect.switchTo(MINEBENTItems.OPEN_UMBRELLA))
+//        );
+//    }
+}

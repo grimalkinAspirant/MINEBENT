@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "p": {
+      "item": "minecraft:gold_ingot"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "  p",
+    " p ",
+    "s  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minebent:gold_club"
+  }
+}

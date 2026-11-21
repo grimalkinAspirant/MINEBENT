@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "c": {
+      "item": "minestuck:chainsaw"
+    },
+    "a": {
+      "item": "minebent:troll_horn"
+    },
+    "m": {
+      "item": "minebent:mirthful_essence"
+    }
+  },
+  "pattern": [
+    " a ",
+    "aca",
+    " ms"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minestuck:demonbane_ragripper"
+  }
+}

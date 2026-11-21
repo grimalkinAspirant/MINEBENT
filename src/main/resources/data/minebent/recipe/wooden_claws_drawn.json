@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "s": {
+      "tag": "minecraft:stone_tool_materials"
+    }
+  },
+  "pattern": [
+    "s s",
+    "sPs",
+    "P P"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minebent:wooden_claws_drawn"
+  }
+}

@@ -1,11 +1,18 @@
 package com.grimalkinAspirant.minebent.items;
 
 import com.grimalkinAspirant.minebent.MINEBENT;
+import com.mraof.minestuck.item.MSItemProperties;
+import com.mraof.minestuck.item.MSItemTypes;
+import com.mraof.minestuck.item.weapon.ItemRightClickEffect;
+import com.mraof.minestuck.item.weapon.WeaponItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Tiers;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -21,6 +28,7 @@ public class MINEBENTCreativeModeTabs {
                         output.accept(MINEBENTItems.CHERUB_KEY);
                         output.accept(MINEBENTItems.CHERUB_PORTAL_ITEM);
 
+                        output.accept(MINEBENTItems.TROLL_HORN);
                         output.accept(MINEBENTItems.CHITIN);
                         output.accept(MINEBENTItems.CHITIN_HELMET);
                         output.accept(MINEBENTItems.CHITIN_CHESTPLATE);
@@ -46,11 +54,36 @@ public class MINEBENTCreativeModeTabs {
                         output.accept(MINEBENTItems.MIRTHFUL_BOOTS);
                         output.accept(MINEBENTItems.MIRTHFUL_SCRIPTURES);
 
+                        output.accept(MINEBENTItems.OPEN_UMBRELLA);
                         output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
                         output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
                         output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
                         output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
-                        output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
+
+                        output.accept(MINEBENTItems.STONE_LANCE);
+                        output.accept(MINEBENTItems.GOLD_LANCE);
+                        output.accept(MINEBENTItems.DIAMOND_LANCE);
+                        output.accept(MINEBENTItems.MIRTHFUL_LANCE);
+                        output.accept(MINEBENTItems.WOODEN_SICKLE);
+                        output.accept(MINEBENTItems.STONE_SICKLE);
+                        output.accept(MINEBENTItems.GOLD_SICKLE);
+                        output.accept(MINEBENTItems.DIAMOND_SICKLE);
+                        output.accept(MINEBENTItems.MIRTHFUL_SICKLE);
+                        output.accept(MINEBENTItems.WOODEN_CLAWS_DRAWN);
+                        output.accept(MINEBENTItems.GOLD_CLAWS_DRAWN);
+                        output.accept(MINEBENTItems.MIRTHFUL_CLAWS_DRAWN);
+                        output.accept(MINEBENTItems.WOODEN_LIPSTICK_CHAINSAW);
+                        output.accept(MINEBENTItems.STONE_LIPSTICK_CHAINSAW);
+                        output.accept(MINEBENTItems.GOLD_LIPSTICK_CHAINSAW);
+                        output.accept(MINEBENTItems.DIAMOND_LIPSTICK_CHAINSAW);
+                        output.accept(MINEBENTItems.STONE_CANE);
+                        output.accept(MINEBENTItems.GOLD_CANE);
+                        output.accept(MINEBENTItems.DIAMOND_CANE);
+                        output.accept(MINEBENTItems.MIRTHFUL_CANE);
+                        output.accept(MINEBENTItems.WOODEN_CLUB);
+                        output.accept(MINEBENTItems.STONE_CLUB);
+                        output.accept(MINEBENTItems.GOLD_CLUB);
+                        output.accept(MINEBENTItems.DIAMOND_CLUB);
 
                         output.accept(MINEBENTItems.TROLLSTONE_ITEM);
                         output.accept(MINEBENTItems.TROLLSTONE_STAIRS_ITEM);
