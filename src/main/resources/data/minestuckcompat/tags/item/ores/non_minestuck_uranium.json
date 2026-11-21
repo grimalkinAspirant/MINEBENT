@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "#c:ores/uranium"
-  ],
-  "remove": [
-    "#minestuck:ores/uranium"
-  ]
-}
