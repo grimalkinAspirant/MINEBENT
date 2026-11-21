@@ -4,12 +4,16 @@ import com.grimalkinAspirant.minebent.MINEBENT;
 import com.grimalkinAspirant.minebent.datagen.BENTDragonArmorFly;
 import com.grimalkinAspirant.minebent.datagen.BENTMagicRangedRightClickEffect;
 import com.grimalkinAspirant.minebent.datagen.BENTRocketArmorFly;
+import com.mraof.minestuck.item.MSFoods;
 import com.mraof.minestuck.item.MSItemProperties;
 import com.mraof.minestuck.item.MSItemTypes;
 import com.mraof.minestuck.item.MSItems;
 import com.mraof.minestuck.item.weapon.*;
 import com.mraof.minestuck.item.weapon.projectiles.ConsumableProjectileWeaponItem;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -44,7 +48,31 @@ public class MINEBENTItems {
     public static final DeferredItem<Item> TROLL_HORN = ITEMS.register("troll_horn",
             () -> new Item(new Item.Properties()));
     // Food
-
+    public static final DeferredItem<Item> SMALL_GRUB = ITEMS.register("small_grub",
+            () -> new Item(new Item.Properties().food(MINEBENTItems.SMALL_GRUB_PROP)));
+    public static final DeferredItem<Item> BIG_GRUB = ITEMS.register("big_grub",
+            () -> new Item(new Item.Properties().food(MINEBENTItems.BIG_GRUB_PROP)));
+    public static final DeferredItem<Item> BUG_MEAT = ITEMS.register("bug_meat",
+            () -> new Item(new Item.Properties().food(MINEBENTItems.BUG_MEAT_PROP)));
+    public static final DeferredItem<Item> COOKED_SMALL_GRUB = ITEMS.register("cooked_small_grub",
+            () -> new Item(new Item.Properties().food(MINEBENTItems.COOKED_SMALL_GRUB_PROP)));
+    public static final DeferredItem<Item> COOKED_BIG_GRUB = ITEMS.register("cooked_big_grub",
+            () -> new Item(new Item.Properties().food(MINEBENTItems.COOKED_BIG_GRUB_PROP)));
+    public static final DeferredItem<Item> COOKED_BUG_MEAT = ITEMS.register("cooked_bug_meat",
+            () -> new Item(new Item.Properties().food(MINEBENTItems.COOKED_BUG_MEAT_PROP)));
+    // Food Properties
+    public static final FoodProperties SMALL_GRUB_PROP = (new FoodProperties.Builder()).nutrition(3).saturationModifier(0.0F).effect(
+            () -> new MobEffectInstance(MobEffects.INFESTED, 60, 3), 0.7F).effect(
+            () -> new MobEffectInstance(MobEffects.HUNGER, 60, 3), 0.7F).build();
+    public static final FoodProperties BIG_GRUB_PROP = (new FoodProperties.Builder()).nutrition(4).saturationModifier(0.0F).effect(
+            () -> new MobEffectInstance(MobEffects.INFESTED, 60, 3), 0.7F).effect(
+            () -> new MobEffectInstance(MobEffects.HUNGER, 60, 3), 0.7F).build();
+    public static final FoodProperties BUG_MEAT_PROP = (new FoodProperties.Builder()).nutrition(5).saturationModifier(0.0F).effect(
+            () -> new MobEffectInstance(MobEffects.INFESTED, 60, 3), 0.7F).effect(
+            () -> new MobEffectInstance(MobEffects.HUNGER, 60, 3), 0.7F).build();
+    public static final FoodProperties COOKED_SMALL_GRUB_PROP = (new FoodProperties.Builder()).nutrition(6).saturationModifier(0.2F).build();
+    public static final FoodProperties COOKED_BIG_GRUB_PROP = (new FoodProperties.Builder()).nutrition(8).saturationModifier(0.3F).build();
+    public static final FoodProperties COOKED_BUG_MEAT_PROP = (new FoodProperties.Builder()).nutrition(10).saturationModifier(0.4F).build();
     // Weapons and Tools
     public static final DeferredItem<Item> AHABS_CROSSHAIRS = ITEMS.register("ahabs_crosshairs",
             () -> new WeaponItem(new WeaponItem.Builder(MSItemTypes.ZILLY_TIER, -2, -2.0f).efficiency(1.0f).set(MSItemTypes.WAND_TOOL).set(BENTMagicRangedRightClickEffect.AHAB),

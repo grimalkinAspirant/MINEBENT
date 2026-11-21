@@ -1,6 +1,6 @@
 {
   "values": [
-    "minecraft:iron_ore",
-    "minecraft:deepslate_iron_ore"
+    "minebent:trollstone_iron_ore",
+    "minebent:trollslate_iron_ore"
   ]
 }

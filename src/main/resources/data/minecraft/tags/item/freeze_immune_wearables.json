@@ -1,9 +1,8 @@
 {
   "values": [
-    "minecraft:leather_boots",
-    "minecraft:leather_leggings",
-    "minecraft:leather_chestplate",
-    "minecraft:leather_helmet",
-    "minecraft:leather_horse_armor"
+    "minebent:chitin_boots",
+    "minebent:chitin_leggings",
+    "minebent:chitin_chestplate",
+    "minebent:chitin_helmet"
   ]
 }

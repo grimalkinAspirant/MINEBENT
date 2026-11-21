@@ -1,7 +1,6 @@
 {
   "values": [
-    "minecraft:cobblestone",
-    "minecraft:blackstone",
-    "minecraft:cobbled_deepslate"
+    "minebent:cobbled_trollstone",
+    "minebent:cobbled_trollslate"
   ]
 }

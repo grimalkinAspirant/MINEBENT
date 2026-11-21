@@ -1,6 +1,6 @@
 {
   "values": [
-    "minecraft:coal_ore",
-    "minecraft:deepslate_coal_ore"
+    "minebent:trollstone_coal_ore",
+    "minebent:trollslate_coal_ore"
   ]
 }

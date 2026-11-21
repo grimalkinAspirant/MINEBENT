@@ -1,25 +1,6 @@
 {
   "values": [
-    "minestuck:fear_no_anvil",
-    "minestuck:zillyhoo_hammer",
-    "minestuck:popamatic_vrillyhoo",
-    "minestuck:mwrthwl",
-    "minestuck:unbreakable_katana",
-    "minestuck:caledfwlch",
-    "minestuck:royal_deringer",
-    "minestuck:cutlass_of_zillywair",
-    "minestuck:cruel_fate_crucible",
-    "minestuck:pillow_talk",
-    "minestuck:genesis_godstabber",
-    "minestuck:yaldabaoths_keyton",
-    "minestuck:allweddol",
-    "minestuck:typhonic_trivializer",
-    "minestuck:prime_staff",
-    "minestuck:thistle_of_zillywich",
-    "minestuck:quill_of_echidna",
-    "minestuck:fluorite_octet",
-    "minestuck:umbral_infiltrator",
-    "minestuck:white_kings_scepter",
-    "minestuck:black_kings_scepter"
+    "minebent:ahabs_crosshairs",
+    "minebent:empiricists_wand"
   ]
 }

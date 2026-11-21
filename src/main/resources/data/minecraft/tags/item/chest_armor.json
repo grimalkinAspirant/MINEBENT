@@ -1,10 +1,8 @@
 {
   "values": [
-    "minecraft:leather_chestplate",
-    "minecraft:chainmail_chestplate",
-    "minecraft:golden_chestplate",
-    "minecraft:iron_chestplate",
-    "minecraft:diamond_chestplate",
-    "minecraft:netherite_chestplate"
+    "minebent:chitin_chestplate",
+    "minebent:mirthful_chestplate",
+    "minebent:rocket_pack",
+    "minebent:dragon_pack"
   ]
 }
