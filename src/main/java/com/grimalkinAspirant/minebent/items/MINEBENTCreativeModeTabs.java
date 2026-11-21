@@ -3,6 +3,7 @@ package com.grimalkinAspirant.minebent.items;
 import com.grimalkinAspirant.minebent.MINEBENT;
 import com.mraof.minestuck.item.MSItemProperties;
 import com.mraof.minestuck.item.MSItemTypes;
+import com.mraof.minestuck.item.MSItems;
 import com.mraof.minestuck.item.weapon.ItemRightClickEffect;
 import com.mraof.minestuck.item.weapon.WeaponItem;
 import net.minecraft.core.registries.Registries;
@@ -39,7 +40,7 @@ public class MINEBENTCreativeModeTabs {
                         output.accept(MINEBENTItems.RUBY_BLOCK_ITEM);
                         output.accept(MINEBENTItems.ROCKET_SHOES);
                         output.accept(MINEBENTItems.ROCKET_PACK);
-                        output.accept(MINEBENTItems.ROCKET_WINGPACK);
+                        output.accept(MINEBENTItems.DRAGON_PACK);
 
                         output.accept(MINEBENTItems.MIRTHFUL_ESSENCE);
                         output.accept(MINEBENTItems.MIRTHFUL_SHOVEL);
@@ -55,11 +56,8 @@ public class MINEBENTCreativeModeTabs {
                         output.accept(MINEBENTItems.MIRTHFUL_SCRIPTURES);
 
                         output.accept(MINEBENTItems.OPEN_UMBRELLA);
-                        output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
-                        output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
-                        output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
-                        output.accept(MINEBENTItems.AHABS_CROSSHAIRS);
-
+                        output.accept(MINEBENTItems.EMPIRICISTS_WAND);
+                        output.accept(MINEBENTItems.PURPLE_SHURIKEN);
                         output.accept(MINEBENTItems.STONE_LANCE);
                         output.accept(MINEBENTItems.GOLD_LANCE);
                         output.accept(MINEBENTItems.DIAMOND_LANCE);
@@ -71,11 +69,17 @@ public class MINEBENTCreativeModeTabs {
                         output.accept(MINEBENTItems.MIRTHFUL_SICKLE);
                         output.accept(MINEBENTItems.WOODEN_CLAWS_DRAWN);
                         output.accept(MINEBENTItems.GOLD_CLAWS_DRAWN);
+                        output.accept(MINEBENTItems.COPPER_CLAWS_DRAWN);
                         output.accept(MINEBENTItems.MIRTHFUL_CLAWS_DRAWN);
                         output.accept(MINEBENTItems.WOODEN_LIPSTICK_CHAINSAW);
                         output.accept(MINEBENTItems.STONE_LIPSTICK_CHAINSAW);
                         output.accept(MINEBENTItems.GOLD_LIPSTICK_CHAINSAW);
                         output.accept(MINEBENTItems.DIAMOND_LIPSTICK_CHAINSAW);
+                        output.accept(MINEBENTItems.SAWDUST_LIPSTICK);
+                        output.accept(MINEBENTItems.CHALKY_LIPSTICK);
+                        output.accept(MSItems.LIPSTICK);
+                        output.accept(MINEBENTItems.SIX_KARAT_LIPSTICK);
+                        output.accept(MINEBENTItems.ICED_LIPSTICK);
                         output.accept(MINEBENTItems.STONE_CANE);
                         output.accept(MINEBENTItems.GOLD_CANE);
                         output.accept(MINEBENTItems.DIAMOND_CANE);

@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "s": {
-      "tag": "minecraft:cobblestone"
+      "tag": "minecraft:stone_tool_materials"
     },
     "m": {
       "item": "minestuck:cane"

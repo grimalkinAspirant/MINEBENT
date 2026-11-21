@@ -1,8 +1,11 @@
 {
   "values": [
-    "minebent:mirthful_sword",
-    "minebent:mirthful_axe",
-    "minebent:mirthful_club",
-    "minebent:ahabs_crosshairs"
+    "#minecraft:swords",
+    "#minecraft:axes",
+    "#minecraft:pickaxes",
+    "#minecraft:shovels",
+    "#minecraft:hoes",
+    "minecraft:trident",
+    "minecraft:mace"
   ]
 }

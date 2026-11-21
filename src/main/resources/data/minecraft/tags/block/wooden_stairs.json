@@ -1,11 +1,15 @@
 {
   "values": [
-    "minestuck:rainbow_planks_stairs",
-    "minestuck:end_planks_stairs",
-    "minestuck:dead_planks_stairs",
-    "minestuck:carved_stairs",
-    "minestuck:treated_planks_stairs",
-    "minestuck:lacquered_stairs",
-    "minestuck:cindered_stairs"
+    "minecraft:oak_stairs",
+    "minecraft:spruce_stairs",
+    "minecraft:birch_stairs",
+    "minecraft:jungle_stairs",
+    "minecraft:acacia_stairs",
+    "minecraft:dark_oak_stairs",
+    "minecraft:crimson_stairs",
+    "minecraft:warped_stairs",
+    "minecraft:mangrove_stairs",
+    "minecraft:bamboo_stairs",
+    "minecraft:cherry_stairs"
   ]
 }

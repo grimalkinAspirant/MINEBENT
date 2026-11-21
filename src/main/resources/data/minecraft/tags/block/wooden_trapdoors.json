@@ -1,14 +1,15 @@
 {
   "values": [
-    "minestuck:carved_trapdoor",
-    "minestuck:cindered_trapdoor",
-    "minestuck:dead_trapdoor",
-    "minestuck:end_trapdoor",
-    "minestuck:frost_trapdoor",
-    "minestuck:glowing_trapdoor",
-    "minestuck:lacquered_trapdoor",
-    "minestuck:rainbow_trapdoor",
-    "minestuck:shadewood_trapdoor",
-    "minestuck:treated_trapdoor"
+    "minecraft:acacia_trapdoor",
+    "minecraft:birch_trapdoor",
+    "minecraft:dark_oak_trapdoor",
+    "minecraft:jungle_trapdoor",
+    "minecraft:oak_trapdoor",
+    "minecraft:spruce_trapdoor",
+    "minecraft:crimson_trapdoor",
+    "minecraft:warped_trapdoor",
+    "minecraft:mangrove_trapdoor",
+    "minecraft:bamboo_trapdoor",
+    "minecraft:cherry_trapdoor"
   ]
 }

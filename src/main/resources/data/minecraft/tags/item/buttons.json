@@ -1,10 +1,6 @@
 {
   "values": [
-    "minebent:red_stone_button",
-    "minebent:blue_stone_button",
-    "minebent:trollstone_button",
-    "minebent:trollslate_button",
-    "minebent:broodstone_button",
-    "minebent:pinkwood_button"
+    "#minecraft:wooden_buttons",
+    "#minecraft:stone_buttons"
   ]
 }

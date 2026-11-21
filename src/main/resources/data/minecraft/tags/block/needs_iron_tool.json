@@ -1,14 +1,16 @@
 {
   "values": [
-    "minestuck:sandstone_gold_ore",
-    "minestuck:red_sandstone_gold_ore",
-    "minestuck:shade_stone_gold_ore",
-    "minestuck:pink_stone_gold_ore",
-    "minestuck:black_stone_gold_ore",
-    "minestuck:end_stone_redstone_ore",
-    "minestuck:black_stone_redstone_ore",
-    "minestuck:pink_stone_diamond_ore",
-    "minestuck:uncarved_wood_redstone_ore",
-    "minestuck:uncarved_wood_emerald_ore"
+    "minecraft:diamond_block",
+    "minecraft:diamond_ore",
+    "minecraft:deepslate_diamond_ore",
+    "minecraft:emerald_ore",
+    "minecraft:deepslate_emerald_ore",
+    "minecraft:emerald_block",
+    "minecraft:gold_block",
+    "minecraft:raw_gold_block",
+    "minecraft:gold_ore",
+    "minecraft:deepslate_gold_ore",
+    "minecraft:redstone_ore",
+    "minecraft:deepslate_redstone_ore"
   ]
 }

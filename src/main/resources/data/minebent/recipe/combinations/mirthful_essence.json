@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minestuck:sopor_slime_pie"
+  },
+  "input2": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "mode": "and",
+  "output": "minebent:mirthful_essence"
+}

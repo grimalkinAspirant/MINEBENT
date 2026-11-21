@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "r": {
+      "item": "minebent:ruby"
+    },
+    "s": {
+      "item": "minestuck:uranium"
+    },
+    "g": {
+      "item": "minecraft:gunpowder"
+    },
+    ,
+    "e": {
+      "item": "minecraft:elytra"
+    }
+  },
+  "pattern": [
+    "rrr",
+    "rsr",
+    "geg"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minestuck:dragon_pack"
+  }
+}

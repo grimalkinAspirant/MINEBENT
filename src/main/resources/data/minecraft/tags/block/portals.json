@@ -1,9 +1,7 @@
 {
   "values": [
-    "minestuck:skaia_portal",
-    "minestuck:gate",
-    "minestuck:gate_main",
-    "minestuck:return_node",
-    "minestuck:return_node_main"
+    "minecraft:nether_portal",
+    "minecraft:end_portal",
+    "minecraft:end_gateway"
   ]
 }

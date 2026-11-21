@@ -1,15 +1,15 @@
 {
   "values": [
-    "#minestuck:planks/aspect",
-    "minestuck:glowing_planks",
-    "minestuck:shadewood_planks",
-    "minestuck:frost_planks",
-    "minestuck:rainbow_planks",
-    "minestuck:end_planks",
-    "minestuck:dead_planks",
-    "minestuck:carved_planks",
-    "minestuck:treated_planks",
-    "minestuck:lacquered_planks",
-    "minestuck:cindered_planks"
+    "minecraft:oak_planks",
+    "minecraft:spruce_planks",
+    "minecraft:birch_planks",
+    "minecraft:jungle_planks",
+    "minecraft:acacia_planks",
+    "minecraft:dark_oak_planks",
+    "minecraft:crimson_planks",
+    "minecraft:warped_planks",
+    "minecraft:mangrove_planks",
+    "minecraft:bamboo_planks",
+    "minecraft:cherry_planks"
   ]
 }

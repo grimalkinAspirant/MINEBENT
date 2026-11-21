@@ -6,7 +6,7 @@
       "tag": "minecraft:planks"
     },
     "s": {
-      "tag": "minecraft:iron_tool_materials"
+      "item": "minecraft:iron_ingot"
     }
   },
   "pattern": [

@@ -1,17 +1,25 @@
 {
   "values": [
-    "minestuck:black_chess_dirt",
-    "minestuck:white_chess_dirt",
-    "minestuck:dark_gray_chess_dirt",
-    "minestuck:light_gray_chess_dirt",
-    "minestuck:blue_dirt",
-    "minestuck:thought_dirt",
-    "minestuck:black_sand",
-    "minestuck:wood_shavings",
-    "minestuck:treated_wood_shavings",
-    "minestuck:lacquered_wood_shavings",
-    "minestuck:glowy_goop",
-    "minestuck:coagulated_blood",
-    "minestuck:sugar_cube"
+    "minecraft:clay",
+    "minecraft:dirt",
+    "minecraft:coarse_dirt",
+    "minecraft:podzol",
+    "minecraft:farmland",
+    "minecraft:grass_block",
+    "minecraft:gravel",
+    "minecraft:mycelium",
+    "minecraft:sand",
+    "minecraft:red_sand",
+    "minecraft:snow_block",
+    "minecraft:snow",
+    "minecraft:soul_sand",
+    "minecraft:dirt_path",
+    "minecraft:soul_soil",
+    "minecraft:rooted_dirt",
+    "minecraft:muddy_mangrove_roots",
+    "minecraft:mud",
+    "minecraft:suspicious_sand",
+    "minecraft:suspicious_gravel",
+    "#minecraft:concrete_powder"
   ]
 }

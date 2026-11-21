@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "n": {
+      "item": "minecraft:blue_wool"
+    }
+  },
+  "pattern": [
+    "nnn",
+    "n n"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minestuck:hood_of_the_huntress"
+  }
+}

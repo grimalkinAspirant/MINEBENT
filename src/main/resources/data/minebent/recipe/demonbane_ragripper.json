@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "c": {
-      "item": "minestuck:chainsaw"
+      "item": "minestuck:lipstick_chainsaw"
     },
     "a": {
       "item": "minebent:troll_horn"
@@ -15,7 +15,7 @@
   "pattern": [
     " a ",
     "aca",
-    " ms"
+    " m "
   ],
   "result": {
     "count": 1,

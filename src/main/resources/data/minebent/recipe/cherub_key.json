@@ -3,13 +3,13 @@
   "category": "equipment",
   "key": {
     "c": {
-      "item": "minecraft:dragon_head"
+      "item": "minestuck:house_key"
     },
     "a": {
-      "item": "minebent:trollstone"
+      "item": "minecraft:bone_block"
     },
     "l": {
-      "tag": "c:rods/wooden"
+      "item": "minecraft:dragon_head"
     }
   },
   "pattern": [
@@ -19,6 +19,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "minebent:wooden_sickle"
+    "id": "minebent:cherub_key"
   }
 }

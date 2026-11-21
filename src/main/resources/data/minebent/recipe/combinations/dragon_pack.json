@@ -1,0 +1,11 @@
+{
+  "type": "minestuck:combination",
+  "input1": {
+    "item": "minebent:rocket_pack"
+  },
+  "input2": {
+    "item": "minecraft:elytra"
+  },
+  "mode": "and",
+  "output": "minebent:dragon_pack"
+}

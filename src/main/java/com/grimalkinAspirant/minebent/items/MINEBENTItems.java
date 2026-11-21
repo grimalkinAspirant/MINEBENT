@@ -7,10 +7,8 @@ import com.grimalkinAspirant.minebent.datagen.BENTRocketArmorFly;
 import com.mraof.minestuck.item.MSItemProperties;
 import com.mraof.minestuck.item.MSItemTypes;
 import com.mraof.minestuck.item.MSItems;
-import com.mraof.minestuck.item.weapon.InventoryTickEffect;
-import com.mraof.minestuck.item.weapon.ItemRightClickEffect;
-import com.mraof.minestuck.item.weapon.OnHitEffect;
-import com.mraof.minestuck.item.weapon.WeaponItem;
+import com.mraof.minestuck.item.weapon.*;
+import com.mraof.minestuck.item.weapon.projectiles.ConsumableProjectileWeaponItem;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
@@ -51,6 +49,9 @@ public class MINEBENTItems {
     public static final DeferredItem<Item> AHABS_CROSSHAIRS = ITEMS.register("ahabs_crosshairs",
             () -> new WeaponItem(new WeaponItem.Builder(MSItemTypes.ZILLY_TIER, -2, -2.0f).efficiency(1.0f).set(MSItemTypes.WAND_TOOL).set(BENTMagicRangedRightClickEffect.AHAB),
                     new Item.Properties().rarity(Rarity.EPIC)));
+    public static final DeferredItem<Item> EMPIRICISTS_WAND = ITEMS.register("empiricists_wand",
+            () -> new WeaponItem(new WeaponItem.Builder(MSItemTypes.DENIZEN_TIER, -2, -2.0f).efficiency(1.0f).set(MSItemTypes.WAND_TOOL).set(MagicRangedRightClickEffect.ECHIDNA_MAGIC),
+                    new Item.Properties().rarity(Rarity.EPIC)));
     public static final DeferredItem<Item> MIRTHFUL_CLUB = ITEMS.register("mirthful_club",
             () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, 5, -2.8F).efficiency(2.0F).set(MSItemTypes.CLUB_TOOL), new Item.Properties()));
     public static final DeferredItem<Item> OPEN_UMBRELLA = ITEMS.register("open_umbrella",
@@ -69,8 +70,8 @@ public class MINEBENTItems {
             () -> new ShovelItem(Tiers.NETHERITE, new Item.Properties().attributes(ShovelItem.createAttributes(Tiers.NETHERITE, 2.5F, -3.0F))));
     public static final DeferredItem<Item> MIRTHFUL_HOE = ITEMS.register("mirthful_hoe",
             () -> new HoeItem(Tiers.NETHERITE, new Item.Properties().attributes(HoeItem.createAttributes(Tiers.NETHERITE, -3.0F, 0.0F))));
-
-    // Tiered Troll Strifekind
+    public static final DeferredItem<Item> PURPLE_SHURIKEN = ITEMS.register("purple_shuriken",
+            () -> new ConsumableProjectileWeaponItem(new Item.Properties(), 3.0F, 2.8F, 3));
     public static final DeferredItem<Item> STONE_LANCE = ITEMS.register("stone_lance",
             () -> new WeaponItem(new WeaponItem.Builder(Tiers.STONE, 4, -2.8F).efficiency(2.0F).set(MSItemTypes.LANCE_TOOL), new Item.Properties()));
     public static final DeferredItem<Item> GOLD_LANCE = ITEMS.register("gold_lance",
@@ -97,6 +98,10 @@ public class MINEBENTItems {
             () -> new WeaponItem(new WeaponItem.Builder(Tiers.GOLD, 1, -1.5F).efficiency(10.0F).set(MSItemTypes.CLAWS_TOOL).set(ItemRightClickEffect.switchTo(MINEBENTItems.GOLD_CLAWS_SHEATHED)), new MSItemProperties().durability(200)));
     public static final DeferredItem<Item> GOLD_CLAWS_SHEATHED = ITEMS.register("gold_claws_sheathed",
             () -> new WeaponItem(new WeaponItem.Builder(Tiers.GOLD, -1, -1.0F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.GOLD_CLAWS_DRAWN)), new MSItemProperties().durability(200)));
+    public static final DeferredItem<Item> COPPER_CLAWS_DRAWN = ITEMS.register("copper_claws_drawn",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.IRON, 1, -1.5F).efficiency(10.0F).set(MSItemTypes.CLAWS_TOOL).set(ItemRightClickEffect.switchTo(MINEBENTItems.COPPER_CLAWS_SHEATHED)), new MSItemProperties().durability(200)));
+    public static final DeferredItem<Item> COPPER_CLAWS_SHEATHED = ITEMS.register("copper_claws_sheathed",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.IRON, -1, -1.0F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.COPPER_CLAWS_DRAWN)), new MSItemProperties().durability(200)));
     public static final DeferredItem<Item> MIRTHFUL_CLAWS_DRAWN = ITEMS.register("mirthful_claws_drawn",
             () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, 2, -1.5F).efficiency(10.0F).set(MSItemTypes.CLAWS_TOOL).set(ItemRightClickEffect.switchTo(MINEBENTItems.MIRTHFUL_CLAWS_SHEATHED)), new MSItemProperties().durability(200)));
     public static final DeferredItem<Item> MIRTHFUL_CLAWS_SHEATHED = ITEMS.register("mirthful_claws_sheathed",
@@ -141,7 +146,7 @@ public class MINEBENTItems {
     public static final DeferredItem<ArmorItem> ROCKET_PACK = ITEMS.register("rocket_pack",
             () -> new BENTRocketArmorFly(MINEBENTMaterials.ROCKET_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(32))));
-    public static final DeferredItem<ArmorItem> ROCKET_WINGPACK = ITEMS.register("rocket_wingpack",
+    public static final DeferredItem<ArmorItem> DRAGON_PACK = ITEMS.register("dragon_pack",
             () -> new BENTDragonArmorFly(MINEBENTMaterials.ROCKET_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(32))));
     public static final DeferredItem<ArmorItem> CHITIN_HELMET = ITEMS.register("chitin_helmet",

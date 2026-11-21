@@ -1,6 +1,8 @@
 {
   "values": [
-    "minestuck:blooming_cactus",
-    "minestuck:glowflower"
+    "#minecraft:crops",
+    "minecraft:sweet_berry_bush",
+    "minecraft:cave_vines",
+    "minecraft:cave_vines_plant"
   ]
 }

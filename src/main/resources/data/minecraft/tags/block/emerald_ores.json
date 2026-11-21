@@ -1,5 +1,6 @@
 {
   "values": [
-    "#minestuck:ores/emerald"
+    "minecraft:emerald_ore",
+    "minecraft:deepslate_emerald_ore"
   ]
 }

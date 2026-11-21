@@ -6,7 +6,7 @@
       "tag": "minecraft:planks"
     },
     "s": {
-      "tag": "minecraft:diamond_tool_materials"
+      "item": "minecraft:diamond"
     }
   },
   "pattern": [

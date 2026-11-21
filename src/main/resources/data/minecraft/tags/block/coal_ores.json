@@ -1,5 +1,6 @@
 {
   "values": [
-    "#minestuck:ores/coal"
+    "minecraft:coal_ore",
+    "minecraft:deepslate_coal_ore"
   ]
 }

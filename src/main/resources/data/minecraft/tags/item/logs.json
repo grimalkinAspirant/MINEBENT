@@ -1,8 +1,7 @@
 {
   "values": [
-    "minebent:pinkwood_log",
-    "minebent:pinkwood_wood",
-    "minebent:stripped_pinkwood_log",
-    "minebent:stripped_pinkwood_wood"
+    "#minecraft:logs_that_burn",
+    "#minecraft:crimson_stems",
+    "#minecraft:warped_stems"
   ]
 }
