@@ -1,19 +1,12 @@
 package com.grimalkinAspirant.minebent.items;
 
 import com.grimalkinAspirant.minebent.MINEBENT;
-import com.mraof.minestuck.item.MSItemProperties;
-import com.mraof.minestuck.item.MSItemTypes;
 import com.mraof.minestuck.item.MSItems;
-import com.mraof.minestuck.item.weapon.ItemRightClickEffect;
-import com.mraof.minestuck.item.weapon.WeaponItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tiers;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -42,6 +35,13 @@ public class MINEBENTCreativeModeTabs {
                         output.accept(MINEBENTItems.ROCKET_PACK);
                         output.accept(MINEBENTItems.DRAGON_PACK);
 
+                        output.accept(MINEBENTItems.SMALL_GRUB);
+                        output.accept(MINEBENTItems.BIG_GRUB);
+                        output.accept(MINEBENTItems.BUG_MEAT);
+                        output.accept(MINEBENTItems.COOKED_SMALL_GRUB);
+                        output.accept(MINEBENTItems.COOKED_BIG_GRUB);
+                        output.accept(MINEBENTItems.COOKED_BUG_MEAT);
+
                         output.accept(MINEBENTItems.MIRTHFUL_ESSENCE);
                         output.accept(MINEBENTItems.MIRTHFUL_SHOVEL);
                         output.accept(MINEBENTItems.MIRTHFUL_PICKAXE);
@@ -57,7 +57,6 @@ public class MINEBENTCreativeModeTabs {
 
                         output.accept(MINEBENTItems.OPEN_UMBRELLA);
                         output.accept(MINEBENTItems.EMPIRICISTS_WAND);
-                        output.accept(MINEBENTItems.PURPLE_SHURIKEN);
                         output.accept(MINEBENTItems.STONE_LANCE);
                         output.accept(MINEBENTItems.GOLD_LANCE);
                         output.accept(MINEBENTItems.DIAMOND_LANCE);

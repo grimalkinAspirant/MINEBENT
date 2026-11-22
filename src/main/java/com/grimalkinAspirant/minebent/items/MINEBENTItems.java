@@ -61,15 +61,15 @@ public class MINEBENTItems {
     public static final DeferredItem<Item> COOKED_BUG_MEAT = ITEMS.register("cooked_bug_meat",
             () -> new Item(new Item.Properties().food(MINEBENTItems.COOKED_BUG_MEAT_PROP)));
     // Food Properties
-    public static final FoodProperties SMALL_GRUB_PROP = (new FoodProperties.Builder()).nutrition(3).saturationModifier(0.0F).effect(
-            () -> new MobEffectInstance(MobEffects.INFESTED, 60, 3), 0.7F).effect(
-            () -> new MobEffectInstance(MobEffects.HUNGER, 60, 3), 0.7F).build();
-    public static final FoodProperties BIG_GRUB_PROP = (new FoodProperties.Builder()).nutrition(4).saturationModifier(0.0F).effect(
-            () -> new MobEffectInstance(MobEffects.INFESTED, 60, 3), 0.7F).effect(
-            () -> new MobEffectInstance(MobEffects.HUNGER, 60, 3), 0.7F).build();
-    public static final FoodProperties BUG_MEAT_PROP = (new FoodProperties.Builder()).nutrition(5).saturationModifier(0.0F).effect(
-            () -> new MobEffectInstance(MobEffects.INFESTED, 60, 3), 0.7F).effect(
-            () -> new MobEffectInstance(MobEffects.HUNGER, 60, 3), 0.7F).build();
+    public static final FoodProperties SMALL_GRUB_PROP = (new FoodProperties.Builder()).nutrition(3).saturationModifier(0.1F).effect(
+            () -> new MobEffectInstance(MobEffects.INFESTED, 600, 3), 0.7F).effect(
+            () -> new MobEffectInstance(MobEffects.HUNGER, 600, 3), 0.7F).build();
+    public static final FoodProperties BIG_GRUB_PROP = (new FoodProperties.Builder()).nutrition(4).saturationModifier(0.1F).effect(
+            () -> new MobEffectInstance(MobEffects.INFESTED, 600, 3), 0.7F).effect(
+            () -> new MobEffectInstance(MobEffects.HUNGER, 600, 3), 0.7F).build();
+    public static final FoodProperties BUG_MEAT_PROP = (new FoodProperties.Builder()).nutrition(5).saturationModifier(0.1F).effect(
+            () -> new MobEffectInstance(MobEffects.INFESTED, 600, 3), 0.7F).effect(
+            () -> new MobEffectInstance(MobEffects.HUNGER, 600, 3), 0.7F).build();
     public static final FoodProperties COOKED_SMALL_GRUB_PROP = (new FoodProperties.Builder()).nutrition(6).saturationModifier(0.2F).build();
     public static final FoodProperties COOKED_BIG_GRUB_PROP = (new FoodProperties.Builder()).nutrition(8).saturationModifier(0.3F).build();
     public static final FoodProperties COOKED_BUG_MEAT_PROP = (new FoodProperties.Builder()).nutrition(10).saturationModifier(0.4F).build();
@@ -98,8 +98,6 @@ public class MINEBENTItems {
             () -> new ShovelItem(Tiers.NETHERITE, new Item.Properties().attributes(ShovelItem.createAttributes(Tiers.NETHERITE, 2.5F, -3.0F))));
     public static final DeferredItem<Item> MIRTHFUL_HOE = ITEMS.register("mirthful_hoe",
             () -> new HoeItem(Tiers.NETHERITE, new Item.Properties().attributes(HoeItem.createAttributes(Tiers.NETHERITE, -3.0F, 0.0F))));
-    public static final DeferredItem<Item> PURPLE_SHURIKEN = ITEMS.register("purple_shuriken",
-            () -> new ConsumableProjectileWeaponItem(new Item.Properties(), 3.0F, 2.8F, 3));
     public static final DeferredItem<Item> STONE_LANCE = ITEMS.register("stone_lance",
             () -> new WeaponItem(new WeaponItem.Builder(Tiers.STONE, 4, -2.8F).efficiency(2.0F).set(MSItemTypes.LANCE_TOOL), new Item.Properties()));
     public static final DeferredItem<Item> GOLD_LANCE = ITEMS.register("gold_lance",

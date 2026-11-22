@@ -1,0 +1,10 @@
+{
+  "type": "minestuck:grist_cost",
+  "grist_cost": {
+    "minestuck:shale": 144,
+    "minestuck:amethyst": 288
+  },
+  "ingredient": {
+    "item": "minebent:mirthful_essence"
+  }
+}
