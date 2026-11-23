@@ -1,16 +1,13 @@
 package com.grimalkinAspirant.minebent.items;
 
 import com.grimalkinAspirant.minebent.MINEBENT;
-import com.grimalkinAspirant.minebent.datagen.BENTDragonArmorFly;
 import com.grimalkinAspirant.minebent.datagen.BENTMagicRangedRightClickEffect;
 import com.grimalkinAspirant.minebent.datagen.BENTRocketArmorFly;
-import com.mraof.minestuck.item.MSFoods;
 import com.mraof.minestuck.item.MSItemProperties;
 import com.mraof.minestuck.item.MSItemTypes;
 import com.mraof.minestuck.item.MSItems;
+import com.mraof.minestuck.item.armor.MSArmorItem;
 import com.mraof.minestuck.item.weapon.*;
-import com.mraof.minestuck.item.weapon.projectiles.ConsumableProjectileWeaponItem;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -19,10 +16,6 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.MapColor;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.ModifyDefaultComponentsEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -36,16 +29,40 @@ public class MINEBENTItems {
 
     // Misc
     public static final DeferredItem<Item> TROLLLOGO_FAKEITEM = ITEMS.register("trolllogo_fakeitem",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static final DeferredItem<Item> CHITIN = ITEMS.register("chitin",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> MIRTHFUL_ESSENCE = ITEMS.register("mirthful_essence",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
     public static final DeferredItem<Item> MIRTHFUL_SCRIPTURES = ITEMS.register("mirthful_scriptures",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> RUBY = ITEMS.register("ruby",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> TROLL_HORN = ITEMS.register("troll_horn",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RUST_BLOOD = ITEMS.register("rust_blood",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BRONZE_BLOOD = ITEMS.register("bronze_blood",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> GOLD_BLOOD = ITEMS.register("gold_blood",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> LIME_BLOOD = ITEMS.register("lime_blood",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> OLIVE_BLOOD = ITEMS.register("olive_blood",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> JADE_BLOOD = ITEMS.register("jade_blood",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> TEAL_BLOOD = ITEMS.register("teal_blood",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BLUE_BLOOD = ITEMS.register("blue_blood",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> INDIGO_BLOOD = ITEMS.register("indigo_blood",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PURPLE_BLOOD = ITEMS.register("purple_blood",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> VIOLET_BLOOD = ITEMS.register("violet_blood",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> FUCHSIA_BLOOD = ITEMS.register("fuchsia_blood",
             () -> new Item(new Item.Properties()));
     // Food
     public static final DeferredItem<Item> SMALL_GRUB = ITEMS.register("small_grub",
@@ -132,22 +149,22 @@ public class MINEBENTItems {
             () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, 2, -1.5F).efficiency(10.0F).set(MSItemTypes.CLAWS_TOOL).set(ItemRightClickEffect.switchTo(MINEBENTItems.MIRTHFUL_CLAWS_SHEATHED)), new MSItemProperties().durability(200)));
     public static final DeferredItem<Item> MIRTHFUL_CLAWS_SHEATHED = ITEMS.register("mirthful_claws_sheathed",
             () -> new WeaponItem(new WeaponItem.Builder(Tiers.NETHERITE, -1, -1.0F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.MIRTHFUL_CLAWS_DRAWN)), new MSItemProperties().durability(200)));
-    public static final DeferredItem<Item> WOODEN_LIPSTICK_CHAINSAW = ITEMS.register("wooden_lipstick_chainsaw",
+    public static final DeferredItem<Item> WOODEN_CHAINSAW = ITEMS.register("wooden_chainsaw",
             () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, 2, -1.5F).efficiency(10.0F).set(MSItemTypes.CHAINSAW_TOOL).set(ItemRightClickEffect.switchTo(MINEBENTItems.SAWDUST_LIPSTICK)), new MSItemProperties().durability(250)));
     public static final DeferredItem<Item> SAWDUST_LIPSTICK = ITEMS.register("sawdust_lipstick",
-            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, -1, -0.5F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.WOODEN_LIPSTICK_CHAINSAW)), new MSItemProperties().durability(250)));
-    public static final DeferredItem<Item> STONE_LIPSTICK_CHAINSAW = ITEMS.register("stone_lipstick_chainsaw",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, -1, -0.5F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.WOODEN_CHAINSAW)), new MSItemProperties().durability(250)));
+    public static final DeferredItem<Item> STONE_CHAINSAW = ITEMS.register("stone_chainsaw",
             () -> new WeaponItem(new WeaponItem.Builder(Tiers.STONE, 2, -1.5F).efficiency(10.0F).set(MSItemTypes.CHAINSAW_TOOL).set(ItemRightClickEffect.switchTo(MINEBENTItems.CHALKY_LIPSTICK)), new MSItemProperties().durability(250)));
     public static final DeferredItem<Item> CHALKY_LIPSTICK = ITEMS.register("chalky_lipstick",
-            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, -1, -0.5F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.STONE_LIPSTICK_CHAINSAW)), new MSItemProperties().durability(250)));
-    public static final DeferredItem<Item> GOLD_LIPSTICK_CHAINSAW = ITEMS.register("gold_lipstick_chainsaw",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, -1, -0.5F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.STONE_CHAINSAW)), new MSItemProperties().durability(250)));
+    public static final DeferredItem<Item> GOLD_CHAINSAW = ITEMS.register("gold_chainsaw",
             () -> new WeaponItem(new WeaponItem.Builder(Tiers.GOLD, 2, -1.5F).efficiency(10.0F).set(MSItemTypes.CHAINSAW_TOOL).set(ItemRightClickEffect.switchTo(MINEBENTItems.SIX_KARAT_LIPSTICK)), new MSItemProperties().durability(250)));
     public static final DeferredItem<Item> SIX_KARAT_LIPSTICK = ITEMS.register("six_karat_lipstick",
-            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, -1, -0.5F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.GOLD_LIPSTICK_CHAINSAW)), new MSItemProperties().durability(250)));
-    public static final DeferredItem<Item> DIAMOND_LIPSTICK_CHAINSAW = ITEMS.register("diamond_lipstick_chainsaw",
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, -1, -0.5F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.GOLD_CHAINSAW)), new MSItemProperties().durability(250)));
+    public static final DeferredItem<Item> DIAMOND_CHAINSAW = ITEMS.register("diamond_chainsaw",
             () -> new WeaponItem(new WeaponItem.Builder(Tiers.DIAMOND, 2, -1.5F).efficiency(10.0F).set(MSItemTypes.CHAINSAW_TOOL).set(ItemRightClickEffect.switchTo(MINEBENTItems.ICED_LIPSTICK)), new MSItemProperties().durability(250)));
     public static final DeferredItem<Item> ICED_LIPSTICK = ITEMS.register("iced_lipstick",
-            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, -1, -0.5F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.DIAMOND_LIPSTICK_CHAINSAW)), new MSItemProperties().durability(250)));
+            () -> new WeaponItem(new WeaponItem.Builder(Tiers.WOOD, -1, -0.5F).efficiency(10.0F).set(ItemRightClickEffect.switchTo(MINEBENTItems.DIAMOND_CHAINSAW)), new MSItemProperties().durability(250)));
     public static final DeferredItem<Item> STONE_CANE = ITEMS.register("stone_cane",
             () -> new WeaponItem(new WeaponItem.Builder(Tiers.STONE, 2, -2.0F).efficiency(1.0F).set(MSItemTypes.CANE_TOOL), new MSItemProperties().durability(100)));
     public static final DeferredItem<Item> GOLD_CANE = ITEMS.register("gold_cane",
@@ -166,14 +183,14 @@ public class MINEBENTItems {
             () -> new WeaponItem(new WeaponItem.Builder(Tiers.DIAMOND, 4, -2.8F).efficiency(2.0F).set(MSItemTypes.CLUB_TOOL), new Item.Properties()));
 
     // Armor
-    public static final DeferredItem<ArmorItem> ROCKET_SHOES = ITEMS.register("rocket_shoes",
+    public static final DeferredItem<MSArmorItem> ROCKET_SHOES = ITEMS.register("rocket_shoes",
             () -> new BENTRocketArmorFly(MINEBENTMaterials.ROCKET_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(32))));
-    public static final DeferredItem<ArmorItem> ROCKET_PACK = ITEMS.register("rocket_pack",
+    public static final DeferredItem<MSArmorItem> ROCKET_PACK = ITEMS.register("rocket_pack",
             () -> new BENTRocketArmorFly(MINEBENTMaterials.ROCKET_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(32))));
-    public static final DeferredItem<ArmorItem> DRAGON_PACK = ITEMS.register("dragon_pack",
-            () -> new BENTDragonArmorFly(MINEBENTMaterials.ROCKET_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+    public static final DeferredItem<MSArmorItem> DRAGON_PACK = ITEMS.register("dragon_pack",
+            () -> new BENTRocketArmorFly(MINEBENTMaterials.ROCKET_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(32))));
     public static final DeferredItem<ArmorItem> CHITIN_HELMET = ITEMS.register("chitin_helmet",
             () -> new ArmorItem(MINEBENTMaterials.CHITIN_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
@@ -202,6 +219,9 @@ public class MINEBENTItems {
     public static final DeferredItem<ArmorItem> SUNHAT = ITEMS.register("sunhat",
             () -> new ArmorItem(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(0))));
+    public static final DeferredItem<ArmorItem> CONE_HORNS = ITEMS.register("cone_horns",
+            () -> new ArmorItem(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(0))));
 
     // Blocks
     public static final DeferredBlock<Block> CHERUB_PORTAL = BLOCKS.registerSimpleBlock("cherub_portal", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
@@ -214,59 +234,91 @@ public class MINEBENTItems {
 
     // Natural Blocks & Derivatives
     public static final DeferredBlock<Block> TROLLSTONE = BLOCKS.registerSimpleBlock("trollstone", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    public static final DeferredItem<BlockItem> TROLLSTONE_ITEM = ITEMS.registerSimpleBlockItem("trollstone", TROLLSTONE);
     public static final DeferredBlock<StairBlock> TROLLSTONE_STAIRS = BLOCKS.register("trollstone_stairs", () -> new StairBlock(MINEBENTItems.TROLLSTONE.get().defaultBlockState(), ofFullCopy(TROLLSTONE.get())));
-    public static final DeferredItem<BlockItem> TROLLSTONE_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("trollstone_stairs", TROLLSTONE_STAIRS);
     public static final DeferredBlock<SlabBlock> TROLLSTONE_SLAB = BLOCKS.register("trollstone_slab", () -> new SlabBlock(ofFullCopy(TROLLSTONE.get())));
-    public static final DeferredItem<BlockItem> TROLLSTONE_SLAB_ITEM = ITEMS.registerSimpleBlockItem("trollstone_slab", TROLLSTONE_SLAB);
     public static final DeferredBlock<ButtonBlock> TROLLSTONE_BUTTON = BLOCKS.register("trollstone_button", () -> new ButtonBlock(BlockSetType.STONE, 10, ofFullCopy(TROLLSTONE.get()).noCollission()));
-    public static final DeferredItem<BlockItem> TROLLSTONE_BUTTON_ITEM = ITEMS.registerSimpleBlockItem("trollstone_button", TROLLSTONE_BUTTON);
     public static final DeferredBlock<PressurePlateBlock> TROLLSTONE_PRESSURE_PLATE = BLOCKS.register("trollstone_pressure_plate", () -> new PressurePlateBlock(BlockSetType.STONE, ofFullCopy(TROLLSTONE.get())));
-    public static final DeferredItem<BlockItem> TROLLSTONE_PRESSURE_PLATE_ITEM = ITEMS.registerSimpleBlockItem("trollstone_pressure_plate", TROLLSTONE_PRESSURE_PLATE);
 
     public static final DeferredBlock<Block> COBBLED_TROLLSTONE = BLOCKS.registerSimpleBlock("cobbled_trollstone", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    public static final DeferredItem<BlockItem> COBBLED_TROLLSTONE_ITEM = ITEMS.registerSimpleBlockItem("cobbled_trollstone", COBBLED_TROLLSTONE);
     public static final DeferredBlock<StairBlock> COBBLED_TROLLSTONE_STAIRS = BLOCKS.register("cobbled_trollstone_stairs", () -> new StairBlock(COBBLED_TROLLSTONE.get().defaultBlockState(), ofFullCopy(COBBLED_TROLLSTONE.get())));
-    public static final DeferredItem<BlockItem> COBBLED_TROLLSTONE_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("cobbled_trollstone_stairs", COBBLED_TROLLSTONE_STAIRS);
     public static final DeferredBlock<SlabBlock> COBBLED_TROLLSTONE_SLAB = BLOCKS.register("cobbled_trollstone_slab", () -> new SlabBlock(ofFullCopy(COBBLED_TROLLSTONE.get())));
-    public static final DeferredItem<BlockItem> COBBLED_TROLLSTONE_SLAB_ITEM = ITEMS.registerSimpleBlockItem("cobbled_trollstone_slab", COBBLED_TROLLSTONE_SLAB);
     public static final DeferredBlock<WallBlock> COBBLED_TROLLSTONE_WALL = BLOCKS.register("cobbled_trollstone_wall", () -> new WallBlock(ofFullCopy(COBBLED_TROLLSTONE.get())));
-    public static final DeferredItem<BlockItem> COBBLED_TROLLSTONE_WALL_ITEM = ITEMS.registerSimpleBlockItem("cobbled_trollstone_wall", COBBLED_TROLLSTONE_WALL);
 
     public static final DeferredBlock<Block> TROLLSTONE_BRICKS = BLOCKS.registerSimpleBlock("trollstone_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    public static final DeferredItem<BlockItem> TROLLSTONE_BRICKS_ITEM = ITEMS.registerSimpleBlockItem("trollstone_bricks", TROLLSTONE_BRICKS);
     public static final DeferredBlock<StairBlock> TROLLSTONE_BRICK_STAIRS = BLOCKS.register("trollstone_brick_stairs", () -> new StairBlock(TROLLSTONE_BRICKS.get().defaultBlockState(), ofFullCopy(TROLLSTONE_BRICKS.get())));
-    public static final DeferredItem<BlockItem> TROLLSTONE_BRICK_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("trollstone_brick_stairs", TROLLSTONE_BRICK_STAIRS);
     public static final DeferredBlock<SlabBlock> TROLLSTONE_BRICK_SLAB = BLOCKS.register("trollstone_brick_slab", () -> new SlabBlock(ofFullCopy(TROLLSTONE_BRICKS.get())));
-    public static final DeferredItem<BlockItem> TROLLSTONE_BRICK_SLAB_ITEM = ITEMS.registerSimpleBlockItem("trollstone_brick_slab", TROLLSTONE_BRICK_SLAB);
     public static final DeferredBlock<WallBlock> TROLLSTONE_BRICK_WALL = BLOCKS.register("trollstone_brick_wall", () -> new WallBlock(ofFullCopy(TROLLSTONE_BRICKS.get())));
-    public static final DeferredItem<BlockItem> TROLLSTONE_BRICK_WALL_ITEM = ITEMS.registerSimpleBlockItem("trollstone_brick_wall", TROLLSTONE_BRICK_WALL);
 
     public static final DeferredBlock<Block> CRACKED_TROLLSTONE_BRICKS = BLOCKS.registerSimpleBlock("cracked_trollstone_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    public static final DeferredItem<BlockItem> CRACKED_TROLLSTONE_BRICKS_ITEM = ITEMS.registerSimpleBlockItem("cracked_trollstone_bricks", CRACKED_TROLLSTONE_BRICKS);
     public static final DeferredBlock<Block> CHISELED_TROLLSTONE_BRICKS = BLOCKS.registerSimpleBlock("chiseled_trollstone_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    public static final DeferredItem<BlockItem> CHISELED_TROLLSTONE_BRICKS_ITEM = ITEMS.registerSimpleBlockItem("chiseled_trollstone_bricks", CHISELED_TROLLSTONE_BRICKS);
     public static final DeferredBlock<Block> MOSSY_COBBLED_TROLLSTONE = BLOCKS.registerSimpleBlock("mossy_cobbled_trollstone", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    public static final DeferredItem<BlockItem> MOSSY_COBBLED_TROLLSTONE_ITEM = ITEMS.registerSimpleBlockItem("mossy_cobbled_trollstone", MOSSY_COBBLED_TROLLSTONE);
     public static final DeferredBlock<Block> MOSSY_TROLLSTONE_BRICKS = BLOCKS.registerSimpleBlock("mossy_trollstone_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    public static final DeferredItem<BlockItem> MOSSY_TROLLSTONE_BRICKS_ITEM = ITEMS.registerSimpleBlockItem("mossy_trollstone_bricks", MOSSY_TROLLSTONE_BRICKS);
+
+    public static final DeferredBlock<Block> TROLLSLATE = BLOCKS.registerSimpleBlock("trollslate", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<StairBlock> TROLLSLATE_STAIRS = BLOCKS.register("trollslate_stairs", () -> new StairBlock(MINEBENTItems.TROLLSLATE.get().defaultBlockState(), ofFullCopy(TROLLSLATE.get())));
+    public static final DeferredBlock<SlabBlock> TROLLSLATE_SLAB = BLOCKS.register("trollslate_slab", () -> new SlabBlock(ofFullCopy(TROLLSLATE.get())));
+    public static final DeferredBlock<ButtonBlock> TROLLSLATE_BUTTON = BLOCKS.register("trollslate_button", () -> new ButtonBlock(BlockSetType.STONE, 10, ofFullCopy(TROLLSLATE.get()).noCollission()));
+    public static final DeferredBlock<PressurePlateBlock> TROLLSLATE_PRESSURE_PLATE = BLOCKS.register("trollslate_pressure_plate", () -> new PressurePlateBlock(BlockSetType.STONE, ofFullCopy(TROLLSLATE.get())));
+
+    public static final DeferredBlock<Block> POLISHED_TROLLSLATE = BLOCKS.registerSimpleBlock("polished_trollslate", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<StairBlock> POLISHED_TROLLSLATE_STAIRS = BLOCKS.register("polished_trollslate_stairs", () -> new StairBlock(POLISHED_TROLLSLATE.get().defaultBlockState(), ofFullCopy(POLISHED_TROLLSLATE.get())));
+    public static final DeferredBlock<SlabBlock> POLISHED_TROLLSLATE_SLAB = BLOCKS.register("polished_trollslate_slab", () -> new SlabBlock(ofFullCopy(POLISHED_TROLLSLATE.get())));
+    public static final DeferredBlock<WallBlock> POLISHED_TROLLSLATE_WALL = BLOCKS.register("polished_trollslate_wall", () -> new WallBlock(ofFullCopy(POLISHED_TROLLSLATE.get())));
+
+    public static final DeferredBlock<Block> COBBLED_TROLLSLATE = BLOCKS.registerSimpleBlock("cobbled_trollslate", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<StairBlock> COBBLED_TROLLSLATE_STAIRS = BLOCKS.register("cobbled_trollslate_stairs", () -> new StairBlock(COBBLED_TROLLSLATE.get().defaultBlockState(), ofFullCopy(COBBLED_TROLLSLATE.get())));
+    public static final DeferredBlock<SlabBlock> COBBLED_TROLLSLATE_SLAB = BLOCKS.register("cobbled_trollslate_slab", () -> new SlabBlock(ofFullCopy(COBBLED_TROLLSLATE.get())));
+    public static final DeferredBlock<WallBlock> COBBLED_TROLLSLATE_WALL = BLOCKS.register("cobbled_trollslate_wall", () -> new WallBlock(ofFullCopy(COBBLED_TROLLSLATE.get())));
+
+    public static final DeferredBlock<Block> TROLLSLATE_BRICKS = BLOCKS.registerSimpleBlock("trollslate_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<StairBlock> TROLLSLATE_BRICK_STAIRS = BLOCKS.register("trollslate_brick_stairs", () -> new StairBlock(TROLLSLATE_BRICKS.get().defaultBlockState(), ofFullCopy(TROLLSLATE_BRICKS.get())));
+    public static final DeferredBlock<SlabBlock> TROLLSLATE_BRICK_SLAB = BLOCKS.register("trollslate_brick_slab", () -> new SlabBlock(ofFullCopy(TROLLSLATE_BRICKS.get())));
+    public static final DeferredBlock<WallBlock> TROLLSLATE_BRICK_WALL = BLOCKS.register("trollslate_brick_wall", () -> new WallBlock(ofFullCopy(TROLLSLATE_BRICKS.get())));
+
+    public static final DeferredBlock<Block> TROLLSLATE_TILES = BLOCKS.registerSimpleBlock("trollslate_tiles", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<StairBlock> TROLLSLATE_TILE_STAIRS = BLOCKS.register("trollslate_tile_stairs", () -> new StairBlock(TROLLSLATE_TILES.get().defaultBlockState(), ofFullCopy(TROLLSLATE_TILES.get())));
+    public static final DeferredBlock<SlabBlock> TROLLSLATE_TILE_SLAB = BLOCKS.register("trollslate_tile_slab", () -> new SlabBlock(ofFullCopy(TROLLSLATE_TILES.get())));
+    public static final DeferredBlock<WallBlock> TROLLSLATE_TILE_WALL = BLOCKS.register("trollslate_tile_wall", () -> new WallBlock(ofFullCopy(TROLLSLATE_TILES.get())));
+
+    public static final DeferredBlock<Block> CRACKED_TROLLSLATE_BRICKS = BLOCKS.registerSimpleBlock("cracked_trollslate_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<Block> CRACKED_TROLLSLATE_TILES = BLOCKS.registerSimpleBlock("cracked_trollslate_tiles", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<Block> CHISELED_TROLLSLATE = BLOCKS.registerSimpleBlock("chiseled_trollslate", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+
+    public static final DeferredBlock<Block> FLUSHDESITE = BLOCKS.registerSimpleBlock("flushdesite", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<StairBlock> FLUSHDESITE_STAIRS = BLOCKS.register("flushdesite_stairs", () -> new StairBlock(FLUSHDESITE.get().defaultBlockState(), ofFullCopy(FLUSHDESITE.get())));
+    public static final DeferredBlock<SlabBlock> FLUSHDESITE_SLAB = BLOCKS.register("flushdesite_slab", () -> new SlabBlock(ofFullCopy(FLUSHDESITE.get())));
+    public static final DeferredBlock<WallBlock> FLUSHDESITE_WALL = BLOCKS.register("flushdesite_wall", () -> new WallBlock(ofFullCopy(FLUSHDESITE.get())));
+
+    public static final DeferredBlock<Block> POLISHED_FLUSHDESITE = BLOCKS.registerSimpleBlock("polished_flushdesite", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<StairBlock> POLISHED_FLUSHDESITE_STAIRS = BLOCKS.register("polished_flushdesite_stairs", () -> new StairBlock(POLISHED_FLUSHDESITE.get().defaultBlockState(), ofFullCopy(POLISHED_FLUSHDESITE.get())));
+    public static final DeferredBlock<SlabBlock> POLISHED_FLUSHDESITE_SLAB = BLOCKS.register("polished_flushdesite_slab", () -> new SlabBlock(ofFullCopy(POLISHED_FLUSHDESITE.get())));
+
+    public static final DeferredBlock<Block> PALEORITE = BLOCKS.registerSimpleBlock("paleorite", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<StairBlock> PALEORITE_STAIRS = BLOCKS.register("paleorite_stairs", () -> new StairBlock(PALEORITE.get().defaultBlockState(), ofFullCopy(PALEORITE.get())));
+    public static final DeferredBlock<SlabBlock> PALEORITE_SLAB = BLOCKS.register("paleorite_slab", () -> new SlabBlock(ofFullCopy(PALEORITE.get())));
+    public static final DeferredBlock<WallBlock> PALEORITE_WALL = BLOCKS.register("paleorite_wall", () -> new WallBlock(ofFullCopy(PALEORITE.get())));
+
+    public static final DeferredBlock<Block> POLISHED_PALEORITE = BLOCKS.registerSimpleBlock("polished_paleorite", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<StairBlock> POLISHED_PALEORITE_STAIRS = BLOCKS.register("polished_paleorite_stairs", () -> new StairBlock(POLISHED_PALEORITE.get().defaultBlockState(), ofFullCopy(POLISHED_PALEORITE.get())));
+    public static final DeferredBlock<SlabBlock> POLISHED_PALEORITE_SLAB = BLOCKS.register("polished_paleorite_slab", () -> new SlabBlock(ofFullCopy(POLISHED_PALEORITE.get())));
+
+    public static final DeferredBlock<Block> ASHENITE = BLOCKS.registerSimpleBlock("ashenite", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<StairBlock> ASHENITE_STAIRS = BLOCKS.register("ashenite_stairs", () -> new StairBlock(ASHENITE.get().defaultBlockState(), ofFullCopy(ASHENITE.get())));
+    public static final DeferredBlock<SlabBlock> ASHENITE_SLAB = BLOCKS.register("ashenite_slab", () -> new SlabBlock(ofFullCopy(ASHENITE.get())));
+    public static final DeferredBlock<WallBlock> ASHENITE_WALL = BLOCKS.register("ashenite_wall", () -> new WallBlock(ofFullCopy(ASHENITE.get())));
+
+    public static final DeferredBlock<Block> POLISHED_ASHENITE = BLOCKS.registerSimpleBlock("polished_ashenite", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<StairBlock> POLISHED_ASHENITE_STAIRS = BLOCKS.register("polished_ashenite_stairs", () -> new StairBlock(POLISHED_ASHENITE.get().defaultBlockState(), ofFullCopy(POLISHED_ASHENITE.get())));
+    public static final DeferredBlock<SlabBlock> POLISHED_ASHENITE_SLAB = BLOCKS.register("polished_ashenite_slab", () -> new SlabBlock(ofFullCopy(POLISHED_ASHENITE.get())));
 
     public static final DeferredBlock<Block> BROODSTONE = BLOCKS.registerSimpleBlock("broodstone", BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE));
-    public static final DeferredItem<BlockItem> BROODSTONE_ITEM = ITEMS.registerSimpleBlockItem("broodstone", BROODSTONE);
     public static final DeferredBlock<StairBlock> BROODSTONE_STAIRS = BLOCKS.register("broodstone_stairs", () -> new StairBlock(BROODSTONE.get().defaultBlockState(), ofFullCopy(BROODSTONE.get())));
-    public static final DeferredItem<BlockItem> BROODSTONE_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("broodstone_stairs", BROODSTONE_STAIRS);
     public static final DeferredBlock<SlabBlock> BROODSTONE_SLAB = BLOCKS.register("broodstone_slab", () -> new SlabBlock(ofFullCopy(BROODSTONE.get())));
-    public static final DeferredItem<BlockItem> BROODSTONE_SLAB_ITEM = ITEMS.registerSimpleBlockItem("broodstone_slab", BROODSTONE_SLAB);
     public static final DeferredBlock<WallBlock> BROODSTONE_WALL = BLOCKS.register("broodstone_wall", () -> new WallBlock(ofFullCopy(BROODSTONE.get())));
-    public static final DeferredItem<BlockItem> BROODSTONE_WALL_ITEM = ITEMS.registerSimpleBlockItem("broodstone_wall", BROODSTONE_WALL);
     public static final DeferredBlock<Block> BROODSTONE_BRICKS = BLOCKS.registerSimpleBlock("broodstone_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE));
-    public static final DeferredItem<BlockItem> BROODSTONE_BRICKS_ITEM = ITEMS.registerSimpleBlockItem("broodstone_bricks", BROODSTONE_BRICKS);
     public static final DeferredBlock<StairBlock> BROODSTONE_BRICK_STAIRS = BLOCKS.register("broodstone_brick_stairs", () -> new StairBlock(BROODSTONE_BRICKS.get().defaultBlockState(), ofFullCopy(BROODSTONE_BRICKS.get())));
-    public static final DeferredItem<BlockItem> BROODSTONE_BRICK_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("broodstone_brick_stairs", BROODSTONE_BRICK_STAIRS);
     public static final DeferredBlock<SlabBlock> BROODSTONE_BRICK_SLAB = BLOCKS.register("broodstone_brick_slab", () -> new SlabBlock(ofFullCopy(BROODSTONE_BRICKS.get())));
-    public static final DeferredItem<BlockItem> BROODSTONE_BRICK_SLAB_ITEM = ITEMS.registerSimpleBlockItem("broodstone_brick_slab", BROODSTONE_BRICK_SLAB);
     public static final DeferredBlock<WallBlock> BROODSTONE_BRICK_WALL = BLOCKS.register("broodstone_brick_wall", () -> new WallBlock(ofFullCopy(BROODSTONE_BRICKS.get())));
-    public static final DeferredItem<BlockItem> BROODSTONE_BRICK_WALL_ITEM = ITEMS.registerSimpleBlockItem("broodstone_brick_wall", BROODSTONE_BRICK_WALL);
 
     // Ores
     public static final DeferredBlock<Block> TROLLSTONE_COAL_ORE = BLOCKS.registerSimpleBlock("trollstone_coal_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
@@ -274,6 +326,7 @@ public class MINEBENTItems {
     public static final DeferredBlock<Block> TROLLSTONE_IRON_ORE = BLOCKS.registerSimpleBlock("trollstone_iron_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
     public static final DeferredBlock<Block> TROLLSTONE_REDSTONE_ORE = BLOCKS.registerSimpleBlock("trollstone_redstone_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
     public static final DeferredBlock<Block> TROLLSTONE_GOLD_ORE = BLOCKS.registerSimpleBlock("trollstone_gold_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<Block> TROLLSTONE_LAPIS_ORE = BLOCKS.registerSimpleBlock("trollstone_lapis_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
     public static final DeferredBlock<Block> TROLLSTONE_DIAMOND_ORE = BLOCKS.registerSimpleBlock("trollstone_diamond_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
     public static final DeferredBlock<Block> TROLLSTONE_QUARTZ_ORE = BLOCKS.registerSimpleBlock("trollstone_quartz_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
     public static final DeferredBlock<Block> TROLLSTONE_CRUXITE_ORE = BLOCKS.registerSimpleBlock("trollstone_cruxite_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
@@ -284,31 +337,10 @@ public class MINEBENTItems {
     public static final DeferredBlock<Block> TROLLSLATE_IRON_ORE = BLOCKS.registerSimpleBlock("trollslate_iron_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
     public static final DeferredBlock<Block> TROLLSLATE_REDSTONE_ORE = BLOCKS.registerSimpleBlock("trollslate_redstone_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
     public static final DeferredBlock<Block> TROLLSLATE_GOLD_ORE = BLOCKS.registerSimpleBlock("trollslate_gold_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<Block> TROLLSLATE_LAPIS_ORE = BLOCKS.registerSimpleBlock("trollslate_lapis_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
     public static final DeferredBlock<Block> TROLLSLATE_DIAMOND_ORE = BLOCKS.registerSimpleBlock("trollslate_diamond_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    public static final DeferredBlock<Block> TROLLSLATE_QUARTZ_ORE = BLOCKS.registerSimpleBlock("trollslate_quartz_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    public static final DeferredBlock<Block> TROLLSLATE_CRUXITE_ORE = BLOCKS.registerSimpleBlock("trollslate_cruxite_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
     public static final DeferredBlock<Block> TROLLSLATE_URANIUM_ORE = BLOCKS.registerSimpleBlock("trollslate_uranium_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
     public static final DeferredBlock<Block> TROLLSLATE_RUBY_ORE = BLOCKS.registerSimpleBlock("trollslate_ruby_ore", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    public static final DeferredItem<BlockItem> TROLLSTONE_COAL_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollstone_coal_ore", TROLLSTONE_COAL_ORE);
-    public static final DeferredItem<BlockItem> TROLLSTONE_COPPER_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollstone_copper_ore", TROLLSTONE_COPPER_ORE);
-    public static final DeferredItem<BlockItem> TROLLSTONE_IRON_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollstone_iron_ore", TROLLSTONE_IRON_ORE);
-    public static final DeferredItem<BlockItem> TROLLSTONE_REDSTONE_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollstone_redstone_ore", TROLLSTONE_REDSTONE_ORE);
-    public static final DeferredItem<BlockItem> TROLLSTONE_GOLD_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollstone_gold_ore", TROLLSTONE_GOLD_ORE);
-    public static final DeferredItem<BlockItem> TROLLSTONE_DIAMOND_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollstone_diamond_ore", TROLLSTONE_DIAMOND_ORE);
-    public static final DeferredItem<BlockItem> TROLLSTONE_QUARTZ_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollstone_quartz_ore", TROLLSTONE_QUARTZ_ORE);
-    public static final DeferredItem<BlockItem> TROLLSTONE_CRUXITE_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollstone_cruxite_ore", TROLLSTONE_CRUXITE_ORE);
-    public static final DeferredItem<BlockItem> TROLLSTONE_URANIUM_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollstone_uranium_ore", TROLLSTONE_URANIUM_ORE);
-    public static final DeferredItem<BlockItem> TROLLSTONE_RUBY_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollstone_ruby_ore", TROLLSTONE_RUBY_ORE);
-    public static final DeferredItem<BlockItem> TROLLSLATE_COAL_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollslate_coal_ore", TROLLSLATE_COAL_ORE);
-    public static final DeferredItem<BlockItem> TROLLSLATE_COPPER_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollslate_copper_ore", TROLLSLATE_COPPER_ORE);
-    public static final DeferredItem<BlockItem> TROLLSLATE_IRON_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollslate_iron_ore", TROLLSLATE_IRON_ORE);
-    public static final DeferredItem<BlockItem> TROLLSLATE_REDSTONE_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollslate_redstone_ore", TROLLSLATE_REDSTONE_ORE);
-    public static final DeferredItem<BlockItem> TROLLSLATE_GOLD_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollslate_gold_ore", TROLLSLATE_GOLD_ORE);
-    public static final DeferredItem<BlockItem> TROLLSLATE_DIAMOND_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollslate_diamond_ore", TROLLSLATE_DIAMOND_ORE);
-    public static final DeferredItem<BlockItem> TROLLSLATE_QUARTZ_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollslate_quartz_ore", TROLLSLATE_QUARTZ_ORE);
-    public static final DeferredItem<BlockItem> TROLLSLATE_CRUXITE_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollslate_cruxite_ore", TROLLSLATE_CRUXITE_ORE);
-    public static final DeferredItem<BlockItem> TROLLSLATE_URANIUM_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollslate_uranium_ore", TROLLSLATE_URANIUM_ORE);
-    public static final DeferredItem<BlockItem> TROLLSLATE_RUBY_ORE_ITEM = ITEMS.registerSimpleBlockItem("trollslate_ruby_ore", TROLLSLATE_RUBY_ORE);
 
     // Blocks Frog Temple
 //    public static final DeferredBlock<Block> RED_STONE = BLOCKS.register("red_stone", () -> new Block(Block.Properties.of().mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.5F, 7.0F)));
@@ -349,108 +381,6 @@ public class MINEBENTItems {
 //    public static final DeferredBlock<Block> RED_STONE_BRICK_TURTLE = BLOCKS.register("red_stone_brick_turtle", () -> new HieroglyphBlock(ofFullCopy(RED_STONE_BRICKS.get())));
 //    public static final DeferredBlock<Block> STEEP_RED_STONE_BRICK_STAIRS_BASE = BLOCKS.register("steep_red_stone_brick_stairs_base", () -> new CustomShapeBlock(ofFullCopy(RED_STONE.get()), MSBlockShapes.STEEP_STAIRS_BASE));
 //    public static final DeferredBlock<Block> STEEP_RED_STONE_BRICK_STAIRS_TOP = BLOCKS.register("steep_red_stone_brick_stairs_top", () -> new CustomShapeBlock(ofFullCopy(RED_STONE.get()), MSBlockShapes.STEEP_STAIRS_TOP));
-//    public static final DeferredItem<BlockItem> RED_STONE_ITEM = ITEMS.registerSimpleBlockItem("red_stone", RED_STONE);
-//    public static final DeferredItem<BlockItem> RED_STONE_WALL_ITEM = ITEMS.registerSimpleBlockItem("red_stone_wall", RED_STONE_WALL);
-//    public static final DeferredItem<BlockItem> RED_STONE_BUTTON_ITEM = ITEMS.registerSimpleBlockItem("red_stone_button", RED_STONE_BUTTON);
-//    public static final DeferredItem<BlockItem> RED_STONE_PRESSURE_PLATE_ITEM = ITEMS.registerSimpleBlockItem("red_stone_pressure_plate", RED_STONE_PRESSURE_PLATE);
-//    public static final DeferredItem<BlockItem> RED_STONE_BRICKS_ITEM = ITEMS.registerSimpleBlockItem("red_stone_bricks", RED_STONE_BRICKS);
-//    public static final DeferredItem<BlockItem> RED_STONE_BRICK_WALL_ITEM = ITEMS.registerSimpleBlockItem("red_stone_brick_wall", RED_STONE_BRICK_WALL);
-//    public static final DeferredItem<BlockItem> RED_STONE_COLUMN_ITEM = ITEMS.registerSimpleBlockItem("red_stone_column", RED_STONE_COLUMN);
-//    public static final DeferredItem<BlockItem> POLISHED_RED_STONE_ITEM = ITEMS.registerSimpleBlockItem("polished_red_stone", POLISHED_RED_STONE);
-//    public static final DeferredItem<BlockItem> POLISHED_RED_STONE_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("polished_red_stone_stairs", POLISHED_RED_STONE_STAIRS);
-//    public static final DeferredItem<BlockItem> POLISHED_RED_STONE_SLAB_ITEM = ITEMS.registerSimpleBlockItem("polished_red_stone_slab", POLISHED_RED_STONE_SLAB);
-//    public static final DeferredItem<BlockItem> POLISHED_RED_STONE_WALL_ITEM = ITEMS.registerSimpleBlockItem("polished_red_stone_wall", POLISHED_RED_STONE_WALL);
-//    public static final DeferredItem<BlockItem> CHISELED_RED_STONE_BRICKS_ITEM = ITEMS.registerSimpleBlockItem("chiseled_red_stone", CHISELED_RED_STONE_BRICKS);
-//    public static final DeferredItem<BlockItem> HORIZONTAL_RED_STONE_BRICKS_ITEM = ITEMS.registerSimpleBlockItem("horizontal_red_stone", HORIZONTAL_RED_STONE_BRICKS);
-//    public static final DeferredItem<BlockItem> HORIZONTAL_RED_STONE_BRICK_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("horizontal_red_stone_stairs", HORIZONTAL_RED_STONE_BRICK_STAIRS);
-//    public static final DeferredItem<BlockItem> HORIZONTAL_RED_STONE_BRICK_SLAB_ITEM = ITEMS.registerSimpleBlockItem("horizontal_red_stone_slab", HORIZONTAL_RED_STONE_BRICK_SLAB);
-//    public static final DeferredItem<BlockItem> HORIZONTAL_RED_STONE_BRICK_WALL_ITEM = ITEMS.registerSimpleBlockItem("horizontal_red_stone_wall", HORIZONTAL_RED_STONE_BRICK_WALL);
-//    public static final DeferredItem<BlockItem> VERTICAL_RED_STONE_BRICKS_ITEM = ITEMS.registerSimpleBlockItem("vertical_red_stone", VERTICAL_RED_STONE_BRICKS);
-//    public static final DeferredItem<BlockItem> VERTICAL_RED_STONE_BRICK_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("vertical_red_stone_stairs", VERTICAL_RED_STONE_BRICK_STAIRS);
-//    public static final DeferredItem<BlockItem> VERTICAL_RED_STONE_BRICK_SLAB_ITEM = ITEMS.registerSimpleBlockItem("vertical_red_stone_slab", VERTICAL_RED_STONE_BRICK_SLAB);
-//    public static final DeferredItem<BlockItem> VERTICAL_RED_STONE_BRICK_WALL_ITEM = ITEMS.registerSimpleBlockItem("vertical_red_stone_wall", VERTICAL_RED_STONE_BRICK_WALL);
-//    public static final DeferredItem<BlockItem> RED_STONE_BRICK_EMBEDDED_LADDER_ITEM = ITEMS.registerSimpleBlockItem("red_stone_brick_embedded_ladder", RED_STONE_BRICK_EMBEDDED_LADDER);
-//    public static final DeferredItem<BlockItem> RED_STONE_BRICK_TRIM_ITEM = ITEMS.registerSimpleBlockItem("red_stone_brick_trim", RED_STONE_BRICK_TRIM);
-//    public static final DeferredItem<BlockItem> RED_STONE_BRICK_FROG_ITEM = ITEMS.registerSimpleBlockItem("red_stone_brick_frog", RED_STONE_BRICK_FROG);
-//    public static final DeferredItem<BlockItem> RED_STONE_BRICK_IGUANA_LEFT_ITEM = ITEMS.registerSimpleBlockItem("red_stone_brick_iguana_left", RED_STONE_BRICK_IGUANA_LEFT);
-//    public static final DeferredItem<BlockItem> RED_STONE_BRICK_IGUANA_RIGHT_ITEM = ITEMS.registerSimpleBlockItem("red_stone_brick_iguana_right", RED_STONE_BRICK_IGUANA_RIGHT);
-//    public static final DeferredItem<BlockItem> RED_STONE_BRICK_LOTUS_ITEM = ITEMS.registerSimpleBlockItem("red_stone_brick_lotus", RED_STONE_BRICK_LOTUS);
-//    public static final DeferredItem<BlockItem> RED_STONE_BRICK_NAK_LEFT_ITEM = ITEMS.registerSimpleBlockItem("red_stone_brick_nak_left", RED_STONE_BRICK_NAK_LEFT);
-//    public static final DeferredItem<BlockItem> RED_STONE_BRICK_NAK_RIGHT_ITEM = ITEMS.registerSimpleBlockItem("red_stone_brick_nak_right", RED_STONE_BRICK_NAK_RIGHT);
-//    public static final DeferredItem<BlockItem> RED_STONE_BRICK_SALAMANDER_LEFT_ITEM = ITEMS.registerSimpleBlockItem("red_stone_brick_salamander_left", RED_STONE_BRICK_SALAMANDER_LEFT);
-//    public static final DeferredItem<BlockItem> RED_STONE_BRICK_SALAMANDER_RIGHT_ITEM = ITEMS.registerSimpleBlockItem("red_stone_brick_salamander_right", RED_STONE_BRICK_SALAMANDER_RIGHT);
-//    public static final DeferredItem<BlockItem> RED_STONE_BRICK_SKAIA_ITEM = ITEMS.registerSimpleBlockItem("red_stone_brick_skaia_", RED_STONE_BRICK_SKAIA);
-//    public static final DeferredItem<BlockItem> RED_STONE_BRICK_TURTLE_ITEM = ITEMS.registerSimpleBlockItem("red_stone_brick_turtle", RED_STONE_BRICK_TURTLE);
-//    public static final DeferredBlock<Block> BLUE_STONE = BLOCKS.register("blue_stone", () -> new Block(Block.Properties.of().mapColor(MapColor.COLOR_BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.5F, 7.0F)));
-//    public static final DeferredBlock<StairBlock> BLUE_STONE_STAIRS = BLOCKS.register("blue_stone_stairs", () -> new StairBlock(BLUE_STONE.get().defaultBlockState(), ofFullCopy(BLUE_STONE.get())));
-//    public static final DeferredBlock<SlabBlock> BLUE_STONE_SLAB = BLOCKS.register("blue_stone_slab", () -> new SlabBlock(ofFullCopy(BLUE_STONE.get())));
-//    public static final DeferredBlock<WallBlock> BLUE_STONE_WALL = BLOCKS.register("blue_stone_wall", () -> new WallBlock(ofFullCopy(BLUE_STONE.get())));
-//    public static final DeferredBlock<ButtonBlock> BLUE_STONE_BUTTON = BLOCKS.register("blue_stone_button", () -> new ButtonBlock(BENTBlockSetType.BLUE_STONE, 10, ofFullCopy(BLUE_STONE.get()).noCollission()));
-//    public static final DeferredBlock<PressurePlateBlock> BLUE_STONE_PRESSURE_PLATE = BLOCKS.register("blue_stone_pressure_plate", () -> new PressurePlateBlock(BENTBlockSetType.BLUE_STONE, ofFullCopy(BLUE_STONE.get())));
-//    public static final DeferredBlock<Block> POLISHED_BLUE_STONE = BLOCKS.register("polished_blue_stone", () -> new Block(ofFullCopy(BLUE_STONE.get())));
-//    public static final DeferredBlock<StairBlock> POLISHED_BLUE_STONE_STAIRS = BLOCKS.register("polished_blue_stone_stairs", () -> new StairBlock(POLISHED_BLUE_STONE.get().defaultBlockState(), ofFullCopy(POLISHED_BLUE_STONE.get())));
-//    public static final DeferredBlock<SlabBlock> POLISHED_BLUE_STONE_SLAB = BLOCKS.register("polished_blue_stone_slab", () -> new SlabBlock(ofFullCopy(POLISHED_BLUE_STONE.get())));
-//    public static final DeferredBlock<WallBlock> POLISHED_BLUE_STONE_WALL = BLOCKS.register("polished_blue_stone_wall", () -> new WallBlock(ofFullCopy(POLISHED_BLUE_STONE.get())));
-//    public static final DeferredBlock<Block> BLUE_STONE_BRICKS = BLOCKS.register("blue_stone_bricks", () -> new Block(ofFullCopy(BLUE_STONE.get())));
-//    public static final DeferredBlock<StairBlock> BLUE_STONE_BRICK_STAIRS = BLOCKS.register("blue_stone_brick_stairs", () -> new StairBlock(BLUE_STONE_BRICKS.get().defaultBlockState(), ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<SlabBlock> BLUE_STONE_BRICK_SLAB = BLOCKS.register("blue_stone_brick_slab", () -> new SlabBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<WallBlock> BLUE_STONE_BRICK_WALL = BLOCKS.register("blue_stone_brick_wall", () -> new WallBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<Block> BLUE_STONE_COLUMN = BLOCKS.register("blue_stone_column", () -> new BENTDirectionalBlock(ofFullCopy(BLUE_STONE.get())));
-//    public static final DeferredBlock<Block> CHISELED_BLUE_STONE_BRICKS = BLOCKS.register("chiseled_blue_stone_bricks", () -> new Block(ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<Block> HORIZONTAL_BLUE_STONE_BRICKS = BLOCKS.register("horizontal_blue_stone_bricks", () -> new Block(ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<StairBlock> HORIZONTAL_BLUE_STONE_BRICK_STAIRS = BLOCKS.register("horizontal_blue_stone_brick_stairs", () -> new StairBlock(HORIZONTAL_BLUE_STONE_BRICKS.get().defaultBlockState(), ofFullCopy(HORIZONTAL_BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<SlabBlock> HORIZONTAL_BLUE_STONE_BRICK_SLAB = BLOCKS.register("horizontal_blue_stone_brick_slab", () -> new SlabBlock(ofFullCopy(HORIZONTAL_BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<WallBlock> HORIZONTAL_BLUE_STONE_BRICK_WALL = BLOCKS.register("horizontal_blue_stone_brick_wall", () -> new WallBlock(ofFullCopy(HORIZONTAL_BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<Block> VERTICAL_BLUE_STONE_BRICKS = BLOCKS.register("vertical_blue_stone_bricks", () -> new Block(ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<StairBlock> VERTICAL_BLUE_STONE_BRICK_STAIRS = BLOCKS.register("vertical_blue_stone_brick_stairs", () -> new StairBlock(VERTICAL_BLUE_STONE_BRICKS.get().defaultBlockState(), ofFullCopy(VERTICAL_BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<SlabBlock> VERTICAL_BLUE_STONE_BRICK_SLAB = BLOCKS.register("vertical_blue_stone_brick_slab", () -> new SlabBlock(ofFullCopy(VERTICAL_BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<WallBlock> VERTICAL_BLUE_STONE_BRICK_WALL = BLOCKS.register("vertical_blue_stone_brick_wall", () -> new WallBlock(ofFullCopy(VERTICAL_BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<Block> BLUE_STONE_BRICK_EMBEDDED_LADDER = BLOCKS.register("blue_stone_brick_embedded_ladder", () -> new CustomShapeBlock(ofFullCopy(BLUE_STONE_BRICKS.get()), MSBlockShapes.EMBEDDED_STAIRS)); //uses the tag CLIMBABLE
-//    public static final DeferredBlock<Block> BLUE_STONE_BRICK_TRIM = BLOCKS.register("blue_stone_brick_trim", () -> new BENTDirectionalBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<Block> BLUE_STONE_BRICK_FROG = BLOCKS.register("blue_stone_brick_frog", () -> new HieroglyphBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<Block> BLUE_STONE_BRICK_IGUANA_LEFT = BLOCKS.register("blue_stone_brick_iguana_left", () -> new HieroglyphBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<Block> BLUE_STONE_BRICK_IGUANA_RIGHT = BLOCKS.register("blue_stone_brick_iguana_right", () -> new HieroglyphBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<Block> BLUE_STONE_BRICK_LOTUS = BLOCKS.register("blue_stone_brick_lotus", () -> new HieroglyphBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<Block> BLUE_STONE_BRICK_NAK_LEFT = BLOCKS.register("blue_stone_brick_nak_left", () -> new HieroglyphBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<Block> BLUE_STONE_BRICK_NAK_RIGHT = BLOCKS.register("blue_stone_brick_nak_right", () -> new HieroglyphBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<Block> BLUE_STONE_BRICK_SALAMANDER_LEFT = BLOCKS.register("blue_stone_brick_salamander_left", () -> new HieroglyphBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<Block> BLUE_STONE_BRICK_SALAMANDER_RIGHT = BLOCKS.register("blue_stone_brick_salamander_right", () -> new HieroglyphBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<Block> BLUE_STONE_BRICK_SKAIA = BLOCKS.register("blue_stone_brick_skaia", () -> new HieroglyphBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<Block> BLUE_STONE_BRICK_TURTLE = BLOCKS.register("blue_stone_brick_turtle", () -> new HieroglyphBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
-//    public static final DeferredBlock<Block> STEEP_BLUE_STONE_BRICK_STAIRS_BASE = BLOCKS.register("steep_blue_stone_brick_stairs_base", () -> new CustomShapeBlock(ofFullCopy(BLUE_STONE.get()), MSBlockShapes.STEEP_STAIRS_BASE));
-//    public static final DeferredBlock<Block> STEEP_BLUE_STONE_BRICK_STAIRS_TOP = BLOCKS.register("steep_blue_stone_brick_stairs_top", () -> new CustomShapeBlock(ofFullCopy(BLUE_STONE.get()), MSBlockShapes.STEEP_STAIRS_TOP));
-//    public static final DeferredItem<BlockItem> BLUE_STONE_ITEM = ITEMS.registerSimpleBlockItem("blue_stone", BLUE_STONE);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_WALL_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_wall", BLUE_STONE_WALL);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_BUTTON_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_button", BLUE_STONE_BUTTON);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_PRESSURE_PLATE_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_pressure_plate", BLUE_STONE_PRESSURE_PLATE);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_BRICKS_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_bricks", BLUE_STONE_BRICKS);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_WALL_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_brick_wall", BLUE_STONE_BRICK_WALL);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_COLUMN_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_column", BLUE_STONE_COLUMN);
-//    public static final DeferredItem<BlockItem> POLISHED_BLUE_STONE_ITEM = ITEMS.registerSimpleBlockItem("polished_blue_stone", POLISHED_BLUE_STONE);
-//    public static final DeferredItem<BlockItem> POLISHED_BLUE_STONE_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("polished_blue_stone_stairs", POLISHED_BLUE_STONE_STAIRS);
-//    public static final DeferredItem<BlockItem> POLISHED_BLUE_STONE_SLAB_ITEM = ITEMS.registerSimpleBlockItem("polished_blue_stone_slab", POLISHED_BLUE_STONE_SLAB);
-//    public static final DeferredItem<BlockItem> POLISHED_BLUE_STONE_WALL_ITEM = ITEMS.registerSimpleBlockItem("polished_blue_stone_wall", POLISHED_BLUE_STONE_WALL);
-//    public static final DeferredItem<BlockItem> CHISELED_BLUE_STONE_BRICKS_ITEM = ITEMS.registerSimpleBlockItem("chiseled_blue_stone", CHISELED_BLUE_STONE_BRICKS);
-//    public static final DeferredItem<BlockItem> HORIZONTAL_BLUE_STONE_BRICKS_ITEM = ITEMS.registerSimpleBlockItem("horizontal_blue_stone", HORIZONTAL_BLUE_STONE_BRICKS);
-//    public static final DeferredItem<BlockItem> HORIZONTAL_BLUE_STONE_BRICK_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("horizontal_blue_stone_stairs", HORIZONTAL_BLUE_STONE_BRICK_STAIRS);
-//    public static final DeferredItem<BlockItem> HORIZONTAL_BLUE_STONE_BRICK_SLAB_ITEM = ITEMS.registerSimpleBlockItem("horizontal_blue_stone_slab", HORIZONTAL_BLUE_STONE_BRICK_SLAB);
-//    public static final DeferredItem<BlockItem> HORIZONTAL_BLUE_STONE_BRICK_WALL_ITEM = ITEMS.registerSimpleBlockItem("horizontal_blue_stone_wall", HORIZONTAL_BLUE_STONE_BRICK_WALL);
-//    public static final DeferredItem<BlockItem> VERTICAL_BLUE_STONE_BRICKS_ITEM = ITEMS.registerSimpleBlockItem("vertical_blue_stone", VERTICAL_BLUE_STONE_BRICKS);
-//    public static final DeferredItem<BlockItem> VERTICAL_BLUE_STONE_BRICK_STAIRS_ITEM = ITEMS.registerSimpleBlockItem("vertical_blue_stone_stairs", VERTICAL_BLUE_STONE_BRICK_STAIRS);
-//    public static final DeferredItem<BlockItem> VERTICAL_BLUE_STONE_BRICK_SLAB_ITEM = ITEMS.registerSimpleBlockItem("vertical_blue_stone_slab", VERTICAL_BLUE_STONE_BRICK_SLAB);
-//    public static final DeferredItem<BlockItem> VERTICAL_BLUE_STONE_BRICK_WALL_ITEM = ITEMS.registerSimpleBlockItem("vertical_blue_stone_wall", VERTICAL_BLUE_STONE_BRICK_WALL);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_EMBEDDED_LADDER_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_brick_embedded_ladder", BLUE_STONE_BRICK_EMBEDDED_LADDER);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_TRIM_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_brick_trim", BLUE_STONE_BRICK_TRIM);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_FROG_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_brick_frog", BLUE_STONE_BRICK_FROG);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_IGUANA_LEFT_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_brick_iguana_left", BLUE_STONE_BRICK_IGUANA_LEFT);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_IGUANA_RIGHT_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_brick_iguana_right", BLUE_STONE_BRICK_IGUANA_RIGHT);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_LOTUS_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_brick_lotus", BLUE_STONE_BRICK_LOTUS);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_NAK_LEFT_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_brick_nak_left", BLUE_STONE_BRICK_NAK_LEFT);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_NAK_RIGHT_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_brick_nak_right", BLUE_STONE_BRICK_NAK_RIGHT);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_SALAMANDER_LEFT_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_brick_salamander_left", BLUE_STONE_BRICK_SALAMANDER_LEFT);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_SALAMANDER_RIGHT_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_brick_salamander_right", BLUE_STONE_BRICK_SALAMANDER_RIGHT);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_SKAIA_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_brick_skaia_", BLUE_STONE_BRICK_SKAIA);
-//    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_TURTLE_ITEM = ITEMS.registerSimpleBlockItem("blue_stone_brick_turtle", BLUE_STONE_BRICK_TURTLE);
 
     //
 //    @SubscribeEvent

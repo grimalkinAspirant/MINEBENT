@@ -1,7 +1,0 @@
-{
-  "remove": [
-    { "id": "minebent:rocket_shoes", "required": false },
-    { "id": "minebent:rocket_pack", "required": false },
-    { "id": "minebent:dragon_pack", "required": false }
-  ]
-}
