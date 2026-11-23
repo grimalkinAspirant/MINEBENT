@@ -1,6 +1,7 @@
 package com.grimalkinAspirant.minebent.items;
 
 import com.grimalkinAspirant.minebent.MINEBENT;
+import com.grimalkinAspirant.minebent.datagen.BENTDragonArmorFly;
 import com.grimalkinAspirant.minebent.datagen.BENTMagicRangedRightClickEffect;
 import com.grimalkinAspirant.minebent.datagen.BENTRocketArmorFly;
 import com.mraof.minestuck.item.MSItemProperties;
@@ -190,7 +191,7 @@ public class MINEBENTItems {
             () -> new BENTRocketArmorFly(MINEBENTMaterials.ROCKET_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(32))));
     public static final DeferredItem<MSArmorItem> DRAGON_PACK = ITEMS.register("dragon_pack",
-            () -> new BENTRocketArmorFly(MINEBENTMaterials.ROCKET_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+            () -> new BENTDragonArmorFly(MINEBENTMaterials.ROCKET_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(32))));
     public static final DeferredItem<ArmorItem> CHITIN_HELMET = ITEMS.register("chitin_helmet",
             () -> new ArmorItem(MINEBENTMaterials.CHITIN_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
