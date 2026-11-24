@@ -1,6 +1,0 @@
-{
-  "parent": "minestuck:item/claw_weapon",
-  "textures": {
-    "layer0": "minebent:item/copper_claws_drawn"
-  }
-}

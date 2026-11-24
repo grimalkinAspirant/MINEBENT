@@ -99,16 +99,7 @@ public class BENTItemModelProvider extends ItemModelProvider{
         basicItem(MINEBENTItems.MIRTHFUL_SCRIPTURES.get());
 
         //Blocks
-        simpleBlockItem(MINEBENTItems.TROLLSTONE.get());
-        simpleBlockItem(MINEBENTItems.TROLLSTONE_STAIRS.get());
-        simpleBlockItem(MINEBENTItems.TROLLSTONE_SLAB.get());
-        simpleBlockItem(MINEBENTItems.TROLLSTONE_BUTTON.get());
-        simpleBlockItem(MINEBENTItems.TROLLSTONE_PRESSURE_PLATE.get());
-        simpleBlockItem(MINEBENTItems.COBBLED_TROLLSTONE.get());
-        simpleBlockItem(MINEBENTItems.COBBLED_TROLLSTONE_STAIRS.get());
-        simpleBlockItem(MINEBENTItems.COBBLED_TROLLSTONE_SLAB.get());
-        simpleBlockItem(MINEBENTItems.COBBLED_TROLLSTONE_WALL.get());
-        simpleBlockItem(MINEBENTItems.TROLLSTONE_BRICKS.get());
+
         //You Get The Point
     }
 

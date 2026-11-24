@@ -2,15 +2,9 @@ package com.grimalkinAspirant.minebent.data;
 
 import com.grimalkinAspirant.minebent.MINEBENT;
 import com.grimalkinAspirant.minebent.items.MINEBENTItems;
-import com.mraof.minestuck.Minestuck;
-import com.mraof.minestuck.block.*;
-import com.mraof.minestuck.block.machine.*;
-import com.mraof.minestuck.block.redstone.*;
-import com.mraof.minestuck.data.AspectTreeBlocksData;
-import com.mraof.minestuck.data.DreamerMoonBlocksData;
-import com.mraof.minestuck.data.MSBlockStateProvider;
-import com.mraof.minestuck.data.SkaiaBlocksData;
-import com.mraof.minestuck.item.MSItems;
+import com.mraof.minestuck.block.ItemBlockPair;
+import com.mraof.minestuck.block.MSBlocks;
+import com.mraof.minestuck.block.MSProperties;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -29,8 +23,6 @@ import java.util.Arrays;
 import java.util.function.Function;
 import java.util.function.IntFunction;
 import java.util.function.Supplier;
-
-import static com.mraof.minestuck.data.MSBlockStateProvider.texture;
 
 public class BENTBlockstateProvider extends BlockStateProvider {
     public BENTBlockstateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -73,6 +65,11 @@ public class BENTBlockstateProvider extends BlockStateProvider {
         slabWithItem(MINEBENTItems.TROLLSTONE_BRICK_SLAB, MINEBENTItems.TROLLSTONE_BRICKS);
         wallWithItem(MINEBENTItems.TROLLSTONE_BRICK_WALL, MINEBENTItems.TROLLSTONE_BRICKS);
 
+        simpleBlockWithItem(MINEBENTItems.CRACKED_TROLLSTONE_BRICKS);
+        simpleBlockWithItem(MINEBENTItems.CHISELED_TROLLSTONE_BRICKS);
+        simpleBlockWithItem(MINEBENTItems.MOSSY_COBBLED_TROLLSTONE);
+        simpleBlockWithItem(MINEBENTItems.MOSSY_TROLLSTONE_BRICKS);
+
         simpleBlockWithItem(MINEBENTItems.TROLLSLATE,
                 id -> models().cubeBottomTop(id.getPath(),
                         texture(id.withSuffix("")),
@@ -97,6 +94,25 @@ public class BENTBlockstateProvider extends BlockStateProvider {
         stairsWithItem(MINEBENTItems.TROLLSLATE_BRICK_STAIRS, MINEBENTItems.TROLLSLATE_BRICKS);
         slabWithItem(MINEBENTItems.TROLLSLATE_BRICK_SLAB, MINEBENTItems.TROLLSLATE_BRICKS);
         wallWithItem(MINEBENTItems.TROLLSLATE_BRICK_WALL, MINEBENTItems.TROLLSLATE_BRICKS);
+
+        simpleBlockWithItem(MINEBENTItems.TROLLSLATE_TILES);
+        stairsWithItem(MINEBENTItems.TROLLSLATE_TILE_STAIRS, MINEBENTItems.TROLLSLATE_TILES);
+        slabWithItem(MINEBENTItems.TROLLSLATE_TILE_SLAB, MINEBENTItems.TROLLSLATE_TILES);
+        wallWithItem(MINEBENTItems.TROLLSLATE_TILE_WALL, MINEBENTItems.TROLLSLATE_TILES);
+
+        simpleBlockWithItem(MINEBENTItems.CRACKED_TROLLSLATE_BRICKS);
+        simpleBlockWithItem(MINEBENTItems.CRACKED_TROLLSLATE_TILES);
+        simpleBlockWithItem(MINEBENTItems.CHISELED_TROLLSLATE);
+
+        simpleBlockWithItem(MINEBENTItems.BROODSTONE);
+        stairsWithItem(MINEBENTItems.BROODSTONE_STAIRS, MINEBENTItems.BROODSTONE);
+        slabWithItem(MINEBENTItems.BROODSTONE_SLAB, MINEBENTItems.BROODSTONE);
+        wallWithItem(MINEBENTItems.BROODSTONE_WALL, MINEBENTItems.BROODSTONE);
+
+        simpleBlockWithItem(MINEBENTItems.BROODSTONE_BRICKS);
+        stairsWithItem(MINEBENTItems.BROODSTONE_BRICK_STAIRS, MINEBENTItems.BROODSTONE_BRICKS);
+        slabWithItem(MINEBENTItems.BROODSTONE_BRICK_SLAB, MINEBENTItems.BROODSTONE_BRICKS);
+        wallWithItem(MINEBENTItems.BROODSTONE_BRICK_WALL, MINEBENTItems.BROODSTONE_BRICKS);
 
         simpleBlockWithItem(MINEBENTItems.FLUSHDESITE);
         stairsWithItem(MINEBENTItems.FLUSHDESITE_STAIRS, MINEBENTItems.FLUSHDESITE);
@@ -124,6 +140,114 @@ public class BENTBlockstateProvider extends BlockStateProvider {
         simpleBlockWithItem(MINEBENTItems.POLISHED_ASHENITE);
         stairsWithItem(MINEBENTItems.POLISHED_ASHENITE_STAIRS, MINEBENTItems.POLISHED_ASHENITE);
         slabWithItem(MINEBENTItems.POLISHED_ASHENITE_SLAB, MINEBENTItems.POLISHED_ASHENITE);
+
+        simpleBlockWithItem(MINEBENTItems.RED_STONE);
+        wallWithItem(MINEBENTItems.RED_STONE_WALL, MINEBENTItems.RED_STONE);
+        buttonWithItem(MINEBENTItems.RED_STONE_BUTTON, MINEBENTItems.RED_STONE);
+        pressurePlateWithItem(MINEBENTItems.RED_STONE_PRESSURE_PLATE, MINEBENTItems.RED_STONE);
+
+        simpleBlockWithItem(MINEBENTItems.POLISHED_RED_STONE);
+        stairsWithItem(MINEBENTItems.POLISHED_RED_STONE_STAIRS, MINEBENTItems.POLISHED_RED_STONE);
+        slabWithItem(MINEBENTItems.POLISHED_RED_STONE_SLAB, MINEBENTItems.POLISHED_RED_STONE);
+        wallWithItem(MINEBENTItems.POLISHED_RED_STONE_WALL, MINEBENTItems.POLISHED_RED_STONE);
+
+        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICKS);
+        wallWithItem(MINEBENTItems.RED_STONE_BRICK_WALL, MINEBENTItems.RED_STONE_BRICKS);
+
+        unflippedColumnWithItem(MINEBENTItems.RED_STONE_COLUMN,
+                id -> models().cubeColumn(
+                        id.getPath(),
+                        texture(id),
+                        texture("polished_RED_stone")));
+        simpleBlockWithItem(MINEBENTItems.CHISELED_RED_STONE_BRICKS);
+
+        simpleBlockWithItem(MINEBENTItems.HORIZONTAL_RED_STONE_BRICKS);
+        stairsWithItem(MINEBENTItems.HORIZONTAL_RED_STONE_BRICK_STAIRS, MINEBENTItems.HORIZONTAL_RED_STONE_BRICKS);
+        slabWithItem(MINEBENTItems.HORIZONTAL_RED_STONE_BRICK_SLAB, MINEBENTItems.HORIZONTAL_RED_STONE_BRICKS);
+        wallWithItem(MINEBENTItems.HORIZONTAL_RED_STONE_BRICK_WALL, MINEBENTItems.HORIZONTAL_RED_STONE_BRICKS);
+
+        simpleBlockWithItem(MINEBENTItems.VERTICAL_RED_STONE_BRICKS);
+        stairsWithItem(MINEBENTItems.VERTICAL_RED_STONE_BRICK_STAIRS, MINEBENTItems.VERTICAL_RED_STONE_BRICKS);
+        slabWithItem(MINEBENTItems.VERTICAL_RED_STONE_BRICK_SLAB, MINEBENTItems.VERTICAL_RED_STONE_BRICKS);
+        wallWithItem(MINEBENTItems.VERTICAL_RED_STONE_BRICK_WALL, MINEBENTItems.VERTICAL_RED_STONE_BRICKS);
+
+        simpleHorizontalWithItem(MINEBENTItems.RED_STONE_BRICK_EMBEDDED_LADDER,
+                id -> models().getExistingFile(id));
+        trimWithItem(MINEBENTItems.RED_STONE_BRICK_TRIM,
+                id -> models().cubeColumn(
+                        id.getPath(),
+                        texture(id),
+                        texture("RED_stone_bricks")),
+                id -> models().cubeColumn(
+                        id.withSuffix("_flipped").getPath(),
+                        texture(id.withSuffix("_flipped")),
+                        texture("RED_stone_bricks")));
+        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_FROG);
+        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_IGUANA_LEFT);
+        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_IGUANA_RIGHT);
+        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_LOTUS);
+        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_NAK_LEFT);
+        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_NAK_RIGHT);
+        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_SALAMANDER_LEFT);
+        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_SALAMANDER_RIGHT);
+        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_SKAIA);
+        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_TURTLE);
+
+        simpleBlockWithItem(MINEBENTItems.BLUE_STONE);
+        wallWithItem(MINEBENTItems.BLUE_STONE_WALL, MINEBENTItems.BLUE_STONE);
+        buttonWithItem(MINEBENTItems.BLUE_STONE_BUTTON, MINEBENTItems.BLUE_STONE);
+        pressurePlateWithItem(MINEBENTItems.BLUE_STONE_PRESSURE_PLATE, MINEBENTItems.BLUE_STONE);
+
+        simpleBlockWithItem(MINEBENTItems.POLISHED_BLUE_STONE);
+        stairsWithItem(MINEBENTItems.POLISHED_BLUE_STONE_STAIRS, MINEBENTItems.POLISHED_BLUE_STONE);
+        slabWithItem(MINEBENTItems.POLISHED_BLUE_STONE_SLAB, MINEBENTItems.POLISHED_BLUE_STONE);
+        wallWithItem(MINEBENTItems.POLISHED_BLUE_STONE_WALL, MINEBENTItems.POLISHED_BLUE_STONE);
+
+        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICKS);
+        wallWithItem(MINEBENTItems.BLUE_STONE_BRICK_WALL, MINEBENTItems.BLUE_STONE_BRICKS);
+
+        unflippedColumnWithItem(MINEBENTItems.BLUE_STONE_COLUMN,
+                id -> models().cubeColumn(
+                        id.getPath(),
+                        texture(id),
+                        texture("polished_BLUE_stone")));
+        simpleBlockWithItem(MINEBENTItems.CHISELED_BLUE_STONE_BRICKS);
+
+        simpleBlockWithItem(MINEBENTItems.HORIZONTAL_BLUE_STONE_BRICKS);
+        stairsWithItem(MINEBENTItems.HORIZONTAL_BLUE_STONE_BRICK_STAIRS, MINEBENTItems.HORIZONTAL_BLUE_STONE_BRICKS);
+        slabWithItem(MINEBENTItems.HORIZONTAL_BLUE_STONE_BRICK_SLAB, MINEBENTItems.HORIZONTAL_BLUE_STONE_BRICKS);
+        wallWithItem(MINEBENTItems.HORIZONTAL_BLUE_STONE_BRICK_WALL, MINEBENTItems.HORIZONTAL_BLUE_STONE_BRICKS);
+
+        simpleBlockWithItem(MINEBENTItems.VERTICAL_BLUE_STONE_BRICKS);
+        stairsWithItem(MINEBENTItems.VERTICAL_BLUE_STONE_BRICK_STAIRS, MINEBENTItems.VERTICAL_BLUE_STONE_BRICKS);
+        slabWithItem(MINEBENTItems.VERTICAL_BLUE_STONE_BRICK_SLAB, MINEBENTItems.VERTICAL_BLUE_STONE_BRICKS);
+        wallWithItem(MINEBENTItems.VERTICAL_BLUE_STONE_BRICK_WALL, MINEBENTItems.VERTICAL_BLUE_STONE_BRICKS);
+
+        simpleHorizontalWithItem(MINEBENTItems.BLUE_STONE_BRICK_EMBEDDED_LADDER,
+                id -> models().getExistingFile(id));
+        trimWithItem(MINEBENTItems.BLUE_STONE_BRICK_TRIM,
+                id -> models().cubeColumn(
+                        id.getPath(),
+                        texture(id),
+                        texture("BLUE_stone_bricks")),
+                id -> models().cubeColumn(
+                        id.withSuffix("_flipped").getPath(),
+                        texture(id.withSuffix("_flipped")),
+                        texture("BLUE_stone_bricks")));
+        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_FROG);
+        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_IGUANA_LEFT);
+        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_IGUANA_RIGHT);
+        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_LOTUS);
+        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_NAK_LEFT);
+        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_NAK_RIGHT);
+        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_SALAMANDER_LEFT);
+        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_SALAMANDER_RIGHT);
+        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_SKAIA);
+        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_TURTLE);
+
+        simpleBlockWithItem(MINEBENTItems.RULERSTONE);
+        simpleBlockWithItem(MINEBENTItems.FELTSTONE);
+        simpleBlockWithItem(MINEBENTItems.CARNIVAL_GROUND);
 
 //        simpleBlockWithItem(MSBlocks.STONE_CRUXITE_ORE);
 //        simpleBlockWithItem(MSBlocks.NETHERRACK_CRUXITE_ORE);
@@ -1941,10 +2065,8 @@ public class BENTBlockstateProvider extends BlockStateProvider {
                 }, ignored);
     }
 
-    /**
-     * While the standard directional block (with {@link //MSBlockStateProvider#directionalUp(DeferredBlock, Function, Property[])}) has the down-facing state rotated 180 degrees along the y-axis,
-     * blocks with this function are instead not rotated in both the up-facing state and the down-facing state.
-     */
+     // While the standard directional block (with {@link MSBlockStateProvider#directionalUp(DeferredBlock, Function, Property[])}) has the down-facing state rotated 180 degrees along the y-axis,
+     // blocks with this function are instead not rotated in both the up-facing state and the down-facing state.
     public void unflippedColumnWithItem(DeferredBlock<?> block, Function<ResourceLocation, ModelFile> modelProvider)
     {
         var model = modelProvider.apply(block.getId());
@@ -2017,7 +2139,7 @@ public class BENTBlockstateProvider extends BlockStateProvider {
     {
         ModelFile slabBottom = models().slab(baseName + "_slab", side, topBottom, topBottom);
         ModelFile slabTop = models().slabTop(baseName + "_slab_top", side, topBottom, topBottom);
-        ModelFile doubleSlab = models().getExistingFile(Minestuck.id(baseName));
+        ModelFile doubleSlab = models().getExistingFile(MINEBENT.id(baseName));
         slabBlock(block.get(), slabBottom, slabTop, doubleSlab);
         simpleBlockItem(block.get(), slabBottom);
     }
@@ -2063,8 +2185,8 @@ public class BENTBlockstateProvider extends BlockStateProvider {
     public void simpleDoorBlock(DeferredBlock<DoorBlock> block)
     {
         String baseName = block.getId().getPath();
-        ResourceLocation doorBottom = Minestuck.id("block/" + baseName + "_bottom");
-        ResourceLocation doorTop = Minestuck.id("block/" + baseName + "_top");
+        ResourceLocation doorBottom = MINEBENT.id("block/" + baseName + "_bottom");
+        ResourceLocation doorTop = MINEBENT.id("block/" + baseName + "_top");
 
         doorBlockWithRenderType(block.get(), doorBottom, doorTop, "cutout");
     }
@@ -2072,8 +2194,8 @@ public class BENTBlockstateProvider extends BlockStateProvider {
     public void simpleDoorBlock(DeferredBlock<DoorBlock> block, String renderType)
     {
         String baseName = block.getId().getPath();
-        ResourceLocation doorBottom = Minestuck.id("block/" + baseName + "_bottom");
-        ResourceLocation doorTop = Minestuck.id("block/" + baseName + "_top");
+        ResourceLocation doorBottom = MINEBENT.id("block/" + baseName + "_bottom");
+        ResourceLocation doorTop = MINEBENT.id("block/" + baseName + "_top");
 
         doorBlockWithRenderType(block.get(), doorBottom, doorTop, renderType);
     }
@@ -2120,34 +2242,10 @@ public class BENTBlockstateProvider extends BlockStateProvider {
         simpleBlockItem(block.get(), pressurePlateInventory);
     }
 
-    private void customLampWithItem(DeferredBlock<?> block)
-    {
-        customLampWithItem(block, block.getId().getPath(), texture(block));
-    }
-
     public void pottedSaplingBlock(DeferredBlock<Block> block, Supplier<? extends Block> saplingBlock) {
         simpleBlock(block.get(),
                 models().withExistingParent(block.getId().getPath(), "block/flower_pot_cross")
                         .renderType("cutout").texture("plant", blockTexture(saplingBlock.get())));
-    }
-
-    private void customLampWithItem(Supplier<? extends Block> block, String baseName, ResourceLocation texture)
-    {
-        ModelFile lampOn = models().cubeAll(baseName + "_on", texture.withSuffix("_on"));
-        ModelFile lampOff = models().cubeAll(baseName + "_off", texture.withSuffix("_off"));
-
-        getVariantBuilder(block.get()).forAllStates(state -> {
-            if(state.getValue(CustomLampBlock.CLICKED))
-            {
-                return ConfiguredModel.builder().modelFile(lampOn).build();
-            } else
-            {
-                return ConfiguredModel.builder().modelFile(lampOff).build();
-            }
-        });
-
-        simpleBlockItem(block.get(), models().cubeAll(baseName + "_on",
-                ResourceLocation.fromNamespaceAndPath(Minestuck.MOD_ID, "block/" + baseName + "_on")));
     }
 
     private void powerVariableWithItem(DeferredBlock<?> block, ModelFile highPowerModel, ModelFile mediumPowerModel, ModelFile lowPowerModel, ModelFile unpoweredModel)
@@ -2283,26 +2381,6 @@ public class BENTBlockstateProvider extends BlockStateProvider {
         });
     }
 
-    private void computerBlockWithExistingModels(DeferredBlock<?> block)
-    {
-        computerBlock(block,
-                existing(block.getId().withSuffix("_off")),
-                existing(block.getId().withSuffix("_on")),
-                existing(block.getId().withSuffix("_game_loaded")),
-                existing(block.getId().withSuffix("_bsod")));
-    }
-
-    private void computerBlock(DeferredBlock<?> block, ModelFile off, ModelFile on, ModelFile gameLoaded, ModelFile bsod)
-    {
-        horizontal(block, state -> switch(state.getValue(ComputerBlock.STATE))
-        {
-            case OFF -> off;
-            case ON -> on;
-            case GAME_LOADED -> gameLoaded;
-            case BROKEN -> bsod;
-        });
-    }
-
     public void flatItem(DeferredItem<?> item, Function<ResourceLocation, ResourceLocation> textureProvider)
     {
         itemModels().withExistingParent(item.getId().getPath(),
@@ -2322,7 +2400,7 @@ public class BENTBlockstateProvider extends BlockStateProvider {
 
     public static ResourceLocation texture(String path)
     {
-        return ResourceLocation.fromNamespaceAndPath(Minestuck.MOD_ID, ModelProvider.BLOCK_FOLDER + "/" + path);
+        return ResourceLocation.fromNamespaceAndPath(MINEBENT.MODID, ModelProvider.BLOCK_FOLDER + "/" + path);
     }
 
     public static ResourceLocation itemTexture(ResourceLocation id)
@@ -2337,6 +2415,6 @@ public class BENTBlockstateProvider extends BlockStateProvider {
 
     public static ResourceLocation id(String path)
     {
-        return ResourceLocation.fromNamespaceAndPath(Minestuck.MOD_ID, path);
+        return ResourceLocation.fromNamespaceAndPath(MINEBENT.MODID, path);
     }
 }
