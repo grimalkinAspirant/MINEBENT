@@ -1,6 +1,6 @@
 package com.grimalkinAspirant.minebent.data.loot_tables;
 
-import com.grimalkinAspirant.minebent.items.MINEBENTItems;
+import com.grimalkinAspirant.minebent.items.MINEBENTBlocks;
 import com.mraof.minestuck.item.MSItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -26,33 +26,33 @@ public class BENTBlockLoot extends BlockLootSubProvider {
     @Override
     protected void generate() {
 
-        dropSelf(MINEBENTItems.RUBY_BLOCK.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSTONE_COAL_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSTONE_COPPER_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSTONE_IRON_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSTONE_GOLD_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSTONE_REDSTONE_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSTONE_LAPIS_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSTONE_DIAMOND_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSTONE_RUBY_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSTONE_QUARTZ_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSTONE_CRUXITE_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSTONE_URANIUM_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSTONE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSLATE_COAL_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSLATE_COPPER_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSLATE_IRON_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSLATE_GOLD_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSLATE_REDSTONE_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSLATE_LAPIS_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSLATE_DIAMOND_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSLATE_RUBY_ORE.get());
-        dropWhenSilkTouch(MINEBENTItems.TROLLSLATE_URANIUM_ORE.get());
+        dropSelf(MINEBENTBlocks.RUBY_BLOCK.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_COAL_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_COPPER_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_IRON_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_GOLD_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_REDSTONE_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_LAPIS_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_DIAMOND_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_RUBY_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_QUARTZ_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_CRUXITE_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_URANIUM_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_COAL_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_COPPER_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_IRON_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_GOLD_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_REDSTONE_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_LAPIS_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_DIAMOND_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_RUBY_ORE.get());
+        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_URANIUM_ORE.get());
     }
 
     //@Override
     //protected Iterable<Block> getKnownBlocks() {
-        //return MINEBENTItems.ITEMS.getEntries().stream().map(e -> (Block) e.value()).toList();
+        //return MINEBENTBlocks.ITEMS.getEntries().stream().map(e -> (Block) e.value()).toList();
     //}
 
     public LootTable.Builder cruxiteOreDrop(Block block)

@@ -187,7 +187,7 @@ public class BENTRecipeProvider extends RecipeProvider {
         //Smithing Table
         //Furnace
         //Shapeless
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 3).requires(MINEBENTItems.TROLL_HORN.get()).save(recipeBuilder, ResourceLocation.fromNamespaceAndPath(MINEBENT.MODID, "bone_meal_from_troll_horn"));
+        //ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 3).requires(MINEBENTItems.TROLL_HORN.get()).unlockedBy("has_troll_horn", has(MINEBENTItems.TROLL_HORN)).save(recipeBuilder, ResourceLocation.fromNamespaceAndPath(MINEBENT.MODID, "bone_meal_from_troll_horn"));
 
         //
         BENTGristCostsProvider.buildRecipes(recipeBuilder);

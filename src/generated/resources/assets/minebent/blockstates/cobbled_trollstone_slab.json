@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "minebent:block/cobbled_trollstone_slab"
+    },
+    "type=double": {
+      "model": "minebent:block/cobbled_trollstone"
+    },
+    "type=top": {
+      "model": "minebent:block/cobbled_trollstone_slab_top"
+    }
+  }
+}

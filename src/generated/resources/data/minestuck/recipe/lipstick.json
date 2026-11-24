@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "b": {
+      "item": "minebent:jade_blood"
+    },
+    "m": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "b",
+    "m"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minestuck:lipstick"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "m": {
+      "item": "minecraft:diamond"
+    },
+    "w": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "m m",
+    "mwm",
+    "w w"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minestuck:action_claws_drawn"
+  }
+}

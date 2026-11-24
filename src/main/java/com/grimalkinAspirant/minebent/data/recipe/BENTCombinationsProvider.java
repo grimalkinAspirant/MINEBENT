@@ -13,8 +13,8 @@ import net.neoforged.neoforge.common.Tags;
 
 public class BENTCombinationsProvider {
     public static void buildRecipes(RecipeOutput consumer){
-        CombinationRecipeBuilder.of(Items.TORCHFLOWER).input(Items.TORCH).and().input(ItemTags.FLOWERS).build(consumer);
-        CombinationRecipeBuilder.of(Items.TORCHFLOWER).input(Items.DIAMOND).or().input(Items.GLOW_LICHEN).build(consumer);
+        //CombinationRecipeBuilder.of(Items.DIAMOND_BLOCK).input(Items.TORCH).and().input(ItemTags.FLOWERS).build(consumer);
+        //CombinationRecipeBuilder.of(Items.DIAMOND_BLOCK).input(Items.DIAMOND).or().input(Items.GLOW_LICHEN).build(consumer);
     }
 
 }

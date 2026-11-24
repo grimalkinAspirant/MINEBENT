@@ -1,7 +1,7 @@
 package com.grimalkinAspirant.minebent.data;
 
 import com.grimalkinAspirant.minebent.MINEBENT;
-import com.grimalkinAspirant.minebent.items.MINEBENTItems;
+import com.grimalkinAspirant.minebent.items.MINEBENTBlocks;
 import com.mraof.minestuck.block.ItemBlockPair;
 import com.mraof.minestuck.block.MSBlocks;
 import com.mraof.minestuck.block.MSProperties;
@@ -49,205 +49,204 @@ public class BENTBlockstateProvider extends BlockStateProvider {
 //        hangingSignBlock(MSBlocks.PERFECTLY_GENERIC_HANGING_SIGN.get(), MSBlocks.PERFECTLY_GENERIC_WALL_HANGING_SIGN.get(),
 //                blockTexture(MSBlocks.GENERIC_OBJECT.get()));
 
-        simpleBlockWithItem(MINEBENTItems.TROLLSTONE);
-        stairsWithItem(MINEBENTItems.TROLLSTONE_STAIRS, MINEBENTItems.TROLLSTONE);
-        slabWithItem(MINEBENTItems.TROLLSTONE_SLAB, MINEBENTItems.TROLLSTONE);
-        buttonWithItem(MINEBENTItems.TROLLSTONE_BUTTON, MINEBENTItems.TROLLSTONE);
-        pressurePlateWithItem(MINEBENTItems.TROLLSTONE_PRESSURE_PLATE, MINEBENTItems.TROLLSTONE);
+        simpleBlockWithItem(MINEBENTBlocks.TROLLSTONE);
+        stairsWithItem(MINEBENTBlocks.TROLLSTONE_STAIRS, MINEBENTBlocks.TROLLSTONE);
+        slabWithItem(MINEBENTBlocks.TROLLSTONE_SLAB, MINEBENTBlocks.TROLLSTONE);
+        buttonWithItem(MINEBENTBlocks.TROLLSTONE_BUTTON, MINEBENTBlocks.TROLLSTONE);
+        pressurePlateWithItem(MINEBENTBlocks.TROLLSTONE_PRESSURE_PLATE, MINEBENTBlocks.TROLLSTONE);
 
-        simpleBlockWithItem(MINEBENTItems.COBBLED_TROLLSTONE);
-        stairsWithItem(MINEBENTItems.COBBLED_TROLLSTONE_STAIRS, MINEBENTItems.COBBLED_TROLLSTONE);
-        slabWithItem(MINEBENTItems.COBBLED_TROLLSTONE_SLAB, MINEBENTItems.COBBLED_TROLLSTONE);
-        wallWithItem(MINEBENTItems.COBBLED_TROLLSTONE_WALL, MINEBENTItems.COBBLED_TROLLSTONE);
+        simpleBlockWithItem(MINEBENTBlocks.COBBLED_TROLLSTONE);
+        stairsWithItem(MINEBENTBlocks.COBBLED_TROLLSTONE_STAIRS, MINEBENTBlocks.COBBLED_TROLLSTONE);
+        slabWithItem(MINEBENTBlocks.COBBLED_TROLLSTONE_SLAB, MINEBENTBlocks.COBBLED_TROLLSTONE);
+        wallWithItem(MINEBENTBlocks.COBBLED_TROLLSTONE_WALL, MINEBENTBlocks.COBBLED_TROLLSTONE);
 
-        simpleBlockWithItem(MINEBENTItems.TROLLSTONE_BRICKS);
-        stairsWithItem(MINEBENTItems.TROLLSTONE_BRICK_STAIRS, MINEBENTItems.TROLLSTONE_BRICKS);
-        slabWithItem(MINEBENTItems.TROLLSTONE_BRICK_SLAB, MINEBENTItems.TROLLSTONE_BRICKS);
-        wallWithItem(MINEBENTItems.TROLLSTONE_BRICK_WALL, MINEBENTItems.TROLLSTONE_BRICKS);
+        simpleBlockWithItem(MINEBENTBlocks.TROLLSTONE_BRICKS);
+        stairsWithItem(MINEBENTBlocks.TROLLSTONE_BRICK_STAIRS, MINEBENTBlocks.TROLLSTONE_BRICKS);
+        slabWithItem(MINEBENTBlocks.TROLLSTONE_BRICK_SLAB, MINEBENTBlocks.TROLLSTONE_BRICKS);
+        wallWithItem(MINEBENTBlocks.TROLLSTONE_BRICK_WALL, MINEBENTBlocks.TROLLSTONE_BRICKS);
 
-        simpleBlockWithItem(MINEBENTItems.CRACKED_TROLLSTONE_BRICKS);
-        simpleBlockWithItem(MINEBENTItems.CHISELED_TROLLSTONE_BRICKS);
-        simpleBlockWithItem(MINEBENTItems.MOSSY_COBBLED_TROLLSTONE);
-        simpleBlockWithItem(MINEBENTItems.MOSSY_TROLLSTONE_BRICKS);
+        simpleBlockWithItem(MINEBENTBlocks.CRACKED_TROLLSTONE_BRICKS);
+        simpleBlockWithItem(MINEBENTBlocks.CHISELED_TROLLSTONE_BRICKS);
+        simpleBlockWithItem(MINEBENTBlocks.MOSSY_COBBLED_TROLLSTONE);
+        simpleBlockWithItem(MINEBENTBlocks.MOSSY_TROLLSTONE_BRICKS);
 
-        simpleBlockWithItem(MINEBENTItems.TROLLSLATE,
+        simpleBlockWithItem(MINEBENTBlocks.TROLLSLATE,
                 id -> models().cubeBottomTop(id.getPath(),
                         texture(id.withSuffix("")),
                         texture(id.withSuffix("_top")),
                         texture(id.withSuffix("_top"))));
-        stairsWithItem(MINEBENTItems.TROLLSLATE_STAIRS, MINEBENTItems.TROLLSLATE);
-        slabWithItem(MINEBENTItems.TROLLSLATE_SLAB, MINEBENTItems.TROLLSLATE);
-        buttonWithItem(MINEBENTItems.TROLLSLATE_BUTTON, MINEBENTItems.TROLLSLATE);
-        pressurePlateWithItem(MINEBENTItems.TROLLSLATE_PRESSURE_PLATE, MINEBENTItems.TROLLSLATE);
+        stairsWithItem(MINEBENTBlocks.TROLLSLATE_STAIRS, MINEBENTBlocks.TROLLSLATE);
+        slabWithItem(MINEBENTBlocks.TROLLSLATE_SLAB, MINEBENTBlocks.TROLLSLATE);
+        buttonWithItem(MINEBENTBlocks.TROLLSLATE_BUTTON, MINEBENTBlocks.TROLLSLATE);
+        pressurePlateWithItem(MINEBENTBlocks.TROLLSLATE_PRESSURE_PLATE, MINEBENTBlocks.TROLLSLATE);
 
-        simpleBlockWithItem(MINEBENTItems.POLISHED_TROLLSLATE);
-        stairsWithItem(MINEBENTItems.POLISHED_TROLLSLATE_STAIRS, MINEBENTItems.POLISHED_TROLLSLATE);
-        slabWithItem(MINEBENTItems.POLISHED_TROLLSLATE_SLAB, MINEBENTItems.POLISHED_TROLLSLATE);
-        wallWithItem(MINEBENTItems.POLISHED_TROLLSLATE_WALL, MINEBENTItems.POLISHED_TROLLSLATE);
+        simpleBlockWithItem(MINEBENTBlocks.POLISHED_TROLLSLATE);
+        stairsWithItem(MINEBENTBlocks.POLISHED_TROLLSLATE_STAIRS, MINEBENTBlocks.POLISHED_TROLLSLATE);
+        slabWithItem(MINEBENTBlocks.POLISHED_TROLLSLATE_SLAB, MINEBENTBlocks.POLISHED_TROLLSLATE);
+        wallWithItem(MINEBENTBlocks.POLISHED_TROLLSLATE_WALL, MINEBENTBlocks.POLISHED_TROLLSLATE);
 
-        simpleBlockWithItem(MINEBENTItems.COBBLED_TROLLSLATE);
-        stairsWithItem(MINEBENTItems.COBBLED_TROLLSLATE_STAIRS, MINEBENTItems.COBBLED_TROLLSLATE);
-        slabWithItem(MINEBENTItems.COBBLED_TROLLSLATE_SLAB, MINEBENTItems.COBBLED_TROLLSLATE);
-        wallWithItem(MINEBENTItems.COBBLED_TROLLSLATE_WALL, MINEBENTItems.COBBLED_TROLLSLATE);
+        simpleBlockWithItem(MINEBENTBlocks.COBBLED_TROLLSLATE);
+        stairsWithItem(MINEBENTBlocks.COBBLED_TROLLSLATE_STAIRS, MINEBENTBlocks.COBBLED_TROLLSLATE);
+        slabWithItem(MINEBENTBlocks.COBBLED_TROLLSLATE_SLAB, MINEBENTBlocks.COBBLED_TROLLSLATE);
+        wallWithItem(MINEBENTBlocks.COBBLED_TROLLSLATE_WALL, MINEBENTBlocks.COBBLED_TROLLSLATE);
 
-        simpleBlockWithItem(MINEBENTItems.TROLLSLATE_BRICKS);
-        stairsWithItem(MINEBENTItems.TROLLSLATE_BRICK_STAIRS, MINEBENTItems.TROLLSLATE_BRICKS);
-        slabWithItem(MINEBENTItems.TROLLSLATE_BRICK_SLAB, MINEBENTItems.TROLLSLATE_BRICKS);
-        wallWithItem(MINEBENTItems.TROLLSLATE_BRICK_WALL, MINEBENTItems.TROLLSLATE_BRICKS);
+        simpleBlockWithItem(MINEBENTBlocks.TROLLSLATE_BRICKS);
+        stairsWithItem(MINEBENTBlocks.TROLLSLATE_BRICK_STAIRS, MINEBENTBlocks.TROLLSLATE_BRICKS);
+        slabWithItem(MINEBENTBlocks.TROLLSLATE_BRICK_SLAB, MINEBENTBlocks.TROLLSLATE_BRICKS);
+        wallWithItem(MINEBENTBlocks.TROLLSLATE_BRICK_WALL, MINEBENTBlocks.TROLLSLATE_BRICKS);
 
-        simpleBlockWithItem(MINEBENTItems.TROLLSLATE_TILES);
-        stairsWithItem(MINEBENTItems.TROLLSLATE_TILE_STAIRS, MINEBENTItems.TROLLSLATE_TILES);
-        slabWithItem(MINEBENTItems.TROLLSLATE_TILE_SLAB, MINEBENTItems.TROLLSLATE_TILES);
-        wallWithItem(MINEBENTItems.TROLLSLATE_TILE_WALL, MINEBENTItems.TROLLSLATE_TILES);
+        simpleBlockWithItem(MINEBENTBlocks.TROLLSLATE_TILES);
+        stairsWithItem(MINEBENTBlocks.TROLLSLATE_TILE_STAIRS, MINEBENTBlocks.TROLLSLATE_TILES);
+        slabWithItem(MINEBENTBlocks.TROLLSLATE_TILE_SLAB, MINEBENTBlocks.TROLLSLATE_TILES);
+        wallWithItem(MINEBENTBlocks.TROLLSLATE_TILE_WALL, MINEBENTBlocks.TROLLSLATE_TILES);
 
-        simpleBlockWithItem(MINEBENTItems.CRACKED_TROLLSLATE_BRICKS);
-        simpleBlockWithItem(MINEBENTItems.CRACKED_TROLLSLATE_TILES);
-        simpleBlockWithItem(MINEBENTItems.CHISELED_TROLLSLATE);
+        simpleBlockWithItem(MINEBENTBlocks.CRACKED_TROLLSLATE_BRICKS);
+        simpleBlockWithItem(MINEBENTBlocks.CRACKED_TROLLSLATE_TILES);
+        simpleBlockWithItem(MINEBENTBlocks.CHISELED_TROLLSLATE);
 
-        simpleBlockWithItem(MINEBENTItems.BROODSTONE);
-        stairsWithItem(MINEBENTItems.BROODSTONE_STAIRS, MINEBENTItems.BROODSTONE);
-        slabWithItem(MINEBENTItems.BROODSTONE_SLAB, MINEBENTItems.BROODSTONE);
-        wallWithItem(MINEBENTItems.BROODSTONE_WALL, MINEBENTItems.BROODSTONE);
+        simpleBlockWithItem(MINEBENTBlocks.BROODSTONE);
+        stairsWithItem(MINEBENTBlocks.BROODSTONE_STAIRS, MINEBENTBlocks.BROODSTONE);
+        slabWithItem(MINEBENTBlocks.BROODSTONE_SLAB, MINEBENTBlocks.BROODSTONE);
+        wallWithItem(MINEBENTBlocks.BROODSTONE_WALL, MINEBENTBlocks.BROODSTONE);
 
-        simpleBlockWithItem(MINEBENTItems.BROODSTONE_BRICKS);
-        stairsWithItem(MINEBENTItems.BROODSTONE_BRICK_STAIRS, MINEBENTItems.BROODSTONE_BRICKS);
-        slabWithItem(MINEBENTItems.BROODSTONE_BRICK_SLAB, MINEBENTItems.BROODSTONE_BRICKS);
-        wallWithItem(MINEBENTItems.BROODSTONE_BRICK_WALL, MINEBENTItems.BROODSTONE_BRICKS);
+        simpleBlockWithItem(MINEBENTBlocks.BROODSTONE_BRICKS);
+        stairsWithItem(MINEBENTBlocks.BROODSTONE_BRICK_STAIRS, MINEBENTBlocks.BROODSTONE_BRICKS);
+        slabWithItem(MINEBENTBlocks.BROODSTONE_BRICK_SLAB, MINEBENTBlocks.BROODSTONE_BRICKS);
+        wallWithItem(MINEBENTBlocks.BROODSTONE_BRICK_WALL, MINEBENTBlocks.BROODSTONE_BRICKS);
 
-        simpleBlockWithItem(MINEBENTItems.FLUSHDESITE);
-        stairsWithItem(MINEBENTItems.FLUSHDESITE_STAIRS, MINEBENTItems.FLUSHDESITE);
-        slabWithItem(MINEBENTItems.FLUSHDESITE_SLAB, MINEBENTItems.FLUSHDESITE);
-        wallWithItem(MINEBENTItems.FLUSHDESITE_WALL, MINEBENTItems.FLUSHDESITE);
+        simpleBlockWithItem(MINEBENTBlocks.FLUSHDESITE);
+        stairsWithItem(MINEBENTBlocks.FLUSHDESITE_STAIRS, MINEBENTBlocks.FLUSHDESITE);
+        slabWithItem(MINEBENTBlocks.FLUSHDESITE_SLAB, MINEBENTBlocks.FLUSHDESITE);
+        wallWithItem(MINEBENTBlocks.FLUSHDESITE_WALL, MINEBENTBlocks.FLUSHDESITE);
 
-        simpleBlockWithItem(MINEBENTItems.POLISHED_FLUSHDESITE);
-        stairsWithItem(MINEBENTItems.POLISHED_FLUSHDESITE_STAIRS, MINEBENTItems.POLISHED_FLUSHDESITE);
-        slabWithItem(MINEBENTItems.POLISHED_FLUSHDESITE_SLAB, MINEBENTItems.POLISHED_FLUSHDESITE);
+        simpleBlockWithItem(MINEBENTBlocks.POLISHED_FLUSHDESITE);
+        stairsWithItem(MINEBENTBlocks.POLISHED_FLUSHDESITE_STAIRS, MINEBENTBlocks.POLISHED_FLUSHDESITE);
+        slabWithItem(MINEBENTBlocks.POLISHED_FLUSHDESITE_SLAB, MINEBENTBlocks.POLISHED_FLUSHDESITE);
 
-        simpleBlockWithItem(MINEBENTItems.PALEORITE);
-        stairsWithItem(MINEBENTItems.PALEORITE_STAIRS, MINEBENTItems.PALEORITE);
-        slabWithItem(MINEBENTItems.PALEORITE_SLAB, MINEBENTItems.PALEORITE);
-        wallWithItem(MINEBENTItems.PALEORITE_WALL, MINEBENTItems.PALEORITE);
+        simpleBlockWithItem(MINEBENTBlocks.PALEORITE);
+        stairsWithItem(MINEBENTBlocks.PALEORITE_STAIRS, MINEBENTBlocks.PALEORITE);
+        slabWithItem(MINEBENTBlocks.PALEORITE_SLAB, MINEBENTBlocks.PALEORITE);
+        wallWithItem(MINEBENTBlocks.PALEORITE_WALL, MINEBENTBlocks.PALEORITE);
 
-        simpleBlockWithItem(MINEBENTItems.POLISHED_PALEORITE);
-        stairsWithItem(MINEBENTItems.POLISHED_PALEORITE_STAIRS, MINEBENTItems.POLISHED_PALEORITE);
-        slabWithItem(MINEBENTItems.POLISHED_PALEORITE_SLAB, MINEBENTItems.POLISHED_PALEORITE);
+        simpleBlockWithItem(MINEBENTBlocks.POLISHED_PALEORITE);
+        stairsWithItem(MINEBENTBlocks.POLISHED_PALEORITE_STAIRS, MINEBENTBlocks.POLISHED_PALEORITE);
+        slabWithItem(MINEBENTBlocks.POLISHED_PALEORITE_SLAB, MINEBENTBlocks.POLISHED_PALEORITE);
 
-        simpleBlockWithItem(MINEBENTItems.ASHENITE);
-        stairsWithItem(MINEBENTItems.ASHENITE_STAIRS, MINEBENTItems.ASHENITE);
-        slabWithItem(MINEBENTItems.ASHENITE_SLAB, MINEBENTItems.ASHENITE);
-        wallWithItem(MINEBENTItems.ASHENITE_WALL, MINEBENTItems.ASHENITE);
+        simpleBlockWithItem(MINEBENTBlocks.ASHENITE);
+        stairsWithItem(MINEBENTBlocks.ASHENITE_STAIRS, MINEBENTBlocks.ASHENITE);
+        slabWithItem(MINEBENTBlocks.ASHENITE_SLAB, MINEBENTBlocks.ASHENITE);
+        wallWithItem(MINEBENTBlocks.ASHENITE_WALL, MINEBENTBlocks.ASHENITE);
 
-        simpleBlockWithItem(MINEBENTItems.POLISHED_ASHENITE);
-        stairsWithItem(MINEBENTItems.POLISHED_ASHENITE_STAIRS, MINEBENTItems.POLISHED_ASHENITE);
-        slabWithItem(MINEBENTItems.POLISHED_ASHENITE_SLAB, MINEBENTItems.POLISHED_ASHENITE);
+        simpleBlockWithItem(MINEBENTBlocks.POLISHED_ASHENITE);
+        stairsWithItem(MINEBENTBlocks.POLISHED_ASHENITE_STAIRS, MINEBENTBlocks.POLISHED_ASHENITE);
+        slabWithItem(MINEBENTBlocks.POLISHED_ASHENITE_SLAB, MINEBENTBlocks.POLISHED_ASHENITE);
 
-        simpleBlockWithItem(MINEBENTItems.RED_STONE);
-        wallWithItem(MINEBENTItems.RED_STONE_WALL, MINEBENTItems.RED_STONE);
-        buttonWithItem(MINEBENTItems.RED_STONE_BUTTON, MINEBENTItems.RED_STONE);
-        pressurePlateWithItem(MINEBENTItems.RED_STONE_PRESSURE_PLATE, MINEBENTItems.RED_STONE);
+        simpleBlockWithItem(MINEBENTBlocks.RED_STONE);
+        wallWithItem(MINEBENTBlocks.RED_STONE_WALL, MINEBENTBlocks.RED_STONE);
+        buttonWithItem(MINEBENTBlocks.RED_STONE_BUTTON, MINEBENTBlocks.RED_STONE);
+        pressurePlateWithItem(MINEBENTBlocks.RED_STONE_PRESSURE_PLATE, MINEBENTBlocks.RED_STONE);
 
-        simpleBlockWithItem(MINEBENTItems.POLISHED_RED_STONE);
-        stairsWithItem(MINEBENTItems.POLISHED_RED_STONE_STAIRS, MINEBENTItems.POLISHED_RED_STONE);
-        slabWithItem(MINEBENTItems.POLISHED_RED_STONE_SLAB, MINEBENTItems.POLISHED_RED_STONE);
-        wallWithItem(MINEBENTItems.POLISHED_RED_STONE_WALL, MINEBENTItems.POLISHED_RED_STONE);
+        simpleBlockWithItem(MINEBENTBlocks.POLISHED_RED_STONE);
+        stairsWithItem(MINEBENTBlocks.POLISHED_RED_STONE_STAIRS, MINEBENTBlocks.POLISHED_RED_STONE);
+        slabWithItem(MINEBENTBlocks.POLISHED_RED_STONE_SLAB, MINEBENTBlocks.POLISHED_RED_STONE);
+        wallWithItem(MINEBENTBlocks.POLISHED_RED_STONE_WALL, MINEBENTBlocks.POLISHED_RED_STONE);
 
-        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICKS);
-        wallWithItem(MINEBENTItems.RED_STONE_BRICK_WALL, MINEBENTItems.RED_STONE_BRICKS);
+        simpleBlockWithItem(MINEBENTBlocks.RED_STONE_BRICKS);
+        wallWithItem(MINEBENTBlocks.RED_STONE_BRICK_WALL, MINEBENTBlocks.RED_STONE_BRICKS);
 
-        unflippedColumnWithItem(MINEBENTItems.RED_STONE_COLUMN,
-                id -> models().cubeColumn(
-                        id.getPath(),
-                        texture(id),
-                        texture("polished_RED_stone")));
-        simpleBlockWithItem(MINEBENTItems.CHISELED_RED_STONE_BRICKS);
+//        unflippedColumnWithItem(MINEBENTBlocks.RED_STONE_COLUMN,
+//                id -> models().cubeColumn(
+//                        id.getPath(),
+//                        texture(id),
+//                        texture("polished_red_stone")));
+        simpleBlockWithItem(MINEBENTBlocks.CHISELED_RED_STONE_BRICKS);
 
-        simpleBlockWithItem(MINEBENTItems.HORIZONTAL_RED_STONE_BRICKS);
-        stairsWithItem(MINEBENTItems.HORIZONTAL_RED_STONE_BRICK_STAIRS, MINEBENTItems.HORIZONTAL_RED_STONE_BRICKS);
-        slabWithItem(MINEBENTItems.HORIZONTAL_RED_STONE_BRICK_SLAB, MINEBENTItems.HORIZONTAL_RED_STONE_BRICKS);
-        wallWithItem(MINEBENTItems.HORIZONTAL_RED_STONE_BRICK_WALL, MINEBENTItems.HORIZONTAL_RED_STONE_BRICKS);
+        simpleBlockWithItem(MINEBENTBlocks.HORIZONTAL_RED_STONE_BRICKS);
+        stairsWithItem(MINEBENTBlocks.HORIZONTAL_RED_STONE_BRICK_STAIRS, MINEBENTBlocks.HORIZONTAL_RED_STONE_BRICKS);
+        slabWithItem(MINEBENTBlocks.HORIZONTAL_RED_STONE_BRICK_SLAB, MINEBENTBlocks.HORIZONTAL_RED_STONE_BRICKS);
+        wallWithItem(MINEBENTBlocks.HORIZONTAL_RED_STONE_BRICK_WALL, MINEBENTBlocks.HORIZONTAL_RED_STONE_BRICKS);
 
-        simpleBlockWithItem(MINEBENTItems.VERTICAL_RED_STONE_BRICKS);
-        stairsWithItem(MINEBENTItems.VERTICAL_RED_STONE_BRICK_STAIRS, MINEBENTItems.VERTICAL_RED_STONE_BRICKS);
-        slabWithItem(MINEBENTItems.VERTICAL_RED_STONE_BRICK_SLAB, MINEBENTItems.VERTICAL_RED_STONE_BRICKS);
-        wallWithItem(MINEBENTItems.VERTICAL_RED_STONE_BRICK_WALL, MINEBENTItems.VERTICAL_RED_STONE_BRICKS);
+        simpleBlockWithItem(MINEBENTBlocks.VERTICAL_RED_STONE_BRICKS);
+        stairsWithItem(MINEBENTBlocks.VERTICAL_RED_STONE_BRICK_STAIRS, MINEBENTBlocks.VERTICAL_RED_STONE_BRICKS);
+        slabWithItem(MINEBENTBlocks.VERTICAL_RED_STONE_BRICK_SLAB, MINEBENTBlocks.VERTICAL_RED_STONE_BRICKS);
+        wallWithItem(MINEBENTBlocks.VERTICAL_RED_STONE_BRICK_WALL, MINEBENTBlocks.VERTICAL_RED_STONE_BRICKS);
 
-        simpleHorizontalWithItem(MINEBENTItems.RED_STONE_BRICK_EMBEDDED_LADDER,
+        simpleHorizontalWithItem(MINEBENTBlocks.RED_STONE_BRICK_EMBEDDED_LADDER,
                 id -> models().getExistingFile(id));
-        trimWithItem(MINEBENTItems.RED_STONE_BRICK_TRIM,
-                id -> models().cubeColumn(
-                        id.getPath(),
-                        texture(id),
-                        texture("RED_stone_bricks")),
-                id -> models().cubeColumn(
-                        id.withSuffix("_flipped").getPath(),
-                        texture(id.withSuffix("_flipped")),
-                        texture("RED_stone_bricks")));
-        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_FROG);
-        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_IGUANA_LEFT);
-        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_IGUANA_RIGHT);
-        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_LOTUS);
-        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_NAK_LEFT);
-        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_NAK_RIGHT);
-        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_SALAMANDER_LEFT);
-        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_SALAMANDER_RIGHT);
-        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_SKAIA);
-        simpleBlockWithItem(MINEBENTItems.RED_STONE_BRICK_TURTLE);
+//        trimWithItem(MINEBENTBlocks.RED_STONE_BRICK_TRIM,
+//                id -> models().cubeColumn(
+//                        id.getPath(),
+//                        texture(id),
+//                        texture("red_stone_bricks")),
+//                id -> models().cubeColumn(
+//                        id.withSuffix("_flipped").getPath(),
+//                        texture(id.withSuffix("_flipped")),
+//                        texture("red_stone_bricks")));
+        simpleBlockWithItem(MINEBENTBlocks.RED_STONE_BRICK_FROG);
+        simpleBlockWithItem(MINEBENTBlocks.RED_STONE_BRICK_IGUANA_LEFT);
+        simpleBlockWithItem(MINEBENTBlocks.RED_STONE_BRICK_IGUANA_RIGHT);
+        simpleBlockWithItem(MINEBENTBlocks.RED_STONE_BRICK_LOTUS);
+        simpleBlockWithItem(MINEBENTBlocks.RED_STONE_BRICK_NAK_LEFT);
+        simpleBlockWithItem(MINEBENTBlocks.RED_STONE_BRICK_NAK_RIGHT);
+        simpleBlockWithItem(MINEBENTBlocks.RED_STONE_BRICK_SALAMANDER_LEFT);
+        simpleBlockWithItem(MINEBENTBlocks.RED_STONE_BRICK_SALAMANDER_RIGHT);
+        simpleBlockWithItem(MINEBENTBlocks.RED_STONE_BRICK_SKAIA);
+        simpleBlockWithItem(MINEBENTBlocks.RED_STONE_BRICK_TURTLE);
 
-        simpleBlockWithItem(MINEBENTItems.BLUE_STONE);
-        wallWithItem(MINEBENTItems.BLUE_STONE_WALL, MINEBENTItems.BLUE_STONE);
-        buttonWithItem(MINEBENTItems.BLUE_STONE_BUTTON, MINEBENTItems.BLUE_STONE);
-        pressurePlateWithItem(MINEBENTItems.BLUE_STONE_PRESSURE_PLATE, MINEBENTItems.BLUE_STONE);
+        simpleBlockWithItem(MINEBENTBlocks.BLUE_STONE);
+        wallWithItem(MINEBENTBlocks.BLUE_STONE_WALL, MINEBENTBlocks.BLUE_STONE);
+        buttonWithItem(MINEBENTBlocks.BLUE_STONE_BUTTON, MINEBENTBlocks.BLUE_STONE);
+        pressurePlateWithItem(MINEBENTBlocks.BLUE_STONE_PRESSURE_PLATE, MINEBENTBlocks.BLUE_STONE);
 
-        simpleBlockWithItem(MINEBENTItems.POLISHED_BLUE_STONE);
-        stairsWithItem(MINEBENTItems.POLISHED_BLUE_STONE_STAIRS, MINEBENTItems.POLISHED_BLUE_STONE);
-        slabWithItem(MINEBENTItems.POLISHED_BLUE_STONE_SLAB, MINEBENTItems.POLISHED_BLUE_STONE);
-        wallWithItem(MINEBENTItems.POLISHED_BLUE_STONE_WALL, MINEBENTItems.POLISHED_BLUE_STONE);
+        simpleBlockWithItem(MINEBENTBlocks.POLISHED_BLUE_STONE);
+        stairsWithItem(MINEBENTBlocks.POLISHED_BLUE_STONE_STAIRS, MINEBENTBlocks.POLISHED_BLUE_STONE);
+        slabWithItem(MINEBENTBlocks.POLISHED_BLUE_STONE_SLAB, MINEBENTBlocks.POLISHED_BLUE_STONE);
+        wallWithItem(MINEBENTBlocks.POLISHED_BLUE_STONE_WALL, MINEBENTBlocks.POLISHED_BLUE_STONE);
 
-        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICKS);
-        wallWithItem(MINEBENTItems.BLUE_STONE_BRICK_WALL, MINEBENTItems.BLUE_STONE_BRICKS);
+        simpleBlockWithItem(MINEBENTBlocks.BLUE_STONE_BRICKS);
+        wallWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_WALL, MINEBENTBlocks.BLUE_STONE_BRICKS);
 
-        unflippedColumnWithItem(MINEBENTItems.BLUE_STONE_COLUMN,
-                id -> models().cubeColumn(
-                        id.getPath(),
-                        texture(id),
-                        texture("polished_BLUE_stone")));
-        simpleBlockWithItem(MINEBENTItems.CHISELED_BLUE_STONE_BRICKS);
+//        unflippedColumnWithItem(MINEBENTBlocks.BLUE_STONE_COLUMN,
+//                id -> models().cubeColumn(
+//                        id.getPath(),
+//                        texture(id),
+//                        texture("polished_blue_stone")));
+        simpleBlockWithItem(MINEBENTBlocks.CHISELED_BLUE_STONE_BRICKS);
 
-        simpleBlockWithItem(MINEBENTItems.HORIZONTAL_BLUE_STONE_BRICKS);
-        stairsWithItem(MINEBENTItems.HORIZONTAL_BLUE_STONE_BRICK_STAIRS, MINEBENTItems.HORIZONTAL_BLUE_STONE_BRICKS);
-        slabWithItem(MINEBENTItems.HORIZONTAL_BLUE_STONE_BRICK_SLAB, MINEBENTItems.HORIZONTAL_BLUE_STONE_BRICKS);
-        wallWithItem(MINEBENTItems.HORIZONTAL_BLUE_STONE_BRICK_WALL, MINEBENTItems.HORIZONTAL_BLUE_STONE_BRICKS);
+        simpleBlockWithItem(MINEBENTBlocks.HORIZONTAL_BLUE_STONE_BRICKS);
+        stairsWithItem(MINEBENTBlocks.HORIZONTAL_BLUE_STONE_BRICK_STAIRS, MINEBENTBlocks.HORIZONTAL_BLUE_STONE_BRICKS);
+        slabWithItem(MINEBENTBlocks.HORIZONTAL_BLUE_STONE_BRICK_SLAB, MINEBENTBlocks.HORIZONTAL_BLUE_STONE_BRICKS);
+        wallWithItem(MINEBENTBlocks.HORIZONTAL_BLUE_STONE_BRICK_WALL, MINEBENTBlocks.HORIZONTAL_BLUE_STONE_BRICKS);
 
-        simpleBlockWithItem(MINEBENTItems.VERTICAL_BLUE_STONE_BRICKS);
-        stairsWithItem(MINEBENTItems.VERTICAL_BLUE_STONE_BRICK_STAIRS, MINEBENTItems.VERTICAL_BLUE_STONE_BRICKS);
-        slabWithItem(MINEBENTItems.VERTICAL_BLUE_STONE_BRICK_SLAB, MINEBENTItems.VERTICAL_BLUE_STONE_BRICKS);
-        wallWithItem(MINEBENTItems.VERTICAL_BLUE_STONE_BRICK_WALL, MINEBENTItems.VERTICAL_BLUE_STONE_BRICKS);
+        simpleBlockWithItem(MINEBENTBlocks.VERTICAL_BLUE_STONE_BRICKS);
+        stairsWithItem(MINEBENTBlocks.VERTICAL_BLUE_STONE_BRICK_STAIRS, MINEBENTBlocks.VERTICAL_BLUE_STONE_BRICKS);
+        slabWithItem(MINEBENTBlocks.VERTICAL_BLUE_STONE_BRICK_SLAB, MINEBENTBlocks.VERTICAL_BLUE_STONE_BRICKS);
+        wallWithItem(MINEBENTBlocks.VERTICAL_BLUE_STONE_BRICK_WALL, MINEBENTBlocks.VERTICAL_BLUE_STONE_BRICKS);
 
-        simpleHorizontalWithItem(MINEBENTItems.BLUE_STONE_BRICK_EMBEDDED_LADDER,
+        simpleHorizontalWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_EMBEDDED_LADDER,
                 id -> models().getExistingFile(id));
-        trimWithItem(MINEBENTItems.BLUE_STONE_BRICK_TRIM,
-                id -> models().cubeColumn(
-                        id.getPath(),
-                        texture(id),
-                        texture("BLUE_stone_bricks")),
-                id -> models().cubeColumn(
-                        id.withSuffix("_flipped").getPath(),
-                        texture(id.withSuffix("_flipped")),
-                        texture("BLUE_stone_bricks")));
-        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_FROG);
-        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_IGUANA_LEFT);
-        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_IGUANA_RIGHT);
-        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_LOTUS);
-        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_NAK_LEFT);
-        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_NAK_RIGHT);
-        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_SALAMANDER_LEFT);
-        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_SALAMANDER_RIGHT);
-        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_SKAIA);
-        simpleBlockWithItem(MINEBENTItems.BLUE_STONE_BRICK_TURTLE);
+//        trimWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_TRIM,
+//                id -> models().cubeColumn(
+//                        id.getPath(),
+//                        texture(id),
+//                        texture("blue_stone_bricks")),
+//                id -> models().cubeColumn(
+//                        id.withSuffix("_flipped").getPath(),
+//                        texture(id.withSuffix("_flipped")),
+//                        texture("blue_stone_bricks")));
+        simpleBlockWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_FROG);
+        simpleBlockWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_IGUANA_LEFT);
+        simpleBlockWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_IGUANA_RIGHT);
+        simpleBlockWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_LOTUS);
+        simpleBlockWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_NAK_LEFT);
+        simpleBlockWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_NAK_RIGHT);
+        simpleBlockWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_SALAMANDER_LEFT);
+        simpleBlockWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_SALAMANDER_RIGHT);
+        simpleBlockWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_SKAIA);
+        simpleBlockWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_TURTLE);
 
-        simpleBlockWithItem(MINEBENTItems.RULERSTONE);
-        simpleBlockWithItem(MINEBENTItems.FELTSTONE);
-        simpleBlockWithItem(MINEBENTItems.CARNIVAL_GROUND);
+        simpleBlockWithItem(MINEBENTBlocks.RULERSTONE);
+        simpleBlockWithItem(MINEBENTBlocks.FELTSTONE);
 
 //        simpleBlockWithItem(MSBlocks.STONE_CRUXITE_ORE);
 //        simpleBlockWithItem(MSBlocks.NETHERRACK_CRUXITE_ORE);

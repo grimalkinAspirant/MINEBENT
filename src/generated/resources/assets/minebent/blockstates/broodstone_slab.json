@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "minebent:block/broodstone_slab"
+    },
+    "type=double": {
+      "model": "minebent:block/broodstone"
+    },
+    "type=top": {
+      "model": "minebent:block/broodstone_slab_top"
+    }
+  }
+}

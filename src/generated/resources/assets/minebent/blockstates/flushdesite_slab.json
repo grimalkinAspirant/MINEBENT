@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "minebent:block/flushdesite_slab"
+    },
+    "type=double": {
+      "model": "minebent:block/flushdesite"
+    },
+    "type=top": {
+      "model": "minebent:block/flushdesite_slab_top"
+    }
+  }
+}

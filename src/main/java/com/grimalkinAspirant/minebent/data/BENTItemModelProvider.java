@@ -11,6 +11,7 @@ import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import com.mraof.minestuck.data.MinestuckItemModelProvider;
 
 import java.util.function.Supplier;
 
@@ -178,7 +179,7 @@ public class BENTItemModelProvider extends ItemModelProvider{
 
     private static ResourceLocation id(String path)
     {
-        return ResourceLocation.fromNamespaceAndPath(Minestuck.MOD_ID, path);
+        return ResourceLocation.fromNamespaceAndPath(MINEBENT.MODID, path);
     }
 
     private static ResourceLocation id(Supplier<? extends Item> item)

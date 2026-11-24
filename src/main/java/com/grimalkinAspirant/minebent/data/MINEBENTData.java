@@ -46,11 +46,11 @@ public final class MINEBENTData {
         generator.addProvider(event.includeServer(), new BENTRecipeProvider(pOutput, event.getLookupProvider()));
         generator.addProvider(event.includeClient(), new BENTItemModelProvider(pOutput, fileHelper));
 
-        generator.addProvider(event.includeServer(),
-                (DataProvider.Factory<BENTLootTableProvider>) ((o) -> new BENTLootTableProvider(o, lookupProvider,
-                        List.of(
-                                new LootTableProvider.SubProviderEntry(BENTBlockLoot::new, LootContextParamSets.BLOCK)
-                ))));
+//        generator.addProvider(event.includeServer(),
+//                (DataProvider.Factory<BENTLootTableProvider>) ((o) -> new BENTLootTableProvider(o, lookupProvider,
+//                        List.of(
+//                                new LootTableProvider.SubProviderEntry(BENTBlockLoot::new, LootContextParamSets.BLOCK)
+//                ))));
 
         generator.addProvider(event.includeServer(), new BENTBetterCombatCompat(pOutput));
     }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "minebent:block/blue_stone_brick_nak_left"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "b": {
+      "item": "minebent:teal_blood"
+    },
+    "m": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    "b",
+    "m"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minebent:six_karat_lipstick"
+  }
+}

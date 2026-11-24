@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "b": {
+      "item": "minebent:purple_blood"
+    },
+    "m": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "b",
+    "m"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minebent:iced_lipstick"
+  }
+}

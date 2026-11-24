@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "minebent:block/trollslate_top",
+    "side": "minebent:block/trollslate",
+    "top": "minebent:block/trollslate_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "minebent:block/trollslate_bricks",
+    "side": "minebent:block/trollslate_bricks",
+    "top": "minebent:block/trollslate_bricks"
+  }
+}

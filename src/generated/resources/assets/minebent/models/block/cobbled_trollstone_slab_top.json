@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "minebent:block/cobbled_trollstone",
+    "side": "minebent:block/cobbled_trollstone",
+    "top": "minebent:block/cobbled_trollstone"
+  }
+}

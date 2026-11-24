@@ -1,0 +1,6 @@
+{
+  "parent": "minebent:item/large_long_weapon",
+  "textures": {
+    "layer0": "minebent:item/gold_lance"
+  }
+}

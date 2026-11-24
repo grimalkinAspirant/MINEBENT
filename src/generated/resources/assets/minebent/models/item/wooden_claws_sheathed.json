@@ -1,0 +1,6 @@
+{
+  "parent": "minebent:item/claw_weapon",
+  "textures": {
+    "layer0": "minebent:item/wooden_claws_sheathed"
+  }
+}

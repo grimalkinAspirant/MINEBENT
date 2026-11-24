@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "b": {
+      "item": "minebent:rust_blood"
+    },
+    "m": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "b",
+    "m"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minebent:sawdust_lipstick"
+  }
+}
