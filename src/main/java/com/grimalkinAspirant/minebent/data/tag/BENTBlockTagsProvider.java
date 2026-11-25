@@ -37,7 +37,7 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 	{
 		super(output, lookupProvider, MINEBENT.MODID, existingFileHelper);
 	}
-	
+
 	@Override
 	@SuppressWarnings("unchecked")
 	protected void addTags(HolderLookup.Provider provider)
@@ -58,7 +58,7 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		tag(INCORRECT_FOR_DENIZEN_TOOL).addTag(INCORRECT_FOR_NETHERITE_TOOL);
 		tag(INCORRECT_FOR_ZILLY_TOOL).addTag(INCORRECT_FOR_NETHERITE_TOOL);
 		tag(INCORRECT_FOR_WELSH_TOOL).addTag(INCORRECT_FOR_NETHERITE_TOOL);
-		
+
 		tag(MINEABLE_WITH_SICKLE).addTags(MINEABLE_WITH_HOE, SWORD_EFFICIENT);
 		tag(MINEABLE_WITH_SCYTHE).addTags(MINEABLE_WITH_HOE);
 		tag(MINEABLE_WITH_CLAWS).addTags(SWORD_EFFICIENT);
@@ -66,13 +66,13 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		tag(MINEABLE_WITH_CHAINSAW).addTags(MINEABLE_WITH_AXE);
 		tag(MINEABLE_WITH_FORK).addTags(Tags.Blocks.STORAGE_BLOCKS_WHEAT);
 		tag(MINEABLE_WITH_SPOON).addTags(MINEABLE_WITH_SHOVEL); //TODO make spoons mine cake
-		
+
 		tag(DIRT).add(BLUE_DIRT.get());
 		tag(PLANKS).add(GLOWING_PLANKS.get(), SHADEWOOD_PLANKS.get(), FROST_PLANKS.get(), RAINBOW_PLANKS.get(), END_PLANKS.get(), DEAD_PLANKS.get(), CARVED_PLANKS.get(), TREATED_PLANKS.get(), LACQUERED_PLANKS.get(), CINDERED_PLANKS.get());
 		tag(STONE_BRICKS).add(DECREPIT_STONE_BRICKS.get(), MOSSY_DECREPIT_STONE_BRICKS.get(), FLOWERY_MOSSY_STONE_BRICKS.get());
 		tag(WOODEN_BUTTONS).add(WOODEN_EXPLOSIVE_BUTTON.get());
 		tag(BUTTONS).add(relevantBlocks(block -> block instanceof ButtonBlock));
-		
+
 		tag(WOODEN_STAIRS).add(RAINBOW_STAIRS.get(), END_STAIRS.get(), DEAD_STAIRS.get(), CARVED_STAIRS.get(), TREATED_PLANKS_STAIRS.get(), LACQUERED_STAIRS.get(), CINDERED_STAIRS.get());
 		tag(WOODEN_SLABS).add(GLOWING_SLAB.get(), SHADEWOOD_SLAB.get(), FROST_SLAB.get(), RAINBOW_SLAB.get(), END_SLAB.get(), DEAD_SLAB.get(), CARVED_SLAB.get(), CARVED_HEAVY_PLANK_SLAB.get(), TREATED_PLANKS_SLAB.get(), TREATED_HEAVY_PLANK_SLAB.get(), LACQUERED_SLAB.get(), LACQUERED_HEAVY_PLANK_SLAB.get(), CINDERED_SLAB.get());
 		tag(SAPLINGS).add(relevantBlocks(block -> block instanceof SaplingBlock));
@@ -106,21 +106,21 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		tag(Tags.Blocks.STORAGE_BLOCKS).addTags(CRUXITE_STORAGE_BLOCKS, ExtraModTags.Blocks.URANIUM_STORAGE_BLOCKS);
 		tag(Tags.Blocks.BOOKSHELVES).add(GLOWING_BOOKSHELF.get(), FROST_BOOKSHELF.get(), RAINBOW_BOOKSHELF.get(), END_BOOKSHELF.get(), DEAD_BOOKSHELF.get(), TREATED_BOOKSHELF.get(), SHADEWOOD_BOOKSHELF.get(), CINDERED_BOOKSHELF.get());
 		tag(FLOWER_POTS).add(relevantBlocks(block -> block instanceof FlowerPotBlock));
-		
+
 		tag(WOOD_TERRAIN_BLOCKS).add(UNCARVED_WOOD.get(), CHIPBOARD.get(), WOOD_SHAVINGS.get(), CARVED_HEAVY_PLANKS.get(), CARVED_PLANKS.get(),
 				TREATED_UNCARVED_WOOD.get(), TREATED_CHIPBOARD.get(), TREATED_WOOD_SHAVINGS.get(), TREATED_HEAVY_PLANKS.get(), TREATED_PLANKS.get(),
 				LACQUERED_UNCARVED_WOOD.get(), LACQUERED_CHIPBOARD.get(), LACQUERED_WOOD_SHAVINGS.get(), LACQUERED_HEAVY_PLANKS.get(), LACQUERED_PLANKS.get());
 		tag(HEAT_TERRAIN_BLOCKS).add(IGNEOUS_STONE.get(), PUMICE_STONE.get(), BLACK_STONE.get(), MAGMATIC_IGNEOUS_STONE.get());
-		
+
 		tag(ASPECT_TREE_PLACEABLE).add(UNCARVED_WOOD.get(), IGNEOUS_STONE.get(), CHALK.get(), Blocks.STONE, Blocks.SAND, Blocks.RED_SAND, Blocks.END_STONE, Blocks.MUD, Blocks.GRASS_BLOCK, Blocks.PODZOL, Blocks.MYCELIUM, Blocks.WHITE_WOOL, Blocks.GRAVEL, Blocks.SANDSTONE, BLUE_DIRT.get());
 		tag(ASPECT_TREE_PLACEABLE).addTag(BlockTags.WOOL);
-		
+
 		tag(LAND_OCEAN_FLUIDS).add(OIL.get(), BLOOD.get(), BRAIN_JUICE.get(), WATER_COLORS.get(), ENDER.get(), LIGHT_WATER.get(), CAULK.get(), MOLTEN_AMBER.get(), Blocks.WATER);
-		
+
 		tag(MINEABLE_WITH_SHOVEL).add(BLUE_DIRT.get(), THOUGHT_DIRT.get());
-		
+
 		needsWoodPickaxe(SMOOTH_SHADE_STONE_SLAB.get(), SMOOTH_SHADE_STONE_STAIRS.get(), SMOOTH_SHADE_STONE_WALL.get());
-		
+
 		needsWoodPickaxe(STONE_CRUXITE_ORE.get(), BLACK_STONE_CRUXITE_ORE.get(), NETHERRACK_CRUXITE_ORE.get(), COBBLESTONE_CRUXITE_ORE.get(), SANDSTONE_CRUXITE_ORE.get(),
 				RED_SANDSTONE_CRUXITE_ORE.get(), END_STONE_CRUXITE_ORE.get(), SHADE_STONE_CRUXITE_ORE.get(), PINK_STONE_CRUXITE_ORE.get(), MYCELIUM_STONE_CRUXITE_ORE.get());
 		needsStonePickaxe(STONE_URANIUM_ORE.get(), DEEPSLATE_URANIUM_ORE.get(), BLACK_STONE_URANIUM_ORE.get(), NETHERRACK_URANIUM_ORE.get(), COBBLESTONE_URANIUM_ORE.get(),
@@ -135,7 +135,7 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		tag(MINEABLE_WITH_AXE).add(UNCARVED_WOOD_IRON_ORE.get(), UNCARVED_WOOD_REDSTONE_ORE.get(), UNCARVED_WOOD_EMERALD_ORE.get(), UNCARVED_WOOD_CRUXITE_ORE.get(), UNCARVED_WOOD_URANIUM_ORE.get());
 		tag(NEEDS_STONE_TOOL).add(UNCARVED_WOOD_IRON_ORE.get(), UNCARVED_WOOD_URANIUM_ORE.get());
 		tag(NEEDS_IRON_TOOL).add(UNCARVED_WOOD_REDSTONE_ORE.get(), UNCARVED_WOOD_EMERALD_ORE.get());
-		
+
 		needsWoodPickaxe(CRUXITE_BLOCK.get(), CRUXITE_STAIRS.get(), CRUXITE_SLAB.get(), CRUXITE_WALL.get(), CRUXITE_BUTTON.get(), CRUXITE_PRESSURE_PLATE.get(),
 				POLISHED_CRUXITE_BLOCK.get(), POLISHED_CRUXITE_STAIRS.get(), POLISHED_CRUXITE_SLAB.get(), POLISHED_CRUXITE_WALL.get(), CRUXITE_BRICKS.get(), CRUXITE_BRICK_STAIRS.get(), CRUXITE_BRICK_SLAB.get(), CRUXITE_BRICK_WALL.get(),
 				SMOOTH_CRUXITE_BLOCK.get(), CHISELED_CRUXITE_BLOCK.get(), CRUXITE_PILLAR.get());
@@ -143,16 +143,16 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		needsWoodPickaxe(URANIUM_BLOCK.get(), URANIUM_STAIRS.get(), URANIUM_SLAB.get(), URANIUM_WALL.get(), URANIUM_BUTTON.get(), URANIUM_PRESSURE_PLATE.get());
 		tag(MINEABLE_WITH_PICKAXE).add(GENERIC_OBJECT.get(), PERFECTLY_GENERIC_STAIRS.get(), PERFECTLY_GENERIC_SLAB.get(), PERFECTLY_GENERIC_WALL.get(), PERFECTLY_GENERIC_FENCE.get(), PERFECTLY_GENERIC_FENCE_GATE.get(), PERFECTLY_GENERIC_BUTTON.get(),
 				PERFECTLY_GENERIC_PRESSURE_PLATE.get(), PERFECTLY_GENERIC_SIGN.get(), PERFECTLY_GENERIC_WALL_SIGN.get(), PERFECTLY_GENERIC_HANGING_SIGN.get(), PERFECTLY_GENERIC_WALL_HANGING_SIGN.get());
-		
+
 		needsWoodPickaxe(METEORIC_STONE.get());
-		
+
 		needsWoodPickaxe(COARSE_STONE.get(), CHISELED_COARSE_STONE.get(), COARSE_STONE_BRICKS.get(), COARSE_STONE_COLUMN.get(), CHISELED_COARSE_STONE_BRICKS.get(), CRACKED_COARSE_STONE_BRICKS.get(), MOSSY_COARSE_STONE_BRICKS.get());
 		needsWoodPickaxe(SHADE_STONE.get(), SMOOTH_SHADE_STONE.get(), SHADE_BRICKS.get(), SHADE_COLUMN.get(), CHISELED_SHADE_BRICKS.get(), CRACKED_SHADE_BRICKS.get(), MOSSY_SHADE_BRICKS.get(), BLOOD_SHADE_BRICKS.get(), TAR_SHADE_BRICKS.get());
 		needsWoodPickaxe(FROST_TILE.get(), CHISELED_FROST_TILE.get(), FROST_BRICKS.get(), FROST_COLUMN.get(), CHISELED_FROST_BRICKS.get(), CRACKED_FROST_BRICKS.get(), FLOWERY_FROST_BRICKS.get());
-		
+
 		needsWoodPickaxe(CAST_IRON.get(), CHISELED_CAST_IRON.get(), CAST_IRON_BUTTON.get(), CAST_IRON_PRESSURE_PLATE.get(), CAST_IRON_STAIRS.get(), CAST_IRON_SLAB.get(), CAST_IRON_WALL.get(),
 				CAST_IRON_FRAME.get(), CAST_IRON_TILE.get(), CAST_IRON_TILE_STAIRS.get(), CAST_IRON_TILE_SLAB.get(), CAST_IRON_SHEET.get(), CAST_IRON_SHEET_STAIRS.get(), CAST_IRON_SHEET_SLAB.get());
-		
+
 		needsWoodPickaxe(STEEL_BEAM.get());
 		needsWoodPickaxe(MYCELIUM_COBBLESTONE.get(), MYCELIUM_STONE.get(), POLISHED_MYCELIUM_STONE.get(), MYCELIUM_BRICKS.get(), MYCELIUM_COLUMN.get(), CHISELED_MYCELIUM_BRICKS.get(), CRACKED_MYCELIUM_BRICKS.get(), SUSPICIOUS_CHISELED_MYCELIUM_BRICKS.get(), MOSSY_MYCELIUM_BRICKS.get(), FLOWERY_MYCELIUM_BRICKS.get());
 		needsWoodPickaxe(BLACK_STONE.get(), POLISHED_BLACK_STONE.get(), BLACK_COBBLESTONE.get(), BLACK_STONE_BRICKS.get(), BLACK_STONE_COLUMN.get(), CRACKED_BLACK_STONE_BRICKS.get(),
@@ -169,10 +169,10 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 				PUMICE_STONE_PRESSURE_PLATE.get(), PUMICE_BRICKS.get(), PUMICE_BRICK_STAIRS.get(), PUMICE_BRICK_SLAB.get(), PUMICE_BRICK_WALL.get(), PUMICE_TILES.get(), PUMICE_TILE_STAIRS.get(), PUMICE_TILE_SLAB.get(), PUMICE_TILE_WALL.get());
 		needsWoodPickaxe(IGNEOUS_SPIKE.get(), MAGMATIC_IGNEOUS_STONE.get());
 		tag(MINEABLE_WITH_PICKAXE).add(HEAT_LAMP.get());
-		
+
 		//Blocks added to this tag will also infinitely burn in lands
 		tag(INFINIBURN_OVERWORLD).add(IGNEOUS_STONE.get(), MAGMATIC_IGNEOUS_STONE.get());
-		
+
 		needsStonePickaxe(BROWN_STONE.get(), POLISHED_BROWN_STONE.get(), BROWN_STONE_BRICKS.get(), CRACKED_BROWN_STONE_BRICKS.get(), BROWN_STONE_COLUMN.get());
 		needsStonePickaxe(GREEN_STONE.get(), POLISHED_GREEN_STONE.get(), GREEN_STONE_BRICKS.get(), GREEN_STONE_COLUMN.get(), CHISELED_GREEN_STONE_BRICKS.get());
 		needsStonePickaxe(HORIZONTAL_GREEN_STONE_BRICKS.get(), VERTICAL_GREEN_STONE_BRICKS.get(), GREEN_STONE_BRICK_EMBEDDED_LADDER.get(), GREEN_STONE_BRICK_TRIM.get());
@@ -182,7 +182,7 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		needsStonePickaxe(BROWN_STONE_BRICK_WALL.get(), BROWN_STONE_BUTTON.get(), BROWN_STONE_PRESSURE_PLATE.get(), BROWN_STONE_WALL.get(), POLISHED_BROWN_STONE_SLAB.get(), POLISHED_BROWN_STONE_STAIRS.get(), POLISHED_BROWN_STONE_WALL.get());
 		needsStonePickaxe(GREEN_STONE_BRICK_WALL.get(), GREEN_STONE_BUTTON.get(), GREEN_STONE_PRESSURE_PLATE.get(), HORIZONTAL_GREEN_STONE_BRICK_SLAB.get(), HORIZONTAL_GREEN_STONE_BRICK_STAIRS.get(), HORIZONTAL_GREEN_STONE_BRICK_WALL.get(), POLISHED_GREEN_STONE_SLAB.get(), POLISHED_GREEN_STONE_STAIRS.get(), POLISHED_GREEN_STONE_WALL.get(), VERTICAL_GREEN_STONE_BRICK_SLAB.get(), VERTICAL_GREEN_STONE_BRICK_STAIRS.get(), VERTICAL_GREEN_STONE_BRICK_WALL.get());
 		needsWoodPickaxe(SANDSTONE_COLUMN.get(), CHISELED_SANDSTONE_COLUMN.get(), RED_SANDSTONE_COLUMN.get(), CHISELED_RED_SANDSTONE_COLUMN.get());
-		
+
 		tag(MINEABLE_WITH_AXE).add(CARVED_PLANKS.get(), CARVED_BUTTON.get(), CARVED_FENCE.get(), CARVED_FENCE_GATE.get(), CARVED_PRESSURE_PLATE.get(), CARVED_SLAB.get(), CARVED_STAIRS.get(), WOODEN_GRASS.get(),
 				TREATED_PLANKS.get(), TREATED_BUTTON.get(), TREATED_FENCE.get(), TREATED_FENCE_GATE.get(), TREATED_PRESSURE_PLATE.get(), TREATED_PLANKS_SLAB.get(), TREATED_PLANKS_STAIRS.get(),
 				TREATED_WOODEN_GRASS.get(), LACQUERED_PLANKS.get(), LACQUERED_BUTTON.get(), LACQUERED_FENCE.get(), LACQUERED_FENCE_GATE.get(), LACQUERED_PRESSURE_PLATE.get(),
@@ -199,7 +199,7 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 				LACQUERED_CHIPBOARD_STAIRS.get(), LACQUERED_HEAVY_PLANKS.get(), LACQUERED_HEAVY_PLANK_SLAB.get(), LACQUERED_HEAVY_PLANK_STAIRS.get(), LACQUERED_CARVED_KNOTTED_WOOD.get(), POLISHED_LACQUERED_UNCARVED_WOOD.get(), POLISHED_LACQUERED_UNCARVED_SLAB.get(), POLISHED_LACQUERED_UNCARVED_STAIRS.get());
 		tag(MINEABLE_WITH_SHOVEL).add(WOOD_SHAVINGS.get(), TREATED_WOOD_SHAVINGS.get(), LACQUERED_WOOD_SHAVINGS.get());
 		needsWoodPickaxe(SPIKES.get());
-		
+
 		tag(MINEABLE_WITH_AXE).add(GLOWING_LOG.get(), GLOWING_WOOD.get(), GLOWING_PLANKS.get(), GLOWING_BUTTON.get(), GLOWING_FENCE.get(), GLOWING_FENCE_GATE.get(), GLOWING_PRESSURE_PLATE.get(), GLOWING_SLAB.get(), GLOWING_STAIRS.get(),
 				SHADEWOOD_LOG.get(), SHADEWOOD.get(), STRIPPED_SHADEWOOD_LOG.get(), STRIPPED_SHADEWOOD.get(), SCARRED_SHADEWOOD_LOG.get(), SCARRED_SHADEWOOD.get(),
 				SHADEWOOD_BUTTON.get(), SHADEWOOD_FENCE.get(), SHADEWOOD_FENCE_GATE.get(), SHADEWOOD_PRESSURE_PLATE.get(), SHADEWOOD_SLAB.get(), SHADEWOOD_STAIRS.get(),
@@ -214,13 +214,13 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		tag(MINEABLE_WITH_AXE).add(CINDERED_LOG.get(), CINDERED_WOOD.get(), CINDERED_PLANKS.get(), CINDERED_BUTTON.get(), CINDERED_FENCE.get(), CINDERED_FENCE_GATE.get(), CINDERED_PRESSURE_PLATE.get(), CINDERED_SLAB.get(), CINDERED_STAIRS.get());
 		tag(MINEABLE_WITH_AXE).add(GLOWING_BOOKSHELF.get(), FROST_BOOKSHELF.get(), RAINBOW_BOOKSHELF.get(), END_BOOKSHELF.get(), DEAD_BOOKSHELF.get(), TREATED_BOOKSHELF.get(), SHADEWOOD_BOOKSHELF.get(), CINDERED_BOOKSHELF.get());
 		tag(MINEABLE_WITH_AXE).add(GLOWING_LADDER.get(), FROST_LADDER.get(), RAINBOW_LADDER.get(), END_LADDER.get(), DEAD_LADDER.get(), TREATED_LADDER.get(), SHADEWOOD_LADDER.get(), CINDERED_LADDER.get());
-		
+
 		tag(MINEABLE_WITH_PICKAXE).add(NATIVE_SULFUR.get());
 		needsWoodPickaxe(PETRIFIED_GRASS.get(), PETRIFIED_POPPY.get());
 		tag(MINEABLE_WITH_SHOVEL).add(GLOWY_GOOP.get(), COAGULATED_BLOOD.get());
 		tag(MINEABLE_WITH_SHOVEL).add(SUGAR_CUBE.get());
 		needsWoodPickaxe(PIPE.get(), PIPE_INTERSECTION.get(), STONE_TABLET.get());
-		
+
 		needsWoodPickaxe(COARSE_STONE_STAIRS.get(), COARSE_STONE_BRICK_STAIRS.get());
 		needsWoodPickaxe(SHADE_STAIRS.get(), SHADE_BRICK_STAIRS.get());
 		needsWoodPickaxe(FROST_TILE_STAIRS.get(), FROST_BRICK_STAIRS.get());
@@ -231,7 +231,7 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		needsStonePickaxe(GREEN_STONE_STAIRS.get(), GREEN_STONE_BRICK_STAIRS.get());
 		tag(MINEABLE_WITH_AXE).add(RAINBOW_STAIRS.get(), END_STAIRS.get(), DEAD_STAIRS.get(), TREATED_PLANKS_STAIRS.get());
 		needsStonePickaxe(STEEP_GREEN_STONE_BRICK_STAIRS_BASE.get(), STEEP_GREEN_STONE_BRICK_STAIRS_TOP.get());
-		
+
 		needsWoodPickaxe(CHALK_SLAB.get(), CHALK_BRICK_SLAB.get());
 		needsWoodPickaxe(PINK_STONE_SLAB.get(), PINK_STONE_BRICK_SLAB.get());
 		needsWoodPickaxe(MYCELIUM_SLAB.get(), MYCELIUM_BRICK_SLAB.get());
@@ -242,7 +242,7 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		needsStonePickaxe(BROWN_STONE_SLAB.get(), BROWN_STONE_BRICK_SLAB.get());
 		needsStonePickaxe(GREEN_STONE_SLAB.get(), GREEN_STONE_BRICK_SLAB.get());
 		tag(MINEABLE_WITH_AXE).add(RAINBOW_SLAB.get(), END_SLAB.get(), DEAD_SLAB.get(), TREATED_PLANKS_SLAB.get());
-		
+
 		needsWoodPickaxe(BLOOD_SHADE_BRICK_SLAB.get(), BLOOD_SHADE_BRICK_STAIRS.get(), BLOOD_SHADE_BRICK_WALL.get());
 		needsWoodPickaxe(CHALK_BRICK_WALL.get(), CHALK_BUTTON.get(), CHALK_PRESSURE_PLATE.get(), CHALK_WALL.get(), FLOWERY_CHALK_BRICK_SLAB.get(), FLOWERY_CHALK_BRICK_STAIRS.get(), FLOWERY_CHALK_BRICK_WALL.get(), MOSSY_CHALK_BRICK_SLAB.get(), MOSSY_CHALK_BRICK_STAIRS.get(), MOSSY_CHALK_BRICK_WALL.get(), POLISHED_CHALK_SLAB.get(), POLISHED_CHALK_STAIRS.get(), POLISHED_CHALK_WALL.get());
 		needsWoodPickaxe(COARSE_STONE_BRICK_WALL.get(), COARSE_STONE_BUTTON.get(), COARSE_STONE_PRESSURE_PLATE.get(), COARSE_STONE_WALL.get());
@@ -253,7 +253,7 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		needsWoodPickaxe(PINK_STONE_BRICK_WALL.get(), PINK_STONE_BUTTON.get(), PINK_STONE_PRESSURE_PLATE.get(), PINK_STONE_WALL.get(), MOSSY_PINK_STONE_BRICK_SLAB.get(), MOSSY_PINK_STONE_BRICK_STAIRS.get(), MOSSY_PINK_STONE_BRICK_WALL.get(), POLISHED_PINK_STONE_SLAB.get(), POLISHED_PINK_STONE_STAIRS.get(), POLISHED_PINK_STONE_WALL.get());
 		needsWoodPickaxe(SHADE_BRICK_WALL.get(), SHADE_BUTTON.get(), SHADE_PRESSURE_PLATE.get(), SHADE_WALL.get(), MOSSY_SHADE_BRICK_SLAB.get(), MOSSY_SHADE_BRICK_STAIRS.get(), MOSSY_SHADE_BRICK_WALL.get(), TAR_SHADE_BRICK_SLAB.get(), TAR_SHADE_BRICK_STAIRS.get(), TAR_SHADE_BRICK_WALL.get());
 		needsWoodPickaxe(URANIUM_BUTTON.get(), URANIUM_PRESSURE_PLATE.get(), URANIUM_SLAB.get(), URANIUM_STAIRS.get(), URANIUM_WALL.get());
-		
+
 		needsWoodPickaxe(TRAJECTORY_BLOCK.get(), STAT_STORER.get(), REMOTE_OBSERVER.get());
 		needsWoodPickaxe(WIRELESS_REDSTONE_TRANSMITTER.get(), WIRELESS_REDSTONE_RECEIVER.get());
 		needsWoodPickaxe(SOLID_SWITCH.get(), VARIABLE_SOLID_SWITCH.get(), ONE_SECOND_INTERVAL_TIMED_SOLID_SWITCH.get(), TWO_SECOND_INTERVAL_TIMED_SOLID_SWITCH.get());
@@ -264,9 +264,9 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		needsWoodPickaxe(REMOTE_COMPARATOR.get(), STRUCTURE_CORE.get(), FALL_PAD.get(), FRAGILE_STONE.get());
 		needsWoodPickaxe(RETRACTABLE_SPIKES.get(), BLOCK_PRESSURE_PLATE.get(), PUSHABLE_BLOCK.get(), BLOCK_TELEPORTER.get());
 		needsWoodPickaxe(AND_GATE_BLOCK.get(), OR_GATE_BLOCK.get(), XOR_GATE_BLOCK.get(), NAND_GATE_BLOCK.get(), NOR_GATE_BLOCK.get(), XNOR_GATE_BLOCK.get());
-		
+
 		needsWoodPickaxe(CRUXTRUDER_LID.get());
-		
+
 		needsWoodPickaxe(MINI_CRUXTRUDER.get(), MINI_TOTEM_LATHE.get(), MINI_ALCHEMITER.get(), MINI_PUNCH_DESIGNIX.get());
 		needsWoodPickaxe(HOLOPAD.get());
 		needsWoodPickaxe(COMPUTER.get(), LAPTOP.get(), CROCKERTOP.get(), HUBTOP.get(), LUNCHTOP.get(), OLD_COMPUTER.get());
@@ -278,17 +278,17 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		tag(MINEABLE_WITH_PICKAXE).add(POWER_HUB.get());
 		needsWoodPickaxe(ANTHVIL.get());
 		needsWoodPickaxe(SKAIANET_DENIER.get());
-		
+
 		tag(MINEABLE_WITH_AXE).add(WOODEN_CACTUS.get(), MIRROR.get());
 		needsWoodPickaxe(BLENDER.get());
 		needsWoodPickaxe(CHESSBOARD.get());
 		needsWoodPickaxe(MINI_FROG_STATUE.get(), MINI_WIZARD_STATUE.get(), MINI_TYPHEUS_STATUE.get());
 		needsWoodPickaxe(CASSETTE_PLAYER.get());
 		needsWoodPickaxe(PARCEL_PYXIS.get(), PYXIS_LID.get());
-		
+
 		tag(ExtraModTags.Blocks.URANIUM_ORES).addTag(URANIUM_ORES);
 		tag(ExtraModTags.Blocks.URANIUM_STORAGE_BLOCKS).add(URANIUM_BLOCK.get());
-		
+
 		tag(GREEN_HIEROGLYPHS).add(GREEN_STONE_BRICK_FROG.get(), GREEN_STONE_BRICK_LOTUS.get(), GREEN_STONE_BRICK_IGUANA_LEFT.get(), GREEN_STONE_BRICK_IGUANA_RIGHT.get(), GREEN_STONE_BRICK_NAK_LEFT.get(), GREEN_STONE_BRICK_NAK_RIGHT.get(), GREEN_STONE_BRICK_SALAMANDER_LEFT.get(), GREEN_STONE_BRICK_SALAMANDER_RIGHT.get(), GREEN_STONE_BRICK_SKAIA.get(), GREEN_STONE_BRICK_TURTLE.get());
 		tag(GLOWING_LOGS).add(GLOWING_LOG.get(), GLOWING_WOOD.get(), STRIPPED_GLOWING_LOG.get(), STRIPPED_GLOWING_WOOD.get());
 		tag(FROST_LOGS).add(FROST_LOG.get(), FROST_WOOD.get(),STRIPPED_FROST_LOG.get(), STRIPPED_FROST_WOOD.get());
@@ -313,7 +313,7 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		tag(MSTags.Blocks.EMERALD_ORES).add(UNCARVED_WOOD_EMERALD_ORE.get());
 		tag(CRUXITE_STORAGE_BLOCKS).add(CRUXITE_BLOCK.get());
 		tag(END_SAPLING_DIRT).addTag(Tags.Blocks.END_STONES).add(END_GRASS.get());
-		
+
 		tag(WALLS).add(relevantBlocks(block -> block instanceof WallBlock));
 		tag(FENCES).add(relevantBlocks(block -> block instanceof FenceBlock));
 		tag(WOODEN_FENCES).add(PERFECTLY_GENERIC_FENCE.get(), GLOWING_FENCE.get(), UNCARVED_WOOD_FENCE.get(), CHIPBOARD_FENCE.get(), CARVED_FENCE.get(), TREATED_UNCARVED_WOOD_FENCE.get(),
@@ -326,7 +326,7 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		tag(WOODEN_TRAPDOORS).add(CARVED_TRAPDOOR.get(), CINDERED_TRAPDOOR.get(), DEAD_TRAPDOOR.get(), END_TRAPDOOR.get(), FROST_TRAPDOOR.get(), GLOWING_TRAPDOOR.get(), LACQUERED_TRAPDOOR.get(), RAINBOW_TRAPDOOR.get(), SHADEWOOD_TRAPDOOR.get(), TREATED_TRAPDOOR.get());
 		tag(TRAPDOORS).add(relevantBlocks(block -> block instanceof TrapDoorBlock));
 		tag(SIGNS).add(relevantBlocks(block -> block instanceof SignBlock));
-		
+
 		tag(ROTATOR_WHITELISTED).add(Blocks.REPEATER, Blocks.COMPARATOR, AND_GATE_BLOCK.get(), OR_GATE_BLOCK.get(), XOR_GATE_BLOCK.get(), NAND_GATE_BLOCK.get(), NOR_GATE_BLOCK.get(), XNOR_GATE_BLOCK.get(), AREA_EFFECT_BLOCK.get(), WIRELESS_REDSTONE_TRANSMITTER.get(), REMOTE_COMPARATOR.get(), PLATFORM_GENERATOR.get(), ITEM_MAGNET.get());
 		tag(PLATFORM_ABSORBING).addTag(Tags.Blocks.OBSIDIANS).add(Blocks.BEDROCK, Blocks.NETHER_PORTAL, Blocks.END_PORTAL, Blocks.END_PORTAL_FRAME, Blocks.REINFORCED_DEEPSLATE, PUSHABLE_BLOCK.get()); //excludes Platform Receptacle blocks as they only absorb conditionally
 		tag(PUSHABLE_BLOCK_REPLACEABLE).addTags(SAPLINGS, FLOWERS);
@@ -334,41 +334,41 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		tag(EDITMODE_BREAK_BLACKLIST).addTags(BlockTags.PORTALS);
 		tag(FARMINE_BREAK_BLACKLIST).add(Blocks.OBSIDIAN);
 	}
-	
+
 	@Override
 	public IntrinsicTagAppender<Block> tag(TagKey<Block> tag)
 	{
 		return super.tag(tag);
 	}
-	
+
 	public void needsWoodPickaxe(Block... blocks)
 	{
 		assertRequiresTool(blocks);
 		tag(MINEABLE_WITH_PICKAXE).add(blocks);
 		tag(Tags.Blocks.NEEDS_WOOD_TOOL).add(blocks);
 	}
-	
+
 	private void needsStonePickaxe(Block... blocks)
 	{
 		assertRequiresTool(blocks);
 		tag(MINEABLE_WITH_PICKAXE).add(blocks);
 		tag(NEEDS_STONE_TOOL).add(blocks);
 	}
-	
+
 	private void needsIronPickaxe(Block... blocks)
 	{
 		assertRequiresTool(blocks);
 		tag(MINEABLE_WITH_PICKAXE).add(blocks);
 		tag(NEEDS_IRON_TOOL).add(blocks);
 	}
-	
+
 	public void needsStoneAxe(Block... blocks)
 	{
 		assertRequiresTool(blocks);
 		tag(MINEABLE_WITH_AXE).add(blocks);
 		tag(NEEDS_STONE_TOOL).add(blocks);
 	}
-	
+
 	private void assertRequiresTool(Block... blocks)
 	{
 		for(Block block : blocks)
@@ -377,15 +377,15 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 				throw new IllegalStateException("You forgot to set requiresCorrectToolForDrops for block %s. It is needed to prevent drops when mining without any tool.".formatted(block));
 		}
 	}
-	
+
 	private static Block[] relevantBlocks(Predicate<Block> predicate)
 	{
 		return MSBlocks.REGISTER.getEntries().stream().map(Supplier::get).filter(predicate).toArray(Block[]::new);
 	}
-	
+
 	@Override
 	public String getName()
 	{
-		return "Minestuck Block Tags";
+		return "MINEBENT Block Tags";
 	}
 }

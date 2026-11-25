@@ -178,6 +178,6 @@ public class BENTItemTagsProvider extends ItemTagsProvider
 	@Override
 	public String getName()
 	{
-		return "Minestuck Item Tags";
+		return "MINEBENT Item Tags";
 	}
 }

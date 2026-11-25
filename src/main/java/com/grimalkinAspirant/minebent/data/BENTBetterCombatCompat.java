@@ -1,6 +1,7 @@
 package com.grimalkinAspirant.minebent.data;
 
 import com.google.gson.JsonObject;
+import com.grimalkinAspirant.minebent.MINEBENT;
 import com.grimalkinAspirant.minebent.items.MINEBENTItems;
 import com.mraof.minestuck.Minestuck;
 import com.mraof.minestuck.item.weapon.MSToolType;
@@ -64,7 +65,7 @@ public class BENTBetterCombatCompat implements DataProvider
     public final CompletableFuture<?> run(CachedOutput cache)
     {
         List<CompletableFuture<?>> futures = new ArrayList<>();
-        Path basePath = this.output.getOutputFolder(PackOutput.Target.DATA_PACK).resolve(Minestuck.MOD_ID).resolve("weapon_attributes");
+        Path basePath = this.output.getOutputFolder(PackOutput.Target.DATA_PACK).resolve(MINEBENT.MODID).resolve("weapon_attributes");
 
         addAllWeapons();
 

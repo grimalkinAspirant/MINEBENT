@@ -1,5 +1,6 @@
 package com.grimalkinAspirant.minebent.data;
 
+import com.grimalkinAspirant.minebent.MINEBENT;
 import com.grimalkinAspirant.minebent.items.MINEBENTItems;
 import com.mraof.minestuck.Minestuck;
 import com.grimalkinAspirant.minebent.items.MINEBENTBlocks;
@@ -11,7 +12,7 @@ public class MINEBENTEnUsLanguageProvider extends MinestuckLanguageProvider
 {
 	MINEBENTEnUsLanguageProvider(PackOutput output)
 	{
-		super(output, Minestuck.MOD_ID, "en_us");
+		super(output, MINEBENT.MODID, "en_us");
 	}
 	
 	@Override
