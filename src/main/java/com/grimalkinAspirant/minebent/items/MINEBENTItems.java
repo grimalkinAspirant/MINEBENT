@@ -228,7 +228,6 @@ public class MINEBENTItems {
     // Block Items
     public static final DeferredItem<BlockItem> CHERUB_PORTAL = registerBlockItem(MINEBENTBlocks.CHERUB_PORTAL);
     public static final DeferredItem<BlockItem> RUBY_BLOCK = registerBlockItem(MINEBENTBlocks.RUBY_BLOCK);
-    public static final DeferredItem<BlockItem> RULERSTONE = registerBlockItem(MINEBENTBlocks.RULERSTONE);
     public static final DeferredItem<BlockItem> FELTSTONE = registerBlockItem(MINEBENTBlocks.FELTSTONE);
     public static final DeferredItem<BlockItem> CARNIVAL_GROUND = registerBlockItem(MINEBENTBlocks.CARNIVAL_GROUND);
     public static final DeferredItem<BlockItem> TROLLSTONE = registerBlockItem(MINEBENTBlocks.TROLLSTONE);

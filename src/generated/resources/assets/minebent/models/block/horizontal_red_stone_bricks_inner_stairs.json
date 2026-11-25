@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "minebent:block/horizontal_red_stone_bricks",
-    "side": "minebent:block/horizontal_red_stone_bricks",
-    "top": "minebent:block/horizontal_red_stone_bricks"
-  }
-}

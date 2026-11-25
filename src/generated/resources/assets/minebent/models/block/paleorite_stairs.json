@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "minebent:block/paleorite",
-    "side": "minebent:block/paleorite",
-    "top": "minebent:block/paleorite"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "minebent:block/trollslate_tiles",
-    "side": "minebent:block/trollslate_tiles",
-    "top": "minebent:block/trollslate_tiles"
-  }
-}

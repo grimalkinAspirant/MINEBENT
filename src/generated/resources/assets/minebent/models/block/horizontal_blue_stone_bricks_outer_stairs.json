@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "minebent:block/horizontal_blue_stone_bricks",
-    "side": "minebent:block/horizontal_blue_stone_bricks",
-    "top": "minebent:block/horizontal_blue_stone_bricks"
-  }
-}

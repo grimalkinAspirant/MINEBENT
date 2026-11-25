@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "minebent:block/ashenite",
-    "side": "minebent:block/ashenite",
-    "top": "minebent:block/ashenite"
-  }
-}

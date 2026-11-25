@@ -39,6 +39,19 @@ public class MINEBENTCreativeModeTabs {
                         output.accept(MINEBENTItems.ROCKET_PACK);
                         output.accept(MINEBENTItems.DRAGON_PACK);
 
+                        output.accept(MINEBENTItems.RUST_BLOOD);
+                        output.accept(MINEBENTItems.BRONZE_BLOOD);
+                        output.accept(MINEBENTItems.GOLD_BLOOD);
+                        output.accept(MINEBENTItems.LIME_BLOOD);
+                        output.accept(MINEBENTItems.OLIVE_BLOOD);
+                        output.accept(MINEBENTItems.JADE_BLOOD);
+                        output.accept(MINEBENTItems.TEAL_BLOOD);
+                        output.accept(MINEBENTItems.BLUE_BLOOD);
+                        output.accept(MINEBENTItems.INDIGO_BLOOD);
+                        output.accept(MINEBENTItems.PURPLE_BLOOD);
+                        output.accept(MINEBENTItems.VIOLET_BLOOD);
+                        output.accept(MINEBENTItems.FUCHSIA_BLOOD);
+
                         output.accept(MINEBENTItems.SMALL_GRUB);
                         output.accept(MINEBENTItems.BIG_GRUB);
                         output.accept(MINEBENTItems.BUG_MEAT);
@@ -95,7 +108,6 @@ public class MINEBENTCreativeModeTabs {
 
                          output.accept(MINEBENTItems.CHERUB_PORTAL);
                          output.accept(MINEBENTItems.RUBY_BLOCK);
-                         output.accept(MINEBENTItems.RULERSTONE);
                          output.accept(MINEBENTItems.FELTSTONE);
                          output.accept(MINEBENTItems.CARNIVAL_GROUND);
                          output.accept(MINEBENTItems.TROLLSTONE);

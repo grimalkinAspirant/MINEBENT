@@ -98,6 +98,18 @@ public class BENTItemModelProvider extends ItemModelProvider{
         basicItem(MINEBENTItems.CHITIN.get());
         basicItem(MINEBENTItems.MIRTHFUL_ESSENCE.get());
         basicItem(MINEBENTItems.MIRTHFUL_SCRIPTURES.get());
+        basicItem(MINEBENTItems.RUST_BLOOD.get());
+        basicItem(MINEBENTItems.BRONZE_BLOOD.get());
+        basicItem(MINEBENTItems.GOLD_BLOOD.get());
+        basicItem(MINEBENTItems.LIME_BLOOD.get());
+        basicItem(MINEBENTItems.OLIVE_BLOOD.get());
+        basicItem(MINEBENTItems.JADE_BLOOD.get());
+        basicItem(MINEBENTItems.TEAL_BLOOD.get());
+        basicItem(MINEBENTItems.BLUE_BLOOD.get());
+        basicItem(MINEBENTItems.INDIGO_BLOOD.get());
+        basicItem(MINEBENTItems.PURPLE_BLOOD.get());
+        basicItem(MINEBENTItems.VIOLET_BLOOD.get());
+        basicItem(MINEBENTItems.FUCHSIA_BLOOD.get());
 
         //Blocks
 

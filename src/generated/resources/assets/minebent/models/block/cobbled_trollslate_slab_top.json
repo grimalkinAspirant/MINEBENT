@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "minebent:block/cobbled_trollslate",
-    "side": "minebent:block/cobbled_trollslate",
-    "top": "minebent:block/cobbled_trollslate"
-  }
-}
