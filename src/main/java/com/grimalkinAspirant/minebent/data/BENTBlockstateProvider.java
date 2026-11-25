@@ -245,7 +245,6 @@ public class BENTBlockstateProvider extends BlockStateProvider {
         simpleBlockWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_SKAIA);
         simpleBlockWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_TURTLE);
 
-        simpleBlockWithItem(MINEBENTBlocks.RULERSTONE);
         simpleBlockWithItem(MINEBENTBlocks.FELTSTONE);
 
 //        simpleBlockWithItem(MSBlocks.STONE_CRUXITE_ORE);
