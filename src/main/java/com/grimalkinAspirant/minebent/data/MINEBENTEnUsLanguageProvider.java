@@ -83,7 +83,6 @@ public class MINEBENTEnUsLanguageProvider extends MinestuckLanguageProvider
         addItem(MSItems.CAT_CLAWS_DRAWN, "Iron Claws");
         addItem(MSItems.CAT_CLAWS_SHEATHED, "Iron Claws");
         addItem(MSItems.LIPSTICK_CHAINSAW, "Iron Chainsaw");
-        addItem(MSItems.LIPSTICK, "Jade Lipstick");
         addItem(MSItems.METAL_BAT, "Iron Club");
         addItem(MINEBENTItems.GOLD_LANCE, "Gold Lance");
         addItem(MINEBENTItems.GOLD_SICKLE, "Gold Sickle");
