@@ -33,6 +33,7 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
+import static com.grimalkinAspirant.minebent.items.MINEBENTItems.*;
 import static com.mraof.minestuck.item.MSItemTypes.*;
 import static com.mraof.minestuck.item.MSItems.*;
 import static com.mraof.minestuck.util.MSTags.Items.*;
@@ -51,70 +52,70 @@ public class BENTItemTagsProvider extends ItemTagsProvider
 	@Override
 	protected void addTags(HolderLookup.Provider provider)
 	{
-		copy(BlockTags.PLANKS, PLANKS);
-		copy(BlockTags.STONE_BRICKS, STONE_BRICKS);
-		copy(BlockTags.WOODEN_BUTTONS, WOODEN_BUTTONS);
-		copy(BlockTags.BUTTONS, BUTTONS);
-		copy(BlockTags.WOODEN_STAIRS, WOODEN_STAIRS);
-		copy(BlockTags.WOODEN_SLABS, WOODEN_SLABS);
-		copy(BlockTags.SAPLINGS, SAPLINGS);
-		copy(BlockTags.STAIRS, STAIRS);
-		copy(BlockTags.SLABS, SLABS);
-		copy(BlockTags.LOGS, LOGS);
-		copy(BlockTags.LEAVES, LEAVES);
-		copy(Tags.Blocks.COBBLESTONES, COBBLESTONES);
-		copy(Tags.Blocks.ORES, ORES);
-		copy(BlockTags.COAL_ORES, ORES_COAL);
-		copy(BlockTags.DIAMOND_ORES, ORES_DIAMOND);
-		copy(BlockTags.GOLD_ORES, ORES_GOLD);
-		copy(BlockTags.IRON_ORES, ORES_IRON);
-		copy(BlockTags.LAPIS_ORES, ORES_LAPIS);
-		copy(Tags.Blocks.ORES_QUARTZ, ORES_QUARTZ);
-		copy(BlockTags.REDSTONE_ORES, ORES_REDSTONE);
-		copy(BlockTags.EMERALD_ORES, ORES_EMERALD);
-		copy(Tags.Blocks.STONES, STONES);
-		copy(Tags.Blocks.STORAGE_BLOCKS, STORAGE_BLOCKS);
-		copy(ExtraModTags.Blocks.URANIUM_ORES, ExtraModTags.Items.URANIUM_ORES);
-		copy(ExtraModTags.Blocks.URANIUM_STORAGE_BLOCKS, ExtraModTags.Items.URANIUM_STORAGE_BLOCKS);
-		copy(MSTags.Blocks.GLOWING_LOGS, GLOWING_LOGS);
-		copy(MSTags.Blocks.FROST_LOGS, FROST_LOGS);
-		copy(MSTags.Blocks.RAINBOW_LOGS, RAINBOW_LOGS);
-		copy(MSTags.Blocks.END_LOGS, END_LOGS);
-		copy(MSTags.Blocks.VINE_LOGS, VINE_LOGS);
-		copy(MSTags.Blocks.FLOWERY_VINE_LOGS, FLOWERY_VINE_LOGS);
-		copy(MSTags.Blocks.DEAD_LOGS, DEAD_LOGS);
-		copy(MSTags.Blocks.CINDERED_LOGS, CINDERED_LOGS);
-		copy(MSTags.Blocks.PETRIFIED_LOGS, PETRIFIED_LOGS);
-		copy(MSTags.Blocks.ASPECT_LOGS, ASPECT_LOGS);
-		copy(MSTags.Blocks.ASPECT_WOOD, ASPECT_WOOD);
-		copy(MSTags.Blocks.ASPECT_PLANKS, ASPECT_PLANKS);
-		copy(MSTags.Blocks.ASPECT_SLABS, ASPECT_SLABS);
-		copy(MSTags.Blocks.ASPECT_LEAVES, ASPECT_LEAVES);
-		copy(MSTags.Blocks.ASPECT_SAPLINGS, ASPECT_SAPLINGS);
-		copy(MSTags.Blocks.SHADEWOOD_LOGS, SHADEWOOD_LOGS);
-		copy(MSTags.Blocks.SHADEWOOD_LEAVES, MSTags.Items.SHADEWOOD_LEAVES);
-		copy(MSTags.Blocks.CRUXITE_ORES, CRUXITE_ORES);
-		copy(MSTags.Blocks.URANIUM_ORES, URANIUM_ORES);
-		copy(MSTags.Blocks.COAL_ORES, MSTags.Items.COAL_ORES);
-		copy(MSTags.Blocks.IRON_ORES, MSTags.Items.IRON_ORES);
-		copy(MSTags.Blocks.GOLD_ORES, MSTags.Items.GOLD_ORES);
-		copy(MSTags.Blocks.REDSTONE_ORES, MSTags.Items.REDSTONE_ORES);
-		copy(MSTags.Blocks.QUARTZ_ORES, QUARTZ_ORES);
-		copy(MSTags.Blocks.LAPIS_ORES, MSTags.Items.LAPIS_ORES);
-		copy(MSTags.Blocks.DIAMOND_ORES, MSTags.Items.DIAMOND_ORES);
-		copy(MSTags.Blocks.EMERALD_ORES, MSTags.Items.EMERALD_ORES);
-		copy(MSTags.Blocks.CRUXITE_STORAGE_BLOCKS, CRUXITE_STORAGE_BLOCKS);
+//		copy(BlockTags.PLANKS, PLANKS);
+//		copy(BlockTags.STONE_BRICKS, STONE_BRICKS);
+//		copy(BlockTags.WOODEN_BUTTONS, WOODEN_BUTTONS);
+//		copy(BlockTags.BUTTONS, BUTTONS);
+//		copy(BlockTags.WOODEN_STAIRS, WOODEN_STAIRS);
+//		copy(BlockTags.WOODEN_SLABS, WOODEN_SLABS);
+//		copy(BlockTags.SAPLINGS, SAPLINGS);
+//		copy(BlockTags.STAIRS, STAIRS);
+//		copy(BlockTags.SLABS, SLABS);
+//		copy(BlockTags.LOGS, LOGS);
+//		copy(BlockTags.LEAVES, LEAVES);
+//		copy(Tags.Blocks.COBBLESTONES, COBBLESTONES);
+//		copy(Tags.Blocks.ORES, ORES);
+//		copy(BlockTags.COAL_ORES, ORES_COAL);
+//		copy(BlockTags.DIAMOND_ORES, ORES_DIAMOND);
+//		copy(BlockTags.GOLD_ORES, ORES_GOLD);
+//		copy(BlockTags.IRON_ORES, ORES_IRON);
+//		copy(BlockTags.LAPIS_ORES, ORES_LAPIS);
+//		copy(Tags.Blocks.ORES_QUARTZ, ORES_QUARTZ);
+//		copy(BlockTags.REDSTONE_ORES, ORES_REDSTONE);
+//		copy(BlockTags.EMERALD_ORES, ORES_EMERALD);
+//		copy(Tags.Blocks.STONES, STONES);
+//		copy(Tags.Blocks.STORAGE_BLOCKS, STORAGE_BLOCKS);
+//		copy(ExtraModTags.Blocks.URANIUM_ORES, ExtraModTags.Items.URANIUM_ORES);
+//		copy(ExtraModTags.Blocks.URANIUM_STORAGE_BLOCKS, ExtraModTags.Items.URANIUM_STORAGE_BLOCKS);
+//		copy(MSTags.Blocks.GLOWING_LOGS, GLOWING_LOGS);
+//		copy(MSTags.Blocks.FROST_LOGS, FROST_LOGS);
+//		copy(MSTags.Blocks.RAINBOW_LOGS, RAINBOW_LOGS);
+//		copy(MSTags.Blocks.END_LOGS, END_LOGS);
+//		copy(MSTags.Blocks.VINE_LOGS, VINE_LOGS);
+//		copy(MSTags.Blocks.FLOWERY_VINE_LOGS, FLOWERY_VINE_LOGS);
+//		copy(MSTags.Blocks.DEAD_LOGS, DEAD_LOGS);
+//		copy(MSTags.Blocks.CINDERED_LOGS, CINDERED_LOGS);
+//		copy(MSTags.Blocks.PETRIFIED_LOGS, PETRIFIED_LOGS);
+//		copy(MSTags.Blocks.ASPECT_LOGS, ASPECT_LOGS);
+//		copy(MSTags.Blocks.ASPECT_WOOD, ASPECT_WOOD);
+//		copy(MSTags.Blocks.ASPECT_PLANKS, ASPECT_PLANKS);
+//		copy(MSTags.Blocks.ASPECT_SLABS, ASPECT_SLABS);
+//		copy(MSTags.Blocks.ASPECT_LEAVES, ASPECT_LEAVES);
+//		copy(MSTags.Blocks.ASPECT_SAPLINGS, ASPECT_SAPLINGS);
+//		copy(MSTags.Blocks.SHADEWOOD_LOGS, SHADEWOOD_LOGS);
+//		copy(MSTags.Blocks.SHADEWOOD_LEAVES, MSTags.Items.SHADEWOOD_LEAVES);
+//		copy(MSTags.Blocks.CRUXITE_ORES, CRUXITE_ORES);
+//		copy(MSTags.Blocks.URANIUM_ORES, URANIUM_ORES);
+//		copy(MSTags.Blocks.COAL_ORES, MSTags.Items.COAL_ORES);
+//		copy(MSTags.Blocks.IRON_ORES, MSTags.Items.IRON_ORES);
+//		copy(MSTags.Blocks.GOLD_ORES, MSTags.Items.GOLD_ORES);
+//		copy(MSTags.Blocks.REDSTONE_ORES, MSTags.Items.REDSTONE_ORES);
+//		copy(MSTags.Blocks.QUARTZ_ORES, QUARTZ_ORES);
+//		copy(MSTags.Blocks.LAPIS_ORES, MSTags.Items.LAPIS_ORES);
+//		copy(MSTags.Blocks.DIAMOND_ORES, MSTags.Items.DIAMOND_ORES);
+//		copy(MSTags.Blocks.EMERALD_ORES, MSTags.Items.EMERALD_ORES);
+//		copy(MSTags.Blocks.CRUXITE_STORAGE_BLOCKS, CRUXITE_STORAGE_BLOCKS);
 		
 		//handles items that are in tool types added by Minestuck which would otherwise not be added to relevant tags for weapons or tools
 		List<MSToolType> minestuckMiningToolTypes = List.of(SICKLE_TOOL, SCYTHE_TOOL, CLAWS_TOOL, HAMMER_TOOL, FORK_TOOL);
 		List<MSToolType> minestuckMeleeToolTypes = List.of(LANCE_TOOL, CLUB_TOOL, KNIFE_TOOL, KEY_TOOL, FAN_TOOL, BATON_TOOL, STAFF_TOOL, CANE_TOOL, WAND_TOOL);
 		List<MSToolType> minestuckToolTypes = Stream.concat(minestuckMiningToolTypes.stream(), minestuckMeleeToolTypes.stream()).toList();
 		
-		tag(SWORDS).add(EMERALD_SWORD.get()).add(relevantItems(item -> hasToolType(item, List.of(SWORD_TOOL))));
-		tag(AXES).add(EMERALD_AXE.get()).add(relevantItems(item -> hasToolType(item, List.of(AXE_TOOL, CHAINSAW_TOOL))));
-		tag(PICKAXES).add(EMERALD_PICKAXE.get()).add(relevantItems(item -> hasToolType(item, List.of(PICKAXE_TOOL))));
-		tag(SHOVELS).add(EMERALD_SHOVEL.get()).add(relevantItems(item -> hasToolType(item, List.of(SHOVEL_TOOL, SPOON_TOOL))));
-		tag(HOES).add(EMERALD_HOE.get(), HELLBRINGERS_HOE_INACTIVE.get(), HELLBRINGERS_HOE_ACTIVE.get());
+		tag(SWORDS).add(relevantItems(item -> hasToolType(item, List.of(SWORD_TOOL))));
+		tag(AXES).add(relevantItems(item -> hasToolType(item, List.of(AXE_TOOL, CHAINSAW_TOOL))));
+		tag(PICKAXES).add(relevantItems(item -> hasToolType(item, List.of(PICKAXE_TOOL))));
+		tag(SHOVELS).add(relevantItems(item -> hasToolType(item, List.of(SHOVEL_TOOL, SPOON_TOOL))));
+		tag(HOES).add(MIRTHFUL_HOE.get());
 		tag(HEAD_ARMOR).add(relevantItems(item -> isArmorType(item, ArmorItem.Type.HELMET)));
 		tag(CHEST_ARMOR).add(relevantItems(item -> isArmorType(item, ArmorItem.Type.CHESTPLATE)));
 		tag(LEG_ARMOR).add(relevantItems(item -> isArmorType(item, ArmorItem.Type.LEGGINGS)));
@@ -130,22 +131,20 @@ public class BENTItemTagsProvider extends ItemTagsProvider
 		tag(DURABILITY_ENCHANTABLE).add(relevantItems(item -> (item instanceof WeaponItem && item.isDamageable(item.getDefaultInstance())) || item instanceof ReturningProjectileWeaponItem));
 		tag(MINING_ENCHANTABLE).add(relevantItems(item -> hasToolType(item, minestuckMiningToolTypes)));
 		tag(MINING_LOOT_ENCHANTABLE).add(relevantItems(item -> hasToolType(item, minestuckMiningToolTypes)));
-		tag(SWORD_ENCHANTABLE).add(relevantItems(item -> item instanceof WeaponItem)); //TODO weapons without sweep can get sweeping edge
+		tag(SWORD_ENCHANTABLE).add(relevantItems(item -> item instanceof WeaponItem));
 		tag(SHARP_WEAPON_ENCHANTABLE).add(relevantItems(item -> item instanceof WeaponItem));
 		tag(VANISHING_ENCHANTABLE).add(relevantItems(item -> item instanceof WeaponItem));
 		
-		tag(Tags.Items.MUSIC_DISCS).add(MUSIC_DISC_DANCE_STAB_DANCE.get(), MUSIC_DISC_EMISSARY_OF_DANCE.get(), MUSIC_DISC_RETRO_BATTLE.get());
-		
-		tag(MSTags.Items.FAYGO).add(MINEBENTItems.MIRTHFUL_ESSENCE.get());
-		tag(CASSETTES).add(MSItems.CASSETTE_MELLOHI.get(), CASSETTE_13.get(), CASSETTE_BLOCKS.get());
-        tag(MINEBENTTags.Items.TROLL_BLOOD).add(MINEBENTItems.RUST_BLOOD.get(), MINEBENTItems.BRONZE_BLOOD.get(), MINEBENTItems.GOLD_BLOOD.get(),MINEBENTItems.LIME_BLOOD.get(),
-                MINEBENTItems.OLIVE_BLOOD.get(), MINEBENTItems.JADE_BLOOD.get(), MINEBENTItems.TEAL_BLOOD.get(),MINEBENTItems.BLUE_BLOOD.get(),
-                MINEBENTItems.INDIGO_BLOOD.get(), MINEBENTItems.PURPLE_BLOOD.get(), MINEBENTItems.VIOLET_BLOOD.get(),MINEBENTItems.FUCHSIA_BLOOD.get());
-		tag(BUGS).addTag(MINEBENTTags.Items.BUG_MEAT);
-		tag(MINEBENTTags.Items.ALTERNIAN_RELIC).add(MINEBENTItems.AHABS_CROSSHAIRS.get()).add(FLUORITE_OCTET.get());
-		tag(MAGIC_WEAPON).add(relevantItems(item ->
-				item instanceof WeaponItem weapon && (weapon.getItemRightClickEffect() instanceof MagicRangedRightClickEffect || weapon.getItemRightClickEffect() instanceof MagicAOERightClickEffect)));
-		tag(LEGENDARY).add(relevantItems(item -> item instanceof WeaponItem weapon && (weapon.getTier() == DENIZEN_TIER || weapon.getTier() == ZILLY_TIER || weapon.getTier() == WELSH_TIER)));
+//		tag(Tags.Items.MUSIC_DISCS).add(MUSIC_DISC_MEGALOVANIA_SHARKMIX.get(), MUSIC_DISC_KNIGHT_RUSH.get(), MUSIC_DISC_BLACK_METAL.get());
+//      tag(CASSETTES).add(MSItems.CASSETTE_MEGALOVANIA_SHARKMIX.get(), CASSETTE_KNIGHT_RUSH.get(), CASSETTE_BLACK_METAL.get());
+
+        tag(MINEBENTTags.Items.TROLL_BLOOD).add(RUST_BLOOD.get(), BRONZE_BLOOD.get(), GOLD_BLOOD.get(),LIME_BLOOD.get(),
+                OLIVE_BLOOD.get(), JADE_BLOOD.get(), TEAL_BLOOD.get(),BLUE_BLOOD.get(),
+                INDIGO_BLOOD.get(), PURPLE_BLOOD.get(), VIOLET_BLOOD.get(),FUCHSIA_BLOOD.get());
+		tag(BUGS).add(SMALL_GRUB.get()).add(COOKED_SMALL_GRUB.get()).add(BIG_GRUB.get()).add(COOKED_BIG_GRUB.get()).add(BUG_MEAT.get()).add(COOKED_BUG_MEAT.get());
+		tag(MINEBENTTags.Items.ALTERNIAN_RELIC).add(AHABS_CROSSHAIRS.get()).add(FLUORITE_OCTET.get());
+		tag(MAGIC_WEAPON).add(EMPIRICISTS_WAND.get());
+		tag(LEGENDARY).add(AHABS_CROSSHAIRS.get()).add(EMPIRICISTS_WAND.get()).add(CHERUB_KEY.get());
 	}
 	
 	private static Item[] relevantItems(Predicate<Item> predicate)

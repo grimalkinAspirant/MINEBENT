@@ -24,6 +24,7 @@ public class MINEBENTEnUsLanguageProvider extends MinestuckLanguageProvider
         addItem(MINEBENTItems.MIRTHFUL_SCRIPTURES, "Mirthful Scriptures");
         addItem(MINEBENTItems.RUBY, "Ruby");
         addItem(MINEBENTItems.TROLL_HORN, "Troll Horn");
+        addItem(MINEBENTItems.CANDY_BLOOD, "Bottle of Blood");
         addItem(MINEBENTItems.RUST_BLOOD, "Rust Blood");
         addItem(MINEBENTItems.BRONZE_BLOOD, "Bronze Blood");
         addItem(MINEBENTItems.GOLD_BLOOD, "Gold Blood");
@@ -212,7 +213,7 @@ public class MINEBENTEnUsLanguageProvider extends MinestuckLanguageProvider
         addBlock(MINEBENTBlocks.POLISHED_RED_STONE_WALL, "Polished Red Stone Wall");
         addBlock(MINEBENTBlocks.RED_STONE_BRICKS, "Red Stone Bricks");
         addBlock(MINEBENTBlocks.RED_STONE_BRICK_WALL, "Red Stone Brick Wall");
-        //addBlock(MINEBENTBlocks.RED_STONE_COLUMN, "Red Stone Column");
+        addBlock(MINEBENTBlocks.RED_STONE_COLUMN, "Red Stone Column");
         addBlock(MINEBENTBlocks.CHISELED_RED_STONE_BRICKS, "Chiseled Red Stone Bricks");
         addBlock(MINEBENTBlocks.HORIZONTAL_RED_STONE_BRICKS, "Horizontal Red Stone Bricks");
         addBlock(MINEBENTBlocks.HORIZONTAL_RED_STONE_BRICK_STAIRS, "Horizontal Red Stone Brick Stairs");
@@ -250,7 +251,7 @@ public class MINEBENTEnUsLanguageProvider extends MinestuckLanguageProvider
         addBlock(MINEBENTBlocks.POLISHED_BLUE_STONE_WALL, "Polished Blue Stone Wall");
         addBlock(MINEBENTBlocks.BLUE_STONE_BRICKS, "Blue Stone Bricks");
         addBlock(MINEBENTBlocks.BLUE_STONE_BRICK_WALL, "Blue Stone Brick Wall");
-        //addBlock(MINEBENTBlocks.BLUE_STONE_COLUMN, "Blue Stone Column");
+        addBlock(MINEBENTBlocks.BLUE_STONE_COLUMN, "Blue Stone Column");
         addBlock(MINEBENTBlocks.CHISELED_BLUE_STONE_BRICKS, "Chiseled Blue Stone Bricks");
         addBlock(MINEBENTBlocks.HORIZONTAL_BLUE_STONE_BRICKS, "Horizontal Blue Stone Bricks");
         addBlock(MINEBENTBlocks.HORIZONTAL_BLUE_STONE_BRICK_STAIRS, "Horizontal Blue Stone Brick Stairs");

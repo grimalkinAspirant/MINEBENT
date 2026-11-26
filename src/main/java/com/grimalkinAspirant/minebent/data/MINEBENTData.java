@@ -38,7 +38,6 @@ public final class MINEBENTData {
 
         gen.addProvider(event.includeClient(), new BENTBlockstateProvider(output, fileHelper));
         gen.addProvider(event.includeServer(), new BENTItemTagsProvider(output, event.getLookupProvider(), blockTags.contentsGetter(), fileHelper));
-        gen.addProvider(event.includeServer(), new BENTBlockTagsProvider(output, event.getLookupProvider(), fileHelper));
         gen.addProvider(event.includeServer(), new BENTRecipeProvider(output, event.getLookupProvider()));
         gen.addProvider(event.includeClient(), new BENTItemModelProvider(output, fileHelper));
         var enUsLanguageProvider = gen.addProvider(event.includeClient(), new MINEBENTEnUsLanguageProvider(output));

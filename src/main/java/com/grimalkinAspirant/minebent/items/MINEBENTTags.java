@@ -86,7 +86,6 @@ public class MINEBENTTags
 	public static class Items
 	{
         public static final TagKey<Item> TROLL_BLOOD = tag("troll_blood");
-        public static final TagKey<Item> BUG_MEAT = tag("bug_meat");
         public static final TagKey<Item> ALTERNIAN_RELIC = tag("alternian_relic");
 
 		private static TagKey<Item> tag(String name)

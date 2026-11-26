@@ -65,7 +65,7 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		tag(MINEABLE_WITH_HAMMER).addTags(MINEABLE_WITH_PICKAXE);
 		tag(MINEABLE_WITH_CHAINSAW).addTags(MINEABLE_WITH_AXE);
 		tag(MINEABLE_WITH_FORK).addTags(Tags.Blocks.STORAGE_BLOCKS_WHEAT);
-		tag(MINEABLE_WITH_SPOON).addTags(MINEABLE_WITH_SHOVEL); //TODO make spoons mine cake
+		tag(MINEABLE_WITH_SPOON).addTags(MINEABLE_WITH_SHOVEL);
 
 		tag(DIRT).add(BLUE_DIRT.get());
 		tag(PLANKS).add(GLOWING_PLANKS.get(), SHADEWOOD_PLANKS.get(), FROST_PLANKS.get(), RAINBOW_PLANKS.get(), END_PLANKS.get(), DEAD_PLANKS.get(), CARVED_PLANKS.get(), TREATED_PLANKS.get(), LACQUERED_PLANKS.get(), CINDERED_PLANKS.get());

@@ -1,18 +1,19 @@
 package com.grimalkinAspirant.minebent.data;
 
 import com.grimalkinAspirant.minebent.MINEBENT;
+import com.grimalkinAspirant.minebent.items.MINEBENTBlocks;
 import com.grimalkinAspirant.minebent.items.MINEBENTItems;
-import com.mraof.minestuck.Minestuck;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import com.mraof.minestuck.data.MinestuckItemModelProvider;
 
+import java.util.Objects;
 import java.util.function.Supplier;
 
 public class BENTItemModelProvider extends ItemModelProvider{
@@ -112,32 +113,79 @@ public class BENTItemModelProvider extends ItemModelProvider{
         basicItem(MINEBENTItems.FUCHSIA_BLOOD.get());
 
         //Blocks
-
-        //You Get The Point
-    }
-
-    ItemModelBuilder simpleItem(Supplier<? extends Item> item)
-    {
-        return simpleItem(item, id(item).getPath());
-    }
-
-    private ItemModelBuilder simpleItem(Supplier<? extends Item> item, String textureName)
-    {
-        return withExistingParent(id(item).getPath(),
-                ResourceLocation.withDefaultNamespace("item/generated"))
-                .texture("layer0", texture(textureName));
-    }
-
-    private ItemModelBuilder handheldItem(Supplier<? extends Item> item)
-    {
-        return handheldItem(item, id(item).getPath());
-    }
-
-    private ItemModelBuilder handheldItem(Supplier<? extends Item> item, String textureName)
-    {
-        return withExistingParent(id(item).getPath(),
-                ResourceLocation.withDefaultNamespace("item/handheld"))
-                .texture("layer0", texture(textureName));
+        simpleBlockItem(MINEBENTBlocks.RUBY_BLOCK.get());
+        simpleBlockItem(MINEBENTBlocks.FELTSTONE.get());
+        simpleBlockItem(MINEBENTBlocks.CARNIVAL_GROUND.get());
+        simpleBlockItem(MINEBENTBlocks.COBBLED_TROLLSTONE.get());
+        simpleBlockItem(MINEBENTBlocks.TROLLSTONE.get());
+        simpleBlockItem(MINEBENTBlocks.TROLLSTONE_BRICKS.get());
+        simpleBlockItem(MINEBENTBlocks.CRACKED_TROLLSTONE_BRICKS.get());
+        simpleBlockItem(MINEBENTBlocks.CHISELED_TROLLSTONE_BRICKS.get());
+        simpleBlockItem(MINEBENTBlocks.MOSSY_COBBLED_TROLLSTONE.get());
+        simpleBlockItem(MINEBENTBlocks.MOSSY_TROLLSTONE_BRICKS.get());
+        simpleBlockItem(MINEBENTBlocks.TROLLSLATE.get());
+        simpleBlockItem(MINEBENTBlocks.POLISHED_TROLLSLATE.get());
+        simpleBlockItem(MINEBENTBlocks.COBBLED_TROLLSLATE.get());
+        simpleBlockItem(MINEBENTBlocks.TROLLSLATE_BRICKS.get());
+        simpleBlockItem(MINEBENTBlocks.TROLLSLATE_TILES.get());
+        simpleBlockItem(MINEBENTBlocks.CRACKED_TROLLSLATE_BRICKS.get());
+        simpleBlockItem(MINEBENTBlocks.CRACKED_TROLLSLATE_TILES.get());
+        simpleBlockItem(MINEBENTBlocks.CHISELED_TROLLSLATE.get());
+        simpleBlockItem(MINEBENTBlocks.FLUSHDESITE.get());
+        simpleBlockItem(MINEBENTBlocks.POLISHED_FLUSHDESITE.get());
+        simpleBlockItem(MINEBENTBlocks.ASHENITE.get());
+        simpleBlockItem(MINEBENTBlocks.POLISHED_ASHENITE.get());
+        simpleBlockItem(MINEBENTBlocks.BROODSTONE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSTONE_COAL_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSTONE_COPPER_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSTONE_IRON_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSTONE_REDSTONE_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSTONE_GOLD_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSTONE_LAPIS_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSTONE_DIAMOND_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSTONE_QUARTZ_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSTONE_URANIUM_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSTONE_RUBY_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSLATE_COAL_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSLATE_COPPER_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSLATE_IRON_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSLATE_REDSTONE_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSLATE_GOLD_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSLATE_LAPIS_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSLATE_DIAMOND_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSLATE_URANIUM_ORE.get());
+//        simpleBlockItem(MINEBENTBlocks.TROLLSLATE_RUBY_ORE.get());
+        simpleBlockItem(MINEBENTBlocks.RED_STONE.get());
+        simpleBlockItem(MINEBENTBlocks.RED_STONE_COLUMN.get());
+        simpleBlockItem(MINEBENTBlocks.POLISHED_RED_STONE.get());
+        simpleBlockItem(MINEBENTBlocks.RED_STONE_BRICKS.get());
+        simpleBlockItem(MINEBENTBlocks.CHISELED_RED_STONE_BRICKS.get());
+        simpleBlockItem(MINEBENTBlocks.HORIZONTAL_RED_STONE_BRICKS.get());
+        simpleBlockItem(MINEBENTBlocks.VERTICAL_RED_STONE_BRICKS.get());
+        simpleBlockItem(MINEBENTBlocks.RED_STONE_BRICK_FROG.get());
+        simpleBlockItem(MINEBENTBlocks.RED_STONE_BRICK_IGUANA_LEFT.get());
+        simpleBlockItem(MINEBENTBlocks.RED_STONE_BRICK_IGUANA_RIGHT.get());
+        simpleBlockItem(MINEBENTBlocks.RED_STONE_BRICK_LOTUS.get());
+        simpleBlockItem(MINEBENTBlocks.RED_STONE_BRICK_NAK_LEFT.get());
+        simpleBlockItem(MINEBENTBlocks.RED_STONE_BRICK_NAK_RIGHT.get());
+        simpleBlockItem(MINEBENTBlocks.RED_STONE_BRICK_SKAIA.get());
+        simpleBlockItem(MINEBENTBlocks.RED_STONE_BRICK_TURTLE.get());
+        simpleBlockItem(MINEBENTBlocks.RED_STONE_COLUMN.get());
+        simpleBlockItem(MINEBENTBlocks.BLUE_STONE.get());
+        simpleBlockItem(MINEBENTBlocks.POLISHED_BLUE_STONE.get());
+        simpleBlockItem(MINEBENTBlocks.BLUE_STONE_BRICKS.get());
+        simpleBlockItem(MINEBENTBlocks.CHISELED_BLUE_STONE_BRICKS.get());
+        simpleBlockItem(MINEBENTBlocks.HORIZONTAL_BLUE_STONE_BRICKS.get());
+        simpleBlockItem(MINEBENTBlocks.VERTICAL_BLUE_STONE_BRICKS.get());
+        simpleBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_FROG.get());
+        simpleBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_IGUANA_LEFT.get());
+        simpleBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_IGUANA_RIGHT.get());
+        simpleBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_LOTUS.get());
+        simpleBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_NAK_LEFT.get());
+        simpleBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_NAK_RIGHT.get());
+        simpleBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_SKAIA.get());
+        simpleBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_TURTLE.get());
+        simpleBlockItem(MINEBENTBlocks.BLUE_STONE_COLUMN.get());
     }
 
     /**
@@ -148,17 +196,6 @@ public class BENTItemModelProvider extends ItemModelProvider{
         String name = id(item).getPath();
         return withExistingParent(name,
                 id("item/claw_weapon"))
-                .texture("layer0", texture(name));
-    }
-
-    /**
-     * Generates a model positioned for weapons with the handle in the top right corner of the texture.
-     */
-    private ItemModelBuilder knifeWeapon(Supplier<? extends Item> item)
-    {
-        String name = id(item).getPath();
-        return withExistingParent(name,
-                id("item/knife_weapon"))
                 .texture("layer0", texture(name));
     }
 
@@ -174,16 +211,6 @@ public class BENTItemModelProvider extends ItemModelProvider{
                 .texture("layer0", texture(name));
     }
 
-    /**
-     * Generated a model that is larger than other weapons when in hand.
-     */
-    private ItemModelBuilder largeWeapon(Supplier<? extends Item> item)
-    {
-        String name = id(item).getPath();
-        return withExistingParent(name,
-                id("item/large_weapon"))
-                .texture("layer0", texture(name));
-    }
     private static ResourceLocation texture(String path)
     {
         return id(ModelProvider.ITEM_FOLDER + "/" + path);

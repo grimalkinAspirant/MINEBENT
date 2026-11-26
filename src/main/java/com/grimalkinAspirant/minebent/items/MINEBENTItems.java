@@ -15,17 +15,10 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
-import net.minecraft.world.level.material.MapColor;
-import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import static com.grimalkinAspirant.minebent.MINEBENT.BLOCKS;
 import static com.mraof.minestuck.item.MSItems.registerBlockItem;
-import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.ofFullCopy;
 
 public class MINEBENTItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MINEBENT.MODID);
@@ -42,6 +35,8 @@ public class MINEBENTItems {
     public static final DeferredItem<Item> RUBY = ITEMS.register("ruby",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> TROLL_HORN = ITEMS.register("troll_horn",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CANDY_BLOOD = ITEMS.register("candy_blood",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> RUST_BLOOD = ITEMS.register("rust_blood",
             () -> new Item(new Item.Properties()));
@@ -219,8 +214,8 @@ public class MINEBENTItems {
     public static final DeferredItem<ArmorItem> MIRTHFUL_BOOTS = ITEMS.register("mirthful_boots",
             () -> new ArmorItem(MINEBENTMaterials.MIRTHFUL_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(42))));
-    public static final DeferredItem<ArmorItem> SUNHAT = ITEMS.register("sunhat",
-            () -> new ArmorItem(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,
+    public static final DeferredItem<MSArmorItem> SUNHAT = ITEMS.register("sunhat",
+            () -> new MSArmorItem(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(0))));
     public static final DeferredItem<ArmorItem> CONE_HORNS = ITEMS.register("cone_horns",
             () -> new ArmorItem(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET,

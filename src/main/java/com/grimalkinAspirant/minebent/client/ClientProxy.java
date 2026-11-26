@@ -33,13 +33,16 @@ public class ClientProxy {
 
         ArmorModels.register(MINEBENTItems.ROCKET_PACK.get(), new HumanoidModel<>(RocketPack.createBodyLayer().bakeRoot()));
         ArmorModels.register(MINEBENTItems.DRAGON_PACK.get(), new HumanoidModel<>(DragonPack.createBodyLayer().bakeRoot()));
+        ArmorModels.register(MINEBENTItems.SUNHAT.get(), new HumanoidModel<>(Sunhat.createBodyLayer().bakeRoot()));
     }
 
     @SubscribeEvent
     private static void registerExtensions(RegisterClientExtensionsEvent event){
         for(DeferredItem<MSArmorItem> armorItem: Arrays.asList(
                 MINEBENTItems.ROCKET_PACK,
-                MINEBENTItems.DRAGON_PACK)
+                MINEBENTItems.DRAGON_PACK,
+                MINEBENTItems.SUNHAT
+        )
         ){
             event.registerItem(new IClientItemExtensions()
             {

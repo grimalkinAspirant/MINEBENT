@@ -1,28 +1,12 @@
 package com.grimalkinAspirant.minebent.items;
 
-import com.grimalkinAspirant.minebent.MINEBENT;
-import com.grimalkinAspirant.minebent.datagen.BENTDirectionalBlock;
-import com.grimalkinAspirant.minebent.datagen.BENTDragonArmorFly;
-import com.grimalkinAspirant.minebent.datagen.BENTMagicRangedRightClickEffect;
-import com.grimalkinAspirant.minebent.datagen.BENTRocketArmorFly;
 import com.mraof.minestuck.block.*;
-import com.mraof.minestuck.item.MSItemProperties;
-import com.mraof.minestuck.item.MSItemTypes;
-import com.mraof.minestuck.item.MSItems;
-import com.mraof.minestuck.item.armor.MSArmorItem;
-import com.mraof.minestuck.item.weapon.*;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
 
 import static com.grimalkinAspirant.minebent.MINEBENT.BLOCKS;
 import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.ofFullCopy;
@@ -31,13 +15,12 @@ import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of
 public class MINEBENTBlocks {
 
     public static final DeferredBlock<Block> CHERUB_PORTAL = BLOCKS.registerSimpleBlock("cherub_portal", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    public static final DeferredBlock<Block> RUBY_BLOCK = BLOCKS.registerSimpleBlock("ruby_block", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED));
-    public static final DeferredBlock<Block> RULERSTONE = BLOCKS.registerSimpleBlock("rulerstone", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK));
+    public static final DeferredBlock<Block> RUBY_BLOCK = BLOCKS.register("ruby_block",() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED)));
     public static final DeferredBlock<Block> FELTSTONE = BLOCKS.registerSimpleBlock("feltstone", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GREEN));
-    public static final DeferredBlock<Block> CARNIVAL_GROUND = BLOCKS.registerSimpleBlock("carnival_ground", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE));
+    public static final DeferredBlock<Block> CARNIVAL_GROUND = BLOCKS.register("carnival_ground", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE)));
 
     // Natural Blocks & Derivatives
-    public static final DeferredBlock<Block> TROLLSTONE = BLOCKS.registerSimpleBlock("trollstone", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<Block> TROLLSTONE = BLOCKS.register("trollstone",() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
     public static final DeferredBlock<StairBlock> TROLLSTONE_STAIRS = BLOCKS.register("trollstone_stairs", () -> new StairBlock(TROLLSTONE.get().defaultBlockState(), ofFullCopy(TROLLSTONE.get())));
     public static final DeferredBlock<SlabBlock> TROLLSTONE_SLAB = BLOCKS.register("trollstone_slab", () -> new SlabBlock(ofFullCopy(TROLLSTONE.get())));
     public static final DeferredBlock<ButtonBlock> TROLLSTONE_BUTTON = BLOCKS.register("trollstone_button", () -> new ButtonBlock(BlockSetType.STONE, 10, ofFullCopy(TROLLSTONE.get()).noCollission()));
@@ -58,7 +41,7 @@ public class MINEBENTBlocks {
     public static final DeferredBlock<Block> MOSSY_COBBLED_TROLLSTONE = BLOCKS.registerSimpleBlock("mossy_cobbled_trollstone", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
     public static final DeferredBlock<Block> MOSSY_TROLLSTONE_BRICKS = BLOCKS.registerSimpleBlock("mossy_trollstone_bricks", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
 
-    public static final DeferredBlock<Block> TROLLSLATE = BLOCKS.registerSimpleBlock("trollslate", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    public static final DeferredBlock<RotatedPillarBlock> TROLLSLATE = BLOCKS.register("trollslate", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
     public static final DeferredBlock<StairBlock> TROLLSLATE_STAIRS = BLOCKS.register("trollslate_stairs", () -> new StairBlock(TROLLSLATE.get().defaultBlockState(), ofFullCopy(TROLLSLATE.get())));
     public static final DeferredBlock<SlabBlock> TROLLSLATE_SLAB = BLOCKS.register("trollslate_slab", () -> new SlabBlock(ofFullCopy(TROLLSLATE.get())));
     public static final DeferredBlock<ButtonBlock> TROLLSLATE_BUTTON = BLOCKS.register("trollslate_button", () -> new ButtonBlock(BlockSetType.STONE, 10, ofFullCopy(TROLLSLATE.get()).noCollission()));
@@ -158,7 +141,7 @@ public class MINEBENTBlocks {
     public static final DeferredBlock<StairBlock> RED_STONE_BRICK_STAIRS = BLOCKS.register("red_stone_brick_stairs", () -> new StairBlock(RED_STONE_BRICKS.get().defaultBlockState(), ofFullCopy(RED_STONE_BRICKS.get())));
     public static final DeferredBlock<SlabBlock> RED_STONE_BRICK_SLAB = BLOCKS.register("red_stone_brick_slab", () -> new SlabBlock(ofFullCopy(RED_STONE_BRICKS.get())));
     public static final DeferredBlock<WallBlock> RED_STONE_BRICK_WALL = BLOCKS.register("red_stone_brick_wall", () -> new WallBlock(ofFullCopy(RED_STONE_BRICKS.get())));
-    //    public static final DeferredBlock<Block> RED_STONE_COLUMN = BLOCKS.register("red_stone_column", () -> new RotatedPillarBlock(ofFullCopy(RED_STONE.get())));
+    public static final DeferredBlock<RotatedPillarBlock> RED_STONE_COLUMN = BLOCKS.register("red_stone_column", () -> new RotatedPillarBlock(ofFullCopy(RED_STONE.get())));
     public static final DeferredBlock<Block> CHISELED_RED_STONE_BRICKS = BLOCKS.register("chiseled_red_stone_bricks", () -> new Block(ofFullCopy(RED_STONE_BRICKS.get())));
     public static final DeferredBlock<Block> HORIZONTAL_RED_STONE_BRICKS = BLOCKS.register("horizontal_red_stone_bricks", () -> new Block(ofFullCopy(RED_STONE_BRICKS.get())));
     public static final DeferredBlock<StairBlock> HORIZONTAL_RED_STONE_BRICK_STAIRS = BLOCKS.register("horizontal_red_stone_brick_stairs", () -> new StairBlock(HORIZONTAL_RED_STONE_BRICKS.get().defaultBlockState(), ofFullCopy(HORIZONTAL_RED_STONE_BRICKS.get())));
@@ -169,7 +152,7 @@ public class MINEBENTBlocks {
     public static final DeferredBlock<SlabBlock> VERTICAL_RED_STONE_BRICK_SLAB = BLOCKS.register("vertical_red_stone_brick_slab", () -> new SlabBlock(ofFullCopy(VERTICAL_RED_STONE_BRICKS.get())));
     public static final DeferredBlock<WallBlock> VERTICAL_RED_STONE_BRICK_WALL = BLOCKS.register("vertical_red_stone_brick_wall", () -> new WallBlock(ofFullCopy(VERTICAL_RED_STONE_BRICKS.get())));
     public static final DeferredBlock<Block> RED_STONE_BRICK_EMBEDDED_LADDER = BLOCKS.register("red_stone_brick_embedded_ladder", () -> new CustomShapeBlock(ofFullCopy(RED_STONE_BRICKS.get()), MSBlockShapes.EMBEDDED_STAIRS)); //uses the tag CLIMBABLE
-    //    public static final DeferredBlock<Block> RED_STONE_BRICK_TRIM = BLOCKS.register("red_stone_brick_trim", () -> new RotatedPillarBlock(ofFullCopy(RED_STONE_BRICKS.get())));
+    public static final DeferredBlock<Block> RED_STONE_BRICK_TRIM = BLOCKS.register("red_stone_brick_trim", () -> new RotatedPillarBlock(ofFullCopy(RED_STONE_BRICKS.get())));
     public static final DeferredBlock<Block> RED_STONE_BRICK_FROG = BLOCKS.register("red_stone_brick_frog", () -> new HieroglyphBlock(ofFullCopy(RED_STONE_BRICKS.get())));
     public static final DeferredBlock<Block> RED_STONE_BRICK_IGUANA_LEFT = BLOCKS.register("red_stone_brick_iguana_left", () -> new HieroglyphBlock(ofFullCopy(RED_STONE_BRICKS.get())));
     public static final DeferredBlock<Block> RED_STONE_BRICK_IGUANA_RIGHT = BLOCKS.register("red_stone_brick_iguana_right", () -> new HieroglyphBlock(ofFullCopy(RED_STONE_BRICKS.get())));
@@ -196,7 +179,7 @@ public class MINEBENTBlocks {
     public static final DeferredBlock<StairBlock> BLUE_STONE_BRICK_STAIRS = BLOCKS.register("blue_stone_brick_stairs", () -> new StairBlock(BLUE_STONE_BRICKS.get().defaultBlockState(), ofFullCopy(BLUE_STONE_BRICKS.get())));
     public static final DeferredBlock<SlabBlock> BLUE_STONE_BRICK_SLAB = BLOCKS.register("blue_stone_brick_slab", () -> new SlabBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
     public static final DeferredBlock<WallBlock> BLUE_STONE_BRICK_WALL = BLOCKS.register("blue_stone_brick_wall", () -> new WallBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
-    //    public static final DeferredBlock<Block> BLUE_STONE_COLUMN = BLOCKS.register("blue_stone_column", () -> new RotatedPillarBlock(ofFullCopy(BLUE_STONE.get())));
+    public static final DeferredBlock<RotatedPillarBlock> BLUE_STONE_COLUMN = BLOCKS.register("blue_stone_column", () -> new RotatedPillarBlock(ofFullCopy(BLUE_STONE.get())));
     public static final DeferredBlock<Block> CHISELED_BLUE_STONE_BRICKS = BLOCKS.register("chiseled_blue_stone_bricks", () -> new Block(ofFullCopy(BLUE_STONE_BRICKS.get())));
     public static final DeferredBlock<Block> HORIZONTAL_BLUE_STONE_BRICKS = BLOCKS.register("horizontal_blue_stone_bricks", () -> new Block(ofFullCopy(BLUE_STONE_BRICKS.get())));
     public static final DeferredBlock<StairBlock> HORIZONTAL_BLUE_STONE_BRICK_STAIRS = BLOCKS.register("horizontal_blue_stone_brick_stairs", () -> new StairBlock(HORIZONTAL_BLUE_STONE_BRICKS.get().defaultBlockState(), ofFullCopy(HORIZONTAL_BLUE_STONE_BRICKS.get())));
@@ -207,7 +190,7 @@ public class MINEBENTBlocks {
     public static final DeferredBlock<SlabBlock> VERTICAL_BLUE_STONE_BRICK_SLAB = BLOCKS.register("vertical_blue_stone_brick_slab", () -> new SlabBlock(ofFullCopy(VERTICAL_BLUE_STONE_BRICKS.get())));
     public static final DeferredBlock<WallBlock> VERTICAL_BLUE_STONE_BRICK_WALL = BLOCKS.register("vertical_blue_stone_brick_wall", () -> new WallBlock(ofFullCopy(VERTICAL_BLUE_STONE_BRICKS.get())));
     public static final DeferredBlock<Block> BLUE_STONE_BRICK_EMBEDDED_LADDER = BLOCKS.register("blue_stone_brick_embedded_ladder", () -> new CustomShapeBlock(ofFullCopy(BLUE_STONE_BRICKS.get()), MSBlockShapes.EMBEDDED_STAIRS)); //uses the tag CLIMBABLE
-    //    public static final DeferredBlock<Block> BLUE_STONE_BRICK_TRIM = BLOCKS.register("blue_stone_brick_trim", () -> new RotatedPillarBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
+    public static final DeferredBlock<Block> BLUE_STONE_BRICK_TRIM = BLOCKS.register("blue_stone_brick_trim", () -> new RotatedPillarBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
     public static final DeferredBlock<Block> BLUE_STONE_BRICK_FROG = BLOCKS.register("blue_stone_brick_frog", () -> new HieroglyphBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
     public static final DeferredBlock<Block> BLUE_STONE_BRICK_IGUANA_LEFT = BLOCKS.register("blue_stone_brick_iguana_left", () -> new HieroglyphBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
     public static final DeferredBlock<Block> BLUE_STONE_BRICK_IGUANA_RIGHT = BLOCKS.register("blue_stone_brick_iguana_right", () -> new HieroglyphBlock(ofFullCopy(BLUE_STONE_BRICKS.get())));
