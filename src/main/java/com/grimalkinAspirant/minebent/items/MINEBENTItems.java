@@ -15,13 +15,22 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import static com.mraof.minestuck.item.MSItems.registerBlockItem;
+import java.util.function.Function;
 
 public class MINEBENTItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MINEBENT.MODID);
+
+    public static DeferredItem<BlockItem> registerBlockItem(DeferredBlock<?> block) {
+        return registerBlockItem(block, block1 -> new BlockItem(block1, new Item.Properties()));
+    }
+
+    public static DeferredItem<BlockItem> registerBlockItem(DeferredBlock<?> block, Function<Block, ? extends BlockItem> function) {
+        return ITEMS.register(block.getId().getPath(), () -> function.apply(block.get()));
+    }
 
     // Misc
     public static final DeferredItem<Item> TROLLLOGO_FAKEITEM = ITEMS.register("trolllogo_fakeitem",
@@ -329,7 +338,7 @@ public class MINEBENTItems {
     public static final DeferredItem<BlockItem> RED_STONE_BRICK_STAIRS = registerBlockItem(MINEBENTBlocks.RED_STONE_BRICK_STAIRS);
     public static final DeferredItem<BlockItem> RED_STONE_BRICK_SLAB = registerBlockItem(MINEBENTBlocks.RED_STONE_BRICK_SLAB);
     public static final DeferredItem<BlockItem> RED_STONE_BRICK_WALL = registerBlockItem(MINEBENTBlocks.RED_STONE_BRICK_WALL);
-    //    public static final DeferredItem<BlockItem> RED_STONE_COLUMN = registerBlockItem(MINEBENTBlocks.RED_STONE_COLUMN);
+    public static final DeferredItem<BlockItem> RED_STONE_COLUMN = registerBlockItem(MINEBENTBlocks.RED_STONE_COLUMN);
     public static final DeferredItem<BlockItem> CHISELED_RED_STONE_BRICKS = registerBlockItem(MINEBENTBlocks.CHISELED_RED_STONE_BRICKS);
     public static final DeferredItem<BlockItem> HORIZONTAL_RED_STONE_BRICKS = registerBlockItem(MINEBENTBlocks.HORIZONTAL_RED_STONE_BRICKS);
     public static final DeferredItem<BlockItem> HORIZONTAL_RED_STONE_BRICK_STAIRS = registerBlockItem(MINEBENTBlocks.HORIZONTAL_RED_STONE_BRICK_STAIRS);
@@ -340,17 +349,12 @@ public class MINEBENTItems {
     public static final DeferredItem<BlockItem> VERTICAL_RED_STONE_BRICK_SLAB = registerBlockItem(MINEBENTBlocks.VERTICAL_RED_STONE_BRICK_SLAB);
     public static final DeferredItem<BlockItem> VERTICAL_RED_STONE_BRICK_WALL = registerBlockItem(MINEBENTBlocks.VERTICAL_RED_STONE_BRICK_WALL);
     public static final DeferredItem<BlockItem> RED_STONE_BRICK_EMBEDDED_LADDER = registerBlockItem(MINEBENTBlocks.RED_STONE_BRICK_EMBEDDED_LADDER);
-    //    public static final DeferredItem<BlockItem> RED_STONE_BRICK_TRIM = registerBlockItem(MINEBENTBlocks.RED_STONE_BRICK_TRIM);
+    public static final DeferredItem<BlockItem> RED_STONE_BRICK_TRIM = registerBlockItem(MINEBENTBlocks.RED_STONE_BRICK_TRIM);
     public static final DeferredItem<BlockItem> RED_STONE_BRICK_FROG = registerBlockItem(MINEBENTBlocks.RED_STONE_BRICK_FROG);
-    public static final DeferredItem<BlockItem> RED_STONE_BRICK_IGUANA_LEFT = registerBlockItem(MINEBENTBlocks.RED_STONE_BRICK_IGUANA_LEFT);
-    public static final DeferredItem<BlockItem> RED_STONE_BRICK_IGUANA_RIGHT = registerBlockItem(MINEBENTBlocks.RED_STONE_BRICK_IGUANA_RIGHT);
     public static final DeferredItem<BlockItem> RED_STONE_BRICK_LOTUS = registerBlockItem(MINEBENTBlocks.RED_STONE_BRICK_LOTUS);
     public static final DeferredItem<BlockItem> RED_STONE_BRICK_NAK_LEFT = registerBlockItem(MINEBENTBlocks.RED_STONE_BRICK_NAK_LEFT);
     public static final DeferredItem<BlockItem> RED_STONE_BRICK_NAK_RIGHT = registerBlockItem(MINEBENTBlocks.RED_STONE_BRICK_NAK_RIGHT);
-    public static final DeferredItem<BlockItem> RED_STONE_BRICK_SALAMANDER_LEFT = registerBlockItem(MINEBENTBlocks.RED_STONE_BRICK_SALAMANDER_LEFT);
-    public static final DeferredItem<BlockItem> RED_STONE_BRICK_SALAMANDER_RIGHT = registerBlockItem(MINEBENTBlocks.RED_STONE_BRICK_SALAMANDER_RIGHT);
     public static final DeferredItem<BlockItem> RED_STONE_BRICK_SKAIA = registerBlockItem(MINEBENTBlocks.RED_STONE_BRICK_SKAIA);
-    public static final DeferredItem<BlockItem> RED_STONE_BRICK_TURTLE = registerBlockItem(MINEBENTBlocks.RED_STONE_BRICK_TURTLE);
     public static final DeferredItem<BlockItem> STEEP_RED_STONE_BRICK_STAIRS_BASE = registerBlockItem(MINEBENTBlocks.STEEP_RED_STONE_BRICK_STAIRS_BASE);
     public static final DeferredItem<BlockItem> STEEP_RED_STONE_BRICK_STAIRS_TOP = registerBlockItem(MINEBENTBlocks.STEEP_RED_STONE_BRICK_STAIRS_TOP);
     public static final DeferredItem<BlockItem> BLUE_STONE = registerBlockItem(MINEBENTBlocks.BLUE_STONE);
@@ -367,7 +371,7 @@ public class MINEBENTItems {
     public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_STAIRS = registerBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_STAIRS);
     public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_SLAB = registerBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_SLAB);
     public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_WALL = registerBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_WALL);
-    //    public static final DeferredItem<BlockItem> BLUE_STONE_COLUMN = registerBlockItem(MINEBENTBlocks.BLUE_STONE_COLUMN);
+    public static final DeferredItem<BlockItem> BLUE_STONE_COLUMN = registerBlockItem(MINEBENTBlocks.BLUE_STONE_COLUMN);
     public static final DeferredItem<BlockItem> CHISELED_BLUE_STONE_BRICKS = registerBlockItem(MINEBENTBlocks.CHISELED_BLUE_STONE_BRICKS);
     public static final DeferredItem<BlockItem> HORIZONTAL_BLUE_STONE_BRICKS = registerBlockItem(MINEBENTBlocks.HORIZONTAL_BLUE_STONE_BRICKS);
     public static final DeferredItem<BlockItem> HORIZONTAL_BLUE_STONE_BRICK_STAIRS = registerBlockItem(MINEBENTBlocks.HORIZONTAL_BLUE_STONE_BRICK_STAIRS);
@@ -378,16 +382,11 @@ public class MINEBENTItems {
     public static final DeferredItem<BlockItem> VERTICAL_BLUE_STONE_BRICK_SLAB = registerBlockItem(MINEBENTBlocks.VERTICAL_BLUE_STONE_BRICK_SLAB);
     public static final DeferredItem<BlockItem> VERTICAL_BLUE_STONE_BRICK_WALL = registerBlockItem(MINEBENTBlocks.VERTICAL_BLUE_STONE_BRICK_WALL);
     public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_EMBEDDED_LADDER = registerBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_EMBEDDED_LADDER);
-    //    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_TRIM = registerBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_TRIM);
-    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_FROG = registerBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_FROG);
+    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_TRIM = registerBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_TRIM);
     public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_IGUANA_LEFT = registerBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_IGUANA_LEFT);
     public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_IGUANA_RIGHT = registerBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_IGUANA_RIGHT);
-    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_LOTUS = registerBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_LOTUS);
-    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_NAK_LEFT = registerBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_NAK_LEFT);
-    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_NAK_RIGHT = registerBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_NAK_RIGHT);
     public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_SALAMANDER_LEFT = registerBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_SALAMANDER_LEFT);
     public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_SALAMANDER_RIGHT = registerBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_SALAMANDER_RIGHT);
-    public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_SKAIA = registerBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_SKAIA);
     public static final DeferredItem<BlockItem> BLUE_STONE_BRICK_TURTLE = registerBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_TURTLE);
     public static final DeferredItem<BlockItem> STEEP_BLUE_STONE_BRICK_STAIRS_BASE = registerBlockItem(MINEBENTBlocks.STEEP_BLUE_STONE_BRICK_STAIRS_BASE);
     public static final DeferredItem<BlockItem> STEEP_BLUE_STONE_BRICK_STAIRS_TOP = registerBlockItem(MINEBENTBlocks.STEEP_BLUE_STONE_BRICK_STAIRS_TOP);

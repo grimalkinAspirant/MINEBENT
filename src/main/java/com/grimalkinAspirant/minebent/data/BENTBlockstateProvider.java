@@ -2,14 +2,23 @@ package com.grimalkinAspirant.minebent.data;
 
 import com.grimalkinAspirant.minebent.MINEBENT;
 import com.grimalkinAspirant.minebent.items.MINEBENTBlocks;
+import com.grimalkinAspirant.minebent.items.MINEBENTItems;
+import com.mraof.minestuck.block.MSBlocks;
+import com.mraof.minestuck.block.MSProperties;
+import com.mraof.minestuck.data.MSBlockStateProvider;
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.Property;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 import static net.minecraft.client.gui.components.ImageWidget.texture;
@@ -115,6 +124,27 @@ public class BENTBlockstateProvider extends BlockStateProvider {
         stairsWithItem(MINEBENTBlocks.POLISHED_ASHENITE_STAIRS, MINEBENTBlocks.POLISHED_ASHENITE);
         slabWithItem(MINEBENTBlocks.POLISHED_ASHENITE_SLAB, MINEBENTBlocks.POLISHED_ASHENITE);
 
+        simpleBlock(MINEBENTBlocks.TROLLSTONE_COAL_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSTONE_COPPER_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSTONE_IRON_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSTONE_REDSTONE_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSTONE_GOLD_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSTONE_LAPIS_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSTONE_DIAMOND_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSTONE_QUARTZ_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSTONE_CRUXITE_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSTONE_URANIUM_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSTONE_RUBY_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSLATE_COAL_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSLATE_COPPER_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSLATE_IRON_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSLATE_REDSTONE_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSLATE_GOLD_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSLATE_LAPIS_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSLATE_DIAMOND_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSLATE_URANIUM_ORE.get());
+        simpleBlock(MINEBENTBlocks.TROLLSLATE_RUBY_ORE.get());
+
         simpleBlock(MINEBENTBlocks.RED_STONE.get());
         wallWithItem(MINEBENTBlocks.RED_STONE_WALL, MINEBENTBlocks.RED_STONE);
         buttonWithItem(MINEBENTBlocks.RED_STONE_BUTTON, MINEBENTBlocks.RED_STONE);
@@ -129,6 +159,7 @@ public class BENTBlockstateProvider extends BlockStateProvider {
         wallWithItem(MINEBENTBlocks.RED_STONE_BRICK_WALL, MINEBENTBlocks.RED_STONE_BRICKS);
 
         logBlock(MINEBENTBlocks.RED_STONE_COLUMN.get());
+        logBlock(MINEBENTBlocks.RED_STONE_BRICK_TRIM.get());
         simpleBlock(MINEBENTBlocks.CHISELED_RED_STONE_BRICKS.get());
 
         simpleBlock(MINEBENTBlocks.HORIZONTAL_RED_STONE_BRICKS.get());
@@ -141,8 +172,6 @@ public class BENTBlockstateProvider extends BlockStateProvider {
         slabWithItem(MINEBENTBlocks.VERTICAL_RED_STONE_BRICK_SLAB, MINEBENTBlocks.VERTICAL_RED_STONE_BRICKS);
         wallWithItem(MINEBENTBlocks.VERTICAL_RED_STONE_BRICK_WALL, MINEBENTBlocks.VERTICAL_RED_STONE_BRICKS);
 
-//        simpleHorizontalWithItem(MINEBENTBlocks.RED_STONE_BRICK_EMBEDDED_LADDER,
-//                id -> models().getExistingFile(id));
 //        trimWithItem(MINEBENTBlocks.RED_STONE_BRICK_TRIM,
 //                id -> models().cubeColumn(
 //                        id.getPath(),
@@ -153,16 +182,21 @@ public class BENTBlockstateProvider extends BlockStateProvider {
 //                        texture(id.withSuffix("_flipped")),
 //                        texture("red_stone_bricks")));
 
+        simpleHorizontalWithItem(MINEBENTBlocks.RED_STONE_BRICK_EMBEDDED_LADDER,
+                id -> models().getExistingFile(id));
+        simpleHorizontalWithItem(MINEBENTBlocks.STEEP_RED_STONE_BRICK_STAIRS_BASE, this::existing);
+        simpleHorizontalWithItem(MINEBENTBlocks.STEEP_RED_STONE_BRICK_STAIRS_TOP, this::existing);
+
+        stairsWithItem(MINEBENTBlocks.RED_STONE_STAIRS, MINEBENTBlocks.RED_STONE);
+        stairsWithItem(MINEBENTBlocks.RED_STONE_BRICK_STAIRS, MINEBENTBlocks.RED_STONE_BRICKS);
+        slabWithItem(MINEBENTBlocks.RED_STONE_SLAB, MINEBENTBlocks.RED_STONE);
+        slabWithItem(MINEBENTBlocks.RED_STONE_BRICK_SLAB, MINEBENTBlocks.RED_STONE_BRICKS);
+
         simpleBlock(MINEBENTBlocks.RED_STONE_BRICK_FROG.get());
-        simpleBlock(MINEBENTBlocks.RED_STONE_BRICK_IGUANA_LEFT.get());
-        simpleBlock(MINEBENTBlocks.RED_STONE_BRICK_IGUANA_RIGHT.get());
         simpleBlock(MINEBENTBlocks.RED_STONE_BRICK_LOTUS.get());
         simpleBlock(MINEBENTBlocks.RED_STONE_BRICK_NAK_LEFT.get());
         simpleBlock(MINEBENTBlocks.RED_STONE_BRICK_NAK_RIGHT.get());
-        simpleBlock(MINEBENTBlocks.RED_STONE_BRICK_SALAMANDER_LEFT.get());
-        simpleBlock(MINEBENTBlocks.RED_STONE_BRICK_SALAMANDER_RIGHT.get());
         simpleBlock(MINEBENTBlocks.RED_STONE_BRICK_SKAIA.get());
-        simpleBlock(MINEBENTBlocks.RED_STONE_BRICK_TURTLE.get());
 
         simpleBlock(MINEBENTBlocks.BLUE_STONE.get());
         wallWithItem(MINEBENTBlocks.BLUE_STONE_WALL, MINEBENTBlocks.BLUE_STONE);
@@ -178,6 +212,7 @@ public class BENTBlockstateProvider extends BlockStateProvider {
         wallWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_WALL, MINEBENTBlocks.BLUE_STONE_BRICKS);
 
         logBlock(MINEBENTBlocks.BLUE_STONE_COLUMN.get());
+        logBlock(MINEBENTBlocks.BLUE_STONE_BRICK_TRIM.get());
         simpleBlock(MINEBENTBlocks.CHISELED_BLUE_STONE_BRICKS.get());
 
         simpleBlock(MINEBENTBlocks.HORIZONTAL_BLUE_STONE_BRICKS.get());
@@ -201,17 +236,26 @@ public class BENTBlockstateProvider extends BlockStateProvider {
 //                        id.withSuffix("_flipped").getPath(),
 //                        texture(id.withSuffix("_flipped")),
 //                        texture("blue_stone_bricks")));
-        simpleBlock(MINEBENTBlocks.BLUE_STONE_BRICK_FROG.get());
         simpleBlock(MINEBENTBlocks.BLUE_STONE_BRICK_IGUANA_LEFT.get());
         simpleBlock(MINEBENTBlocks.BLUE_STONE_BRICK_IGUANA_RIGHT.get());
-        simpleBlock(MINEBENTBlocks.BLUE_STONE_BRICK_LOTUS.get());
-        simpleBlock(MINEBENTBlocks.BLUE_STONE_BRICK_NAK_LEFT.get());
-        simpleBlock(MINEBENTBlocks.BLUE_STONE_BRICK_NAK_RIGHT.get());
         simpleBlock(MINEBENTBlocks.BLUE_STONE_BRICK_SALAMANDER_LEFT.get());
         simpleBlock(MINEBENTBlocks.BLUE_STONE_BRICK_SALAMANDER_RIGHT.get());
-        simpleBlock(MINEBENTBlocks.BLUE_STONE_BRICK_SKAIA.get());
         simpleBlock(MINEBENTBlocks.BLUE_STONE_BRICK_TURTLE.get());
 
+        stairsWithItem(MINEBENTBlocks.BLUE_STONE_STAIRS, MINEBENTBlocks.BLUE_STONE);
+        stairsWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_STAIRS, MINEBENTBlocks.BLUE_STONE_BRICKS);
+        slabWithItem(MINEBENTBlocks.BLUE_STONE_SLAB, MINEBENTBlocks.BLUE_STONE);
+        slabWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_SLAB, MINEBENTBlocks.BLUE_STONE_BRICKS);
+
+        simpleHorizontalWithItem(MINEBENTBlocks.BLUE_STONE_BRICK_EMBEDDED_LADDER,
+                id -> models().getExistingFile(id));
+        simpleHorizontalWithItem(MINEBENTBlocks.STEEP_BLUE_STONE_BRICK_STAIRS_BASE, this::existing);
+        simpleHorizontalWithItem(MINEBENTBlocks.STEEP_BLUE_STONE_BRICK_STAIRS_TOP, this::existing);
+    }
+
+    private ModelFile existing(ResourceLocation id)
+    {
+        return this.models().getExistingFile(id);
     }
 
     public void pressurePlateWithItem(Supplier<PressurePlateBlock> block, DeferredBlock<?> sourceBlock)
@@ -264,7 +308,22 @@ public class BENTBlockstateProvider extends BlockStateProvider {
         simpleBlockItem(block.get(), slabBottom);
     }
 
-
+    void trimWithItem(DeferredBlock<?> block, Function<ResourceLocation, ModelFile> modelProvider, Function<ResourceLocation, ModelFile> flippedModelProvider)
+    {
+        var model = modelProvider.apply(block.getId());
+        var flippedModel = flippedModelProvider.apply(block.getId());
+        getVariantBuilder(block.get())
+                .forAllStates(state -> {
+                    Direction dir = state.getValue(BlockStateProperties.FACING);
+                    return ConfiguredModel.builder()
+                            .modelFile(dir == Direction.DOWN || dir == Direction.SOUTH || dir == Direction.WEST
+                                    ? flippedModel : model)
+                            .rotationX(dir.getAxis().isHorizontal() ? 90 : 0)
+                            .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + 180) % 360)
+                            .build();
+                });
+        simpleBlockItem(block.get(), model);
+    }
 
     public void stairsWithItem(Supplier<StairBlock> block, DeferredBlock<?> sourceBlock){
         stairsWithItem(block, sourceBlock.getId().getPath(), blockTexture(sourceBlock.get()));
@@ -280,6 +339,48 @@ public class BENTBlockstateProvider extends BlockStateProvider {
         ModelFile stairsOuter = models().stairsOuter(baseName +"_outer_stairs", side, bottom, top);
         stairsBlock(block.get(), stairs, stairsInner, stairsOuter);
         simpleBlockItem(block.get(), stairs);
+    }
+
+    public void simpleHorizontal(DeferredBlock<?> block, Function<ResourceLocation, ModelFile> modelProvider)
+    {
+        simpleHorizontal(block, 180, modelProvider);
+    }
+
+    private void simpleHorizontal(DeferredBlock<?> block, int angleOffset, Function<ResourceLocation, ModelFile> modelProvider)
+    {
+        var model = modelProvider.apply(block.getId());
+        horizontal(block, angleOffset, $ -> model, BlockStateProperties.WATERLOGGED, MSProperties.MACHINE_TOGGLE, BlockStateProperties.POWERED, BlockStateProperties.POWER);
+    }
+
+    private void horizontal(DeferredBlock<?> block, Function<BlockState, ModelFile> modelProvider, Property<?>... ignored)
+    {
+        horizontal(block, 180, modelProvider, ignored);
+    }
+
+    private void horizontal(DeferredBlock<?> block, int angleOffset, Function<BlockState, ModelFile> modelProvider, Property<?>... ignored)
+    {
+        getVariantBuilder(block.get())
+                .forAllStatesExcept(state -> ConfiguredModel.builder()
+                                .modelFile(modelProvider.apply(state))
+                                .rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + angleOffset) % 360)
+                                .build(),
+                        ignored
+                );
+    }
+
+    private void simpleHorizontalWithItem(DeferredBlock<?> block, Function<ResourceLocation, ModelFile> modelProvider)
+    {
+        var model = modelProvider.apply(block.getId());
+        simpleHorizontal(block, $ -> model);
+        simpleBlockItem(block.get(), model);
+    }
+
+    @SuppressWarnings("SameParameterValue")
+    private void simpleHorizontalWithItem(DeferredBlock<?> block, int angleOffset, Function<ResourceLocation, ModelFile> modelProvider)
+    {
+        var model = modelProvider.apply(block.getId());
+        simpleHorizontal(block, angleOffset, $ -> model);
+        simpleBlockItem(block.get(), model);
     }
 
     public static ResourceLocation id(String path)

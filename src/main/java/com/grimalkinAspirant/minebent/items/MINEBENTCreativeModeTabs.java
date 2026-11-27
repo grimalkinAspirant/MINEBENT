@@ -39,6 +39,7 @@ public class MINEBENTCreativeModeTabs {
                         output.accept(MINEBENTItems.ROCKET_PACK);
                         output.accept(MINEBENTItems.DRAGON_PACK);
 
+                        output.accept(MINEBENTItems.CANDY_BLOOD);
                         output.accept(MINEBENTItems.RUST_BLOOD);
                         output.accept(MINEBENTItems.BRONZE_BLOOD);
                         output.accept(MINEBENTItems.GOLD_BLOOD);
@@ -108,8 +109,6 @@ public class MINEBENTCreativeModeTabs {
 
                          output.accept(MINEBENTItems.CHERUB_PORTAL);
                          output.accept(MINEBENTItems.RUBY_BLOCK);
-                         output.accept(MINEBENTItems.FELTSTONE);
-                         output.accept(MINEBENTItems.CARNIVAL_GROUND);
                          output.accept(MINEBENTItems.TROLLSTONE);
                          output.accept(MINEBENTItems.TROLLSTONE_STAIRS);
                          output.accept(MINEBENTItems.TROLLSTONE_SLAB);
@@ -214,7 +213,7 @@ public class MINEBENTCreativeModeTabs {
                          output.accept(MINEBENTItems.RED_STONE_BRICK_STAIRS);
                          output.accept(MINEBENTItems.RED_STONE_BRICK_SLAB);
                          output.accept(MINEBENTItems.RED_STONE_BRICK_WALL);
-                        //     output.accept(MINEBENTItems.RED_STONE_COLUMN);
+                         output.accept(MINEBENTItems.RED_STONE_COLUMN);
                          output.accept(MINEBENTItems.CHISELED_RED_STONE_BRICKS);
                          output.accept(MINEBENTItems.HORIZONTAL_RED_STONE_BRICKS);
                          output.accept(MINEBENTItems.HORIZONTAL_RED_STONE_BRICK_STAIRS);
@@ -225,19 +224,15 @@ public class MINEBENTCreativeModeTabs {
                          output.accept(MINEBENTItems.VERTICAL_RED_STONE_BRICK_SLAB);
                          output.accept(MINEBENTItems.VERTICAL_RED_STONE_BRICK_WALL);
                          output.accept(MINEBENTItems.RED_STONE_BRICK_EMBEDDED_LADDER);
-                        //     output.accept(MINEBENTItems.RED_STONE_BRICK_TRIM);
+                         output.accept(MINEBENTItems.RED_STONE_BRICK_TRIM);
                          output.accept(MINEBENTItems.RED_STONE_BRICK_FROG);
-                         output.accept(MINEBENTItems.RED_STONE_BRICK_IGUANA_LEFT);
-                         output.accept(MINEBENTItems.RED_STONE_BRICK_IGUANA_RIGHT);
                          output.accept(MINEBENTItems.RED_STONE_BRICK_LOTUS);
                          output.accept(MINEBENTItems.RED_STONE_BRICK_NAK_LEFT);
                          output.accept(MINEBENTItems.RED_STONE_BRICK_NAK_RIGHT);
-                         output.accept(MINEBENTItems.RED_STONE_BRICK_SALAMANDER_LEFT);
-                         output.accept(MINEBENTItems.RED_STONE_BRICK_SALAMANDER_RIGHT);
                          output.accept(MINEBENTItems.RED_STONE_BRICK_SKAIA);
-                         output.accept(MINEBENTItems.RED_STONE_BRICK_TURTLE);
                          output.accept(MINEBENTItems.STEEP_RED_STONE_BRICK_STAIRS_BASE);
                          output.accept(MINEBENTItems.STEEP_RED_STONE_BRICK_STAIRS_TOP);
+                         output.accept(MINEBENTItems.RED_STONE_BRICK_TRIM);
                          output.accept(MINEBENTItems.BLUE_STONE);
                          output.accept(MINEBENTItems.BLUE_STONE_STAIRS);
                          output.accept(MINEBENTItems.BLUE_STONE_SLAB);
@@ -252,7 +247,7 @@ public class MINEBENTCreativeModeTabs {
                          output.accept(MINEBENTItems.BLUE_STONE_BRICK_STAIRS);
                          output.accept(MINEBENTItems.BLUE_STONE_BRICK_SLAB);
                          output.accept(MINEBENTItems.BLUE_STONE_BRICK_WALL);
-//                         output.accept(MINEBENTItems.BLUE_STONE_COLUMN);
+                         output.accept(MINEBENTItems.BLUE_STONE_COLUMN);
                          output.accept(MINEBENTItems.CHISELED_BLUE_STONE_BRICKS);
                          output.accept(MINEBENTItems.HORIZONTAL_BLUE_STONE_BRICKS);
                          output.accept(MINEBENTItems.HORIZONTAL_BLUE_STONE_BRICK_STAIRS);
@@ -263,19 +258,15 @@ public class MINEBENTCreativeModeTabs {
                          output.accept(MINEBENTItems.VERTICAL_BLUE_STONE_BRICK_SLAB);
                          output.accept(MINEBENTItems.VERTICAL_BLUE_STONE_BRICK_WALL);
                          output.accept(MINEBENTItems.BLUE_STONE_BRICK_EMBEDDED_LADDER);
-//                         output.accept(MINEBENTItems.BLUE_STONE_BRICK_TRIM);
-                         output.accept(MINEBENTItems.BLUE_STONE_BRICK_FROG);
+                         output.accept(MINEBENTItems.BLUE_STONE_BRICK_TRIM);
                          output.accept(MINEBENTItems.BLUE_STONE_BRICK_IGUANA_LEFT);
                          output.accept(MINEBENTItems.BLUE_STONE_BRICK_IGUANA_RIGHT);
-                         output.accept(MINEBENTItems.BLUE_STONE_BRICK_LOTUS);
-                         output.accept(MINEBENTItems.BLUE_STONE_BRICK_NAK_LEFT);
-                         output.accept(MINEBENTItems.BLUE_STONE_BRICK_NAK_RIGHT);
                          output.accept(MINEBENTItems.BLUE_STONE_BRICK_SALAMANDER_LEFT);
                          output.accept(MINEBENTItems.BLUE_STONE_BRICK_SALAMANDER_RIGHT);
-                         output.accept(MINEBENTItems.BLUE_STONE_BRICK_SKAIA);
                          output.accept(MINEBENTItems.BLUE_STONE_BRICK_TURTLE);
                          output.accept(MINEBENTItems.STEEP_BLUE_STONE_BRICK_STAIRS_BASE);
                          output.accept(MINEBENTItems.STEEP_BLUE_STONE_BRICK_STAIRS_TOP);
+                         output.accept(MINEBENTItems.BLUE_STONE_BRICK_TRIM);
                     })
                     .build());
 

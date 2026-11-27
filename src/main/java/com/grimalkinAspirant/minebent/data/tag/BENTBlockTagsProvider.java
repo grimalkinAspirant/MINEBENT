@@ -1,6 +1,7 @@
 package com.grimalkinAspirant.minebent.data.tag;
 
 import com.grimalkinAspirant.minebent.MINEBENT;
+import com.grimalkinAspirant.minebent.items.MINEBENTItems;
 import com.mraof.minestuck.Minestuck;
 import com.mraof.minestuck.block.MSBlocks;
 import com.mraof.minestuck.block.plant.FlammableLogBlock;
@@ -25,6 +26,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
+import static com.grimalkinAspirant.minebent.items.MINEBENTBlocks.*;
 import static com.mraof.minestuck.block.MSBlocks.*;
 import static com.mraof.minestuck.util.MSTags.Blocks.*;
 import static net.minecraft.tags.BlockTags.*;
@@ -300,7 +302,6 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		tag(CINDERED_LOGS).add(CINDERED_LOG.get(), CINDERED_WOOD.get(), STRIPPED_CINDERED_LOG.get(), STRIPPED_CINDERED_WOOD.get());
 		tag(PETRIFIED_LOGS).add(PETRIFIED_LOG.get(), PETRIFIED_WOOD.get());
 		tag(SHADEWOOD_LOGS).add(SHADEWOOD_LOG.get(), SHADEWOOD.get(), STRIPPED_SHADEWOOD_LOG.get(), STRIPPED_SHADEWOOD.get(), SCARRED_SHADEWOOD_LOG.get(), SCARRED_SHADEWOOD.get(), STRIPPED_SCARRED_SHADEWOOD_LOG.get(), STRIPPED_SCARRED_SHADEWOOD.get(), ROTTED_SHADEWOOD_LOG.get(), ROTTED_SHADEWOOD.get(), STRIPPED_ROTTED_SHADEWOOD_LOG.get(), STRIPPED_ROTTED_SHADEWOOD.get());
-		tag(MSTags.Blocks.SHADEWOOD_LEAVES).add(MSBlocks.SHADEWOOD_LEAVES.get(), SHROOMY_SHADEWOOD_LEAVES.get());
 		tag(CRUXITE_ORES).add(STONE_CRUXITE_ORE.get(), NETHERRACK_CRUXITE_ORE.get(), COBBLESTONE_CRUXITE_ORE.get(), SANDSTONE_CRUXITE_ORE.get(), RED_SANDSTONE_CRUXITE_ORE.get(), END_STONE_CRUXITE_ORE.get(), PINK_STONE_CRUXITE_ORE.get(), SHADE_STONE_CRUXITE_ORE.get(), MYCELIUM_STONE_CRUXITE_ORE.get(), UNCARVED_WOOD_CRUXITE_ORE.get(), BLACK_STONE_CRUXITE_ORE.get());
 		tag(URANIUM_ORES).add(STONE_URANIUM_ORE.get(), DEEPSLATE_URANIUM_ORE.get(), NETHERRACK_URANIUM_ORE.get(), COBBLESTONE_URANIUM_ORE.get(), SANDSTONE_URANIUM_ORE.get(), RED_SANDSTONE_URANIUM_ORE.get(), END_STONE_URANIUM_ORE.get(), PINK_STONE_URANIUM_ORE.get(), SHADE_STONE_URANIUM_ORE.get(), MYCELIUM_STONE_URANIUM_ORE.get(), UNCARVED_WOOD_URANIUM_ORE.get(), BLACK_STONE_URANIUM_ORE.get());
 		tag(MSTags.Blocks.COAL_ORES).add(NETHERRACK_COAL_ORE.get(), SHADE_STONE_COAL_ORE.get(), PINK_STONE_COAL_ORE.get());
@@ -315,17 +316,15 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		tag(END_SAPLING_DIRT).addTag(Tags.Blocks.END_STONES).add(END_GRASS.get());
 
 		tag(WALLS).add(relevantBlocks(block -> block instanceof WallBlock));
-		tag(FENCES).add(relevantBlocks(block -> block instanceof FenceBlock));
-		tag(WOODEN_FENCES).add(PERFECTLY_GENERIC_FENCE.get(), GLOWING_FENCE.get(), UNCARVED_WOOD_FENCE.get(), CHIPBOARD_FENCE.get(), CARVED_FENCE.get(), TREATED_UNCARVED_WOOD_FENCE.get(),
-				TREATED_CHIPBOARD_FENCE.get(), TREATED_FENCE.get(), LACQUERED_UNCARVED_WOOD_FENCE.get(), LACQUERED_CHIPBOARD_FENCE.get(), LACQUERED_FENCE.get(), FROST_FENCE.get(),
-				RAINBOW_FENCE.get(), END_FENCE.get(), DEAD_FENCE.get(), SHADEWOOD_FENCE.get(), CINDERED_FENCE.get());
-		tag(FENCE_GATES).add(relevantBlocks(block -> block instanceof FenceGateBlock));
-		tag(PRESSURE_PLATES).add(relevantBlocks(block -> block instanceof PressurePlateBlock));
-		tag(WOODEN_DOORS).add(CARVED_DOOR.get(), CINDERED_DOOR.get(), DEAD_DOOR.get(), END_DOOR.get(), FROST_DOOR.get(), GLOWING_DOOR.get(), LACQUERED_DOOR.get(), RAINBOW_DOOR.get(), SHADEWOOD_DOOR.get(), TREATED_DOOR.get());
-		tag(DOORS).add(relevantBlocks(block -> block instanceof DoorBlock));
-		tag(WOODEN_TRAPDOORS).add(CARVED_TRAPDOOR.get(), CINDERED_TRAPDOOR.get(), DEAD_TRAPDOOR.get(), END_TRAPDOOR.get(), FROST_TRAPDOOR.get(), GLOWING_TRAPDOOR.get(), LACQUERED_TRAPDOOR.get(), RAINBOW_TRAPDOOR.get(), SHADEWOOD_TRAPDOOR.get(), TREATED_TRAPDOOR.get());
-		tag(TRAPDOORS).add(relevantBlocks(block -> block instanceof TrapDoorBlock));
-		tag(SIGNS).add(relevantBlocks(block -> block instanceof SignBlock));
+//		tag(FENCES).add(relevantBlocks(block -> block instanceof FenceBlock));
+//		tag(WOODEN_FENCES).add(PERFECTLY_GENERIC_FENCE.get());
+//		tag(FENCE_GATES).add(relevantBlocks(block -> block instanceof FenceGateBlock));
+		tag(PRESSURE_PLATES).add(TROLLSLATE_PRESSURE_PLATE.get(), TROLLSTONE_PRESSURE_PLATE.get(), BLUE_STONE_PRESSURE_PLATE.get(), RED_STONE_PRESSURE_PLATE.get());
+//		tag(WOODEN_DOORS).add(CARVED_DOOR.get());
+//		tag(DOORS).add(relevantBlocks(block -> block instanceof DoorBlock));
+//		tag(WOODEN_TRAPDOORS).add(CARVED_TRAPDOOR.get());
+//		tag(TRAPDOORS).add(relevantBlocks(block -> block instanceof TrapDoorBlock));
+//		tag(SIGNS).add(relevantBlocks(block -> block instanceof SignBlock));
 
 		tag(ROTATOR_WHITELISTED).add(Blocks.REPEATER, Blocks.COMPARATOR, AND_GATE_BLOCK.get(), OR_GATE_BLOCK.get(), XOR_GATE_BLOCK.get(), NAND_GATE_BLOCK.get(), NOR_GATE_BLOCK.get(), XNOR_GATE_BLOCK.get(), AREA_EFFECT_BLOCK.get(), WIRELESS_REDSTONE_TRANSMITTER.get(), REMOTE_COMPARATOR.get(), PLATFORM_GENERATOR.get(), ITEM_MAGNET.get());
 		tag(PLATFORM_ABSORBING).addTag(Tags.Blocks.OBSIDIANS).add(Blocks.BEDROCK, Blocks.NETHER_PORTAL, Blocks.END_PORTAL, Blocks.END_PORTAL_FRAME, Blocks.REINFORCED_DEEPSLATE, PUSHABLE_BLOCK.get()); //excludes Platform Receptacle blocks as they only absorb conditionally
@@ -378,10 +377,10 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		}
 	}
 
-	private static Block[] relevantBlocks(Predicate<Block> predicate)
-	{
-		return MSBlocks.REGISTER.getEntries().stream().map(Supplier::get).filter(predicate).toArray(Block[]::new);
-	}
+    private static Block[] relevantBlocks(Predicate<Block> predicate)
+    {
+        return MSBlocks.REGISTER.getEntries().stream().map(Supplier::get).filter(predicate).toArray(Block[]::new);
+    }
 
 	@Override
 	public String getName()
