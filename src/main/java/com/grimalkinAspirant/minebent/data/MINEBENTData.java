@@ -4,7 +4,6 @@ import com.grimalkinAspirant.minebent.MINEBENT;
 import com.grimalkinAspirant.minebent.data.recipe.BENTRecipeProvider;
 import com.grimalkinAspirant.minebent.data.tag.BENTBlockTagsProvider;
 import com.grimalkinAspirant.minebent.data.tag.BENTItemTagsProvider;
-import com.grimalkinAspirant.minebent.datagen.BENTArmorTrimMaterials;
 import com.mraof.minestuck.data.MinestuckEnUsLanguageProvider;
 import com.mraof.minestuck.data.dialogue.*;
 import com.mraof.minestuck.data.tag.MinestuckBlockTagsProvider;
@@ -60,7 +59,7 @@ public final class MINEBENTData {
 
     private static RegistrySetBuilder registrySetBuilder()
     {
-        return new RegistrySetBuilder()
-                .add(Registries.TRIM_MATERIAL, BENTArmorTrimMaterials::bootstrap);
+        return new RegistrySetBuilder();
+                //.add(Registries.TRIM_MATERIAL, BENTArmorTrimMaterials::bootstrap);
     }
 }

@@ -19,6 +19,8 @@ public class MINEBENTEnUsLanguageProvider extends MinestuckLanguageProvider
 	protected void addTranslations()
 	{
         addItem(MINEBENTItems.TROLLLOGO_FAKEITEM, "Trollian");
+        addItem(MINEBENTItems.SGRUB_CODE, "Sgrub Code");
+        addItem(MINEBENTItems.COMPLETED_SGRUB_CODE, "Sgrub Code");
         addItem(MINEBENTItems.CHITIN, "Chitin");
         addItem(MINEBENTItems.MIRTHFUL_ESSENCE, "Mirthful Essence");
         addItem(MINEBENTItems.MIRTHFUL_SCRIPTURES, "Mirthful Scriptures");

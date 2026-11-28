@@ -1,11 +1,14 @@
 package com.grimalkinAspirant.minebent.data.loot_tables;
 
 import com.grimalkinAspirant.minebent.items.MINEBENTBlocks;
+import static com.grimalkinAspirant.minebent.items.MINEBENTBlocks.*;
+import com.grimalkinAspirant.minebent.items.MINEBENTItems;
 import com.mraof.minestuck.item.MSItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
@@ -26,28 +29,50 @@ public class BENTBlockLoot extends BlockLootSubProvider {
     @Override
     protected void generate() {
 
-        dropSelf(MINEBENTBlocks.RUBY_BLOCK.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_COAL_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_COPPER_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_IRON_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_GOLD_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_REDSTONE_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_LAPIS_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_DIAMOND_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_RUBY_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_QUARTZ_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_CRUXITE_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE_URANIUM_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSTONE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_COAL_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_COPPER_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_IRON_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_GOLD_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_REDSTONE_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_LAPIS_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_DIAMOND_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_RUBY_ORE.get());
-        dropWhenSilkTouch(MINEBENTBlocks.TROLLSLATE_URANIUM_ORE.get());
+        dropSelf(RUBY_BLOCK.get());
+        dropWhenSilkTouch(TROLLSTONE_COAL_ORE.get());
+        dropWhenSilkTouch(TROLLSTONE_COPPER_ORE.get());
+        dropWhenSilkTouch(TROLLSTONE_IRON_ORE.get());
+        dropWhenSilkTouch(TROLLSTONE_GOLD_ORE.get());
+        dropWhenSilkTouch(TROLLSTONE_REDSTONE_ORE.get());
+        dropWhenSilkTouch(TROLLSTONE_LAPIS_ORE.get());
+        dropWhenSilkTouch(TROLLSTONE_DIAMOND_ORE.get());
+        dropWhenSilkTouch(TROLLSTONE_RUBY_ORE.get());
+        dropWhenSilkTouch(TROLLSTONE_QUARTZ_ORE.get());
+        dropWhenSilkTouch(TROLLSTONE_CRUXITE_ORE.get());
+        dropWhenSilkTouch(TROLLSTONE_URANIUM_ORE.get());
+        dropWhenSilkTouch(TROLLSTONE.get());
+        dropWhenSilkTouch(TROLLSLATE_COAL_ORE.get());
+        dropWhenSilkTouch(TROLLSLATE_COPPER_ORE.get());
+        dropWhenSilkTouch(TROLLSLATE_IRON_ORE.get());
+        dropWhenSilkTouch(TROLLSLATE_GOLD_ORE.get());
+        dropWhenSilkTouch(TROLLSLATE_REDSTONE_ORE.get());
+        dropWhenSilkTouch(TROLLSLATE_LAPIS_ORE.get());
+        dropWhenSilkTouch(TROLLSLATE_DIAMOND_ORE.get());
+        dropWhenSilkTouch(TROLLSLATE_RUBY_ORE.get());
+        dropWhenSilkTouch(TROLLSLATE_URANIUM_ORE.get());
+        dropWhenSilkTouch(TROLLSLATE.get());
+
+        add(TROLLSTONE_CRUXITE_ORE.get(), this::cruxiteOreDrop);
+        add(TROLLSTONE_URANIUM_ORE.get(), this::uraniumOreDrop);
+        add(TROLLSTONE_COAL_ORE.get(), this::coalOreDrop);
+        add(TROLLSTONE_COPPER_ORE.get(), this::copperOreDrop);
+        add(TROLLSTONE_IRON_ORE.get(), this::ironOreDrop);
+        add(TROLLSTONE_GOLD_ORE.get(), this::goldOreDrop);
+        add(TROLLSTONE_REDSTONE_ORE.get(), this::redstoneOreDrop);
+        add(TROLLSTONE_QUARTZ_ORE.get(), this::quartzOreDrop);
+        add(TROLLSTONE_LAPIS_ORE.get(), this::lapisOreDrop);
+        add(TROLLSTONE_DIAMOND_ORE.get(), this::diamondOreDrop);
+        add(TROLLSTONE_RUBY_ORE.get(), this::rubyOreDrop);
+        add(TROLLSLATE_URANIUM_ORE.get(), this::uraniumOreDrop);
+        add(TROLLSLATE_COAL_ORE.get(), this::coalOreDrop);
+        add(TROLLSLATE_COPPER_ORE.get(), this::copperOreDrop);
+        add(TROLLSLATE_IRON_ORE.get(), this::ironOreDrop);
+        add(TROLLSLATE_GOLD_ORE.get(), this::goldOreDrop);
+        add(TROLLSLATE_REDSTONE_ORE.get(), this::redstoneOreDrop);
+        add(TROLLSLATE_LAPIS_ORE.get(), this::lapisOreDrop);
+        add(TROLLSLATE_DIAMOND_ORE.get(), this::diamondOreDrop);
+        add(TROLLSLATE_RUBY_ORE.get(), this::rubyOreDrop);
     }
 
     //@Override
@@ -63,5 +88,48 @@ public class BENTBlockLoot extends BlockLootSubProvider {
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F)))
                         .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
     }
-
+    public LootTable.Builder uraniumOreDrop(Block block)
+    {
+        return createOreDrop(block, MSItems.RAW_URANIUM.get());
+    }
+    private LootTable.Builder coalOreDrop(Block block)
+    {
+        return createOreDrop(block, Items.COAL);
+    }
+    private LootTable.Builder goldOreDrop(Block block)
+    {
+        return createOreDrop(block, Items.RAW_GOLD);
+    }
+    private LootTable.Builder ironOreDrop(Block block)
+    {
+        return createOreDrop(block, Items.RAW_IRON);
+    }
+    private LootTable.Builder copperOreDrop(Block block)
+    {
+        return createOreDrop(block, Items.RAW_COPPER);
+    }
+    private LootTable.Builder redstoneOreDrop(Block block)
+    {
+        HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+        return createSilkTouchDispatchTable(block, applyExplosionDecay(block, LootItem.lootTableItem(Items.REDSTONE)
+                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 5.0F)))
+                .apply(ApplyBonusCount.addUniformBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
+    }
+    private LootTable.Builder quartzOreDrop(Block block)
+    {
+        return createOreDrop(block, Items.QUARTZ);
+    }
+    private LootTable.Builder lapisOreDrop(Block block)
+    {
+        HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+        return createSilkTouchDispatchTable(block, applyExplosionDecay(block,
+                LootItem.lootTableItem(Items.LAPIS_LAZULI)
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 9.0F)))
+                        .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
+    }
+    private LootTable.Builder diamondOreDrop(Block block)
+    {
+        return createOreDrop(block, Items.DIAMOND);
+    }
+    private LootTable.Builder rubyOreDrop(Block block) { return createOreDrop(block, MINEBENTItems.RUBY.get()); }
 }

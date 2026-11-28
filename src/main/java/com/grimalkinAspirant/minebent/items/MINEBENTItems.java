@@ -5,9 +5,7 @@ import com.grimalkinAspirant.minebent.datagen.BENTDragonArmorFly;
 import com.grimalkinAspirant.minebent.datagen.BENTMagicRangedRightClickEffect;
 import com.grimalkinAspirant.minebent.datagen.BENTRocketArmorFly;
 import com.mraof.minestuck.block.*;
-import com.mraof.minestuck.item.MSItemProperties;
-import com.mraof.minestuck.item.MSItemTypes;
-import com.mraof.minestuck.item.MSItems;
+import com.mraof.minestuck.item.*;
 import com.mraof.minestuck.item.armor.MSArmorItem;
 import com.mraof.minestuck.item.weapon.*;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -35,6 +33,10 @@ public class MINEBENTItems {
     // Misc
     public static final DeferredItem<Item> TROLLLOGO_FAKEITEM = ITEMS.register("trolllogo_fakeitem",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
+    public static final DeferredItem<Item> SGRUB_CODE = ITEMS.register("sgrub_code",
+            () -> new IncompleteSgrubCodeItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> COMPLETED_SGRUB_CODE = ITEMS.register("completed_sgrub_code",
+            () -> new ReadableSburbCodeItem.Completed(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
     public static final DeferredItem<Item> CHITIN = ITEMS.register("chitin",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> MIRTHFUL_ESSENCE = ITEMS.register("mirthful_essence",

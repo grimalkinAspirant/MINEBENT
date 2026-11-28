@@ -2,6 +2,7 @@ package com.grimalkinAspirant.minebent.data.tag;
 
 import com.grimalkinAspirant.minebent.MINEBENT;
 import com.grimalkinAspirant.minebent.items.MINEBENTItems;
+import com.grimalkinAspirant.minebent.items.MINEBENTTags;
 import com.mraof.minestuck.Minestuck;
 import com.mraof.minestuck.block.MSBlocks;
 import com.mraof.minestuck.block.plant.FlammableLogBlock;
@@ -66,7 +67,6 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		tag(MINEABLE_WITH_CLAWS).addTags(SWORD_EFFICIENT);
 		tag(MINEABLE_WITH_HAMMER).addTags(MINEABLE_WITH_PICKAXE);
 		tag(MINEABLE_WITH_CHAINSAW).addTags(MINEABLE_WITH_AXE);
-		tag(MINEABLE_WITH_FORK).addTags(Tags.Blocks.STORAGE_BLOCKS_WHEAT);
 		tag(MINEABLE_WITH_SPOON).addTags(MINEABLE_WITH_SHOVEL);
 
 		tag(DIRT).add(BLUE_DIRT.get());
@@ -94,18 +94,9 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		tag(NETHER_CARVER_REPLACEABLES).addTag(HEAT_TERRAIN_BLOCKS);
 		tag(Tags.Blocks.COBBLESTONES).add(FLOWERY_MOSSY_COBBLESTONE.get(), MYCELIUM_COBBLESTONE.get(), BLACK_COBBLESTONE.get());
 		tag(Tags.Blocks.END_STONES).add(COARSE_END_STONE.get());
-		tag(Tags.Blocks.ORES).addTags(CRUXITE_ORES, ExtraModTags.Blocks.URANIUM_ORES);
-		tag(BlockTags.COAL_ORES).addTag(MSTags.Blocks.COAL_ORES);
-		tag(BlockTags.DIAMOND_ORES).addTag(MSTags.Blocks.DIAMOND_ORES);
-		tag(BlockTags.GOLD_ORES).addTag(MSTags.Blocks.GOLD_ORES);
-		tag(BlockTags.IRON_ORES).addTag(MSTags.Blocks.IRON_ORES);
-		tag(BlockTags.LAPIS_ORES).addTag(MSTags.Blocks.LAPIS_ORES);
-		tag(Tags.Blocks.ORES_QUARTZ).addTag(QUARTZ_ORES);
-		tag(BlockTags.REDSTONE_ORES).addTag(MSTags.Blocks.REDSTONE_ORES);
-		tag(BlockTags.EMERALD_ORES).addTag(MSTags.Blocks.EMERALD_ORES);
+
 		tag(BlockTags.DAMPENS_VIBRATIONS).add(DENSE_CLOUD.get(), BRIGHT_DENSE_CLOUD.get());
 		tag(Tags.Blocks.STONES).add(COARSE_STONE.get(), SHADE_STONE.get(), MYCELIUM_STONE.get(), BLACK_STONE.get(), IGNEOUS_STONE.get(), PUMICE_STONE.get(), COARSE_END_STONE.get(), PINK_STONE.get(), BROWN_STONE.get(), GREEN_STONE.get(), UNCARVED_WOOD.get());
-		tag(Tags.Blocks.STORAGE_BLOCKS).addTags(CRUXITE_STORAGE_BLOCKS, ExtraModTags.Blocks.URANIUM_STORAGE_BLOCKS);
 		tag(Tags.Blocks.BOOKSHELVES).add(GLOWING_BOOKSHELF.get(), FROST_BOOKSHELF.get(), RAINBOW_BOOKSHELF.get(), END_BOOKSHELF.get(), DEAD_BOOKSHELF.get(), TREATED_BOOKSHELF.get(), SHADEWOOD_BOOKSHELF.get(), CINDERED_BOOKSHELF.get());
 		tag(FLOWER_POTS).add(relevantBlocks(block -> block instanceof FlowerPotBlock));
 
@@ -288,32 +279,17 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 		needsWoodPickaxe(CASSETTE_PLAYER.get());
 		needsWoodPickaxe(PARCEL_PYXIS.get(), PYXIS_LID.get());
 
-		tag(ExtraModTags.Blocks.URANIUM_ORES).addTag(URANIUM_ORES);
-		tag(ExtraModTags.Blocks.URANIUM_STORAGE_BLOCKS).add(URANIUM_BLOCK.get());
-
-		tag(GREEN_HIEROGLYPHS).add(GREEN_STONE_BRICK_FROG.get(), GREEN_STONE_BRICK_LOTUS.get(), GREEN_STONE_BRICK_IGUANA_LEFT.get(), GREEN_STONE_BRICK_IGUANA_RIGHT.get(), GREEN_STONE_BRICK_NAK_LEFT.get(), GREEN_STONE_BRICK_NAK_RIGHT.get(), GREEN_STONE_BRICK_SALAMANDER_LEFT.get(), GREEN_STONE_BRICK_SALAMANDER_RIGHT.get(), GREEN_STONE_BRICK_SKAIA.get(), GREEN_STONE_BRICK_TURTLE.get());
-		tag(GLOWING_LOGS).add(GLOWING_LOG.get(), GLOWING_WOOD.get(), STRIPPED_GLOWING_LOG.get(), STRIPPED_GLOWING_WOOD.get());
-		tag(FROST_LOGS).add(FROST_LOG.get(), FROST_WOOD.get(),STRIPPED_FROST_LOG.get(), STRIPPED_FROST_WOOD.get());
-		tag(RAINBOW_LOGS).add(RAINBOW_LOG.get(), RAINBOW_WOOD.get(), STRIPPED_RAINBOW_LOG.get(), STRIPPED_RAINBOW_WOOD.get());
-		tag(END_LOGS).add(END_LOG.get(), END_WOOD.get(), STRIPPED_END_LOG.get(), STRIPPED_END_WOOD.get());
-		tag(VINE_LOGS).add(VINE_LOG.get(), VINE_WOOD.get());
-		tag(FLOWERY_VINE_LOGS).add(FLOWERY_VINE_LOG.get(), FLOWERY_VINE_WOOD.get());
-		tag(DEAD_LOGS).add(DEAD_LOG.get(), DEAD_WOOD.get(), STRIPPED_DEAD_LOG.get(), STRIPPED_DEAD_WOOD.get());
-		tag(CINDERED_LOGS).add(CINDERED_LOG.get(), CINDERED_WOOD.get(), STRIPPED_CINDERED_LOG.get(), STRIPPED_CINDERED_WOOD.get());
-		tag(PETRIFIED_LOGS).add(PETRIFIED_LOG.get(), PETRIFIED_WOOD.get());
-		tag(SHADEWOOD_LOGS).add(SHADEWOOD_LOG.get(), SHADEWOOD.get(), STRIPPED_SHADEWOOD_LOG.get(), STRIPPED_SHADEWOOD.get(), SCARRED_SHADEWOOD_LOG.get(), SCARRED_SHADEWOOD.get(), STRIPPED_SCARRED_SHADEWOOD_LOG.get(), STRIPPED_SCARRED_SHADEWOOD.get(), ROTTED_SHADEWOOD_LOG.get(), ROTTED_SHADEWOOD.get(), STRIPPED_ROTTED_SHADEWOOD_LOG.get(), STRIPPED_ROTTED_SHADEWOOD.get());
-		tag(CRUXITE_ORES).add(STONE_CRUXITE_ORE.get(), NETHERRACK_CRUXITE_ORE.get(), COBBLESTONE_CRUXITE_ORE.get(), SANDSTONE_CRUXITE_ORE.get(), RED_SANDSTONE_CRUXITE_ORE.get(), END_STONE_CRUXITE_ORE.get(), PINK_STONE_CRUXITE_ORE.get(), SHADE_STONE_CRUXITE_ORE.get(), MYCELIUM_STONE_CRUXITE_ORE.get(), UNCARVED_WOOD_CRUXITE_ORE.get(), BLACK_STONE_CRUXITE_ORE.get());
-		tag(URANIUM_ORES).add(STONE_URANIUM_ORE.get(), DEEPSLATE_URANIUM_ORE.get(), NETHERRACK_URANIUM_ORE.get(), COBBLESTONE_URANIUM_ORE.get(), SANDSTONE_URANIUM_ORE.get(), RED_SANDSTONE_URANIUM_ORE.get(), END_STONE_URANIUM_ORE.get(), PINK_STONE_URANIUM_ORE.get(), SHADE_STONE_URANIUM_ORE.get(), MYCELIUM_STONE_URANIUM_ORE.get(), UNCARVED_WOOD_URANIUM_ORE.get(), BLACK_STONE_URANIUM_ORE.get());
-		tag(MSTags.Blocks.COAL_ORES).add(NETHERRACK_COAL_ORE.get(), SHADE_STONE_COAL_ORE.get(), PINK_STONE_COAL_ORE.get());
-		tag(MSTags.Blocks.IRON_ORES).add(END_STONE_IRON_ORE.get(), SANDSTONE_IRON_ORE.get(), RED_SANDSTONE_IRON_ORE.get(), UNCARVED_WOOD_IRON_ORE.get());
-		tag(MSTags.Blocks.GOLD_ORES).add(SANDSTONE_GOLD_ORE.get(), RED_SANDSTONE_GOLD_ORE.get(), SHADE_STONE_GOLD_ORE.get(), PINK_STONE_GOLD_ORE.get(), BLACK_STONE_GOLD_ORE.get());
-		tag(MSTags.Blocks.REDSTONE_ORES).add(END_STONE_REDSTONE_ORE.get(), UNCARVED_WOOD_REDSTONE_ORE.get(), BLACK_STONE_REDSTONE_ORE.get());
-		tag(QUARTZ_ORES).add(STONE_QUARTZ_ORE.get(), BLACK_STONE_QUARTZ_ORE.get());
-		tag(MSTags.Blocks.LAPIS_ORES).add(PINK_STONE_LAPIS_ORE.get());
-		tag(MSTags.Blocks.DIAMOND_ORES).add(PINK_STONE_DIAMOND_ORE.get());
-		tag(MSTags.Blocks.EMERALD_ORES).add(UNCARVED_WOOD_EMERALD_ORE.get());
-		tag(CRUXITE_STORAGE_BLOCKS).add(CRUXITE_BLOCK.get());
-		tag(END_SAPLING_DIRT).addTag(Tags.Blocks.END_STONES).add(END_GRASS.get());
+		tag(MINEBENTTags.Blocks.TROLL_HIEROGLYPHS).add(RED_STONE_BRICK_FROG.get(), RED_STONE_BRICK_LOTUS.get(), BLUE_STONE_BRICK_IGUANA_LEFT.get(), BLUE_STONE_BRICK_IGUANA_RIGHT.get(), RED_STONE_BRICK_NAK_LEFT.get(), RED_STONE_BRICK_NAK_RIGHT.get(), BLUE_STONE_BRICK_SALAMANDER_LEFT.get(), BLUE_STONE_BRICK_SALAMANDER_RIGHT.get(), RED_STONE_BRICK_SKAIA.get(), BLUE_STONE_BRICK_TURTLE.get());
+		tag(MSTags.Blocks.CRUXITE_ORES).add(TROLLSTONE_CRUXITE_ORE.get());
+		tag(MSTags.Blocks.URANIUM_ORES).add(TROLLSTONE_URANIUM_ORE.get(), TROLLSLATE_URANIUM_ORE.get());
+		tag(MSTags.Blocks.COAL_ORES).add(TROLLSTONE_COAL_ORE.get(), TROLLSLATE_COAL_ORE.get());
+        tag(COPPER_ORES).add(TROLLSTONE_COPPER_ORE.get(), TROLLSLATE_COPPER_ORE.get());
+        tag(MSTags.Blocks.IRON_ORES).add(TROLLSTONE_IRON_ORE.get(), TROLLSLATE_IRON_ORE.get());
+        tag(MSTags.Blocks.GOLD_ORES).add(TROLLSTONE_GOLD_ORE.get(), TROLLSLATE_GOLD_ORE.get());
+        tag(MSTags.Blocks.REDSTONE_ORES).add(TROLLSTONE_REDSTONE_ORE.get(), TROLLSLATE_REDSTONE_ORE.get());
+        tag(MSTags.Blocks.LAPIS_ORES).add(TROLLSTONE_LAPIS_ORE.get(), TROLLSLATE_LAPIS_ORE.get());
+        tag(MSTags.Blocks.DIAMOND_ORES).add(TROLLSTONE_DIAMOND_ORE.get(), TROLLSLATE_DIAMOND_ORE.get());
+        tag(MSTags.Blocks.QUARTZ_ORES).add(TROLLSTONE_QUARTZ_ORE.get());
 
 		tag(WALLS).add(relevantBlocks(block -> block instanceof WallBlock));
 //		tag(FENCES).add(relevantBlocks(block -> block instanceof FenceBlock));
@@ -325,13 +301,6 @@ public final class BENTBlockTagsProvider extends BlockTagsProvider
 //		tag(WOODEN_TRAPDOORS).add(CARVED_TRAPDOOR.get());
 //		tag(TRAPDOORS).add(relevantBlocks(block -> block instanceof TrapDoorBlock));
 //		tag(SIGNS).add(relevantBlocks(block -> block instanceof SignBlock));
-
-		tag(ROTATOR_WHITELISTED).add(Blocks.REPEATER, Blocks.COMPARATOR, AND_GATE_BLOCK.get(), OR_GATE_BLOCK.get(), XOR_GATE_BLOCK.get(), NAND_GATE_BLOCK.get(), NOR_GATE_BLOCK.get(), XNOR_GATE_BLOCK.get(), AREA_EFFECT_BLOCK.get(), WIRELESS_REDSTONE_TRANSMITTER.get(), REMOTE_COMPARATOR.get(), PLATFORM_GENERATOR.get(), ITEM_MAGNET.get());
-		tag(PLATFORM_ABSORBING).addTag(Tags.Blocks.OBSIDIANS).add(Blocks.BEDROCK, Blocks.NETHER_PORTAL, Blocks.END_PORTAL, Blocks.END_PORTAL_FRAME, Blocks.REINFORCED_DEEPSLATE, PUSHABLE_BLOCK.get()); //excludes Platform Receptacle blocks as they only absorb conditionally
-		tag(PUSHABLE_BLOCK_REPLACEABLE).addTags(SAPLINGS, FLOWERS);
-		tag(PETRIFIED_FLORA_PLACEABLE).addTags(Tags.Blocks.STONES, Tags.Blocks.COBBLESTONES, Tags.Blocks.GRAVELS);
-		tag(EDITMODE_BREAK_BLACKLIST).addTags(BlockTags.PORTALS);
-		tag(FARMINE_BREAK_BLACKLIST).add(Blocks.OBSIDIAN);
 	}
 
 	@Override

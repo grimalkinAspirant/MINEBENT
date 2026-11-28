@@ -3,6 +3,7 @@ package com.grimalkinAspirant.minebent.data;
 import com.grimalkinAspirant.minebent.MINEBENT;
 import com.grimalkinAspirant.minebent.items.MINEBENTBlocks;
 import com.grimalkinAspirant.minebent.items.MINEBENTItems;
+import com.mraof.minestuck.item.MSItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -94,6 +95,8 @@ public class BENTItemModelProvider extends ItemModelProvider{
         basicItem(MINEBENTItems.COOKED_BUG_MEAT.get());
 
         //Other
+        basicItem(MINEBENTItems.SGRUB_CODE.get());
+        simpleItem(MINEBENTItems.COMPLETED_SGRUB_CODE, "sgrub_code");
         basicItem(MINEBENTItems.TROLL_HORN.get());
         basicItem(MINEBENTItems.RUBY.get());
         basicItem(MINEBENTItems.CHITIN.get());
@@ -188,7 +191,12 @@ public class BENTItemModelProvider extends ItemModelProvider{
         simpleBlockItem(MINEBENTBlocks.BLUE_STONE_COLUMN.get());
         simpleBlockItem(MINEBENTBlocks.BLUE_STONE_BRICK_TRIM.get());
     }
-
+    private ItemModelBuilder simpleItem(Supplier<? extends Item> item, String textureName)
+    {
+        return withExistingParent(id(item).getPath(),
+                ResourceLocation.withDefaultNamespace("item/generated"))
+                .texture("layer0", texture(textureName));
+    }
     /**
      * Generates a model that in third person places the weapon flat on top of the hand.
      */
